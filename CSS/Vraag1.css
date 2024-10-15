@@ -1,3 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center;     /* Verticaal centreren */
+    height: 100vh;           /* De hoogte van het scherm */
+    background-color:rebeccapurple; /* Lichtgrijze achtergrondkleur zoals op de afbeelding */
+
+}
+
+.container {
+    background-color: white; /* Witte achtergrond voor de container */
+    border-radius: 10px;     /* Afgeronde hoeken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw onder de container */
+    padding: 20px;           /* Binnenruimte rondom de inhoud */
+    width: 90vw;             /* Responsieve breedte, afhankelijk van het scherm */
+    max-width: 800px;        /* Maximale breedte van 800px op grotere schermen */
+    height: auto;            /* Automatische hoogte */
+    text-align: left; /* Zorg ervoor dat de inhoud aan de linkerkant is uitgelijnd */
+    position: relative;
+}
+.titel-balk{
+    background-color: #B1D249;
+    color: white;
+
+
+}
+
 .dot {
     height: 75px;
     width: 75px;
@@ -9,5 +38,10 @@
     font-size: 30px; /* Set the font size of the number */
     color: white; /* Optional: Change the text color */
     font-family: "Roboto Thin";
-}
+    position: absolute;
+    top:10%;
 
+
+
+
+}
