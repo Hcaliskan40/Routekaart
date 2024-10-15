@@ -7,9 +7,16 @@
     <title>Vraag1</title>
 </head>
 <body>
-<style><span class="dot">1</span> </style>
 
-<h2>Hier krijg ik energie van en doe ik graag:</h2>
+<div class="container">
+    <h1 class="titel-balk">Like</h1>
+    <span class="dot">1</span>
+
+
+</div>
+
+
+
 
 
 
