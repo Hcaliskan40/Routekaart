@@ -1,0 +1,13 @@
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #B1D249;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center; /* Horizontally center the number */
+    line-height: 75px; /* Vertically center the number by matching line height with circle height */
+    font-size: 30px; /* Set the font size of the number */
+    color: white; /* Optional: Change the text color */
+    font-family: "Roboto Thin";
+}
+
