@@ -48,6 +48,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
 </head>
 <body>
 <h2>Select an Image</h2>
+<a href="index.php">Close</a>
 <div class="popup-body">
     <?php generateRoster($connection, $imageIndex, $selectedImages); ?>
 </div>
