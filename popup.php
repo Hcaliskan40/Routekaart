@@ -1,22 +1,36 @@
 <?php
-
+session_start();
 $connection = mysqli_connect('127.0.0.1', 'root', '', 'routekaart', '3306');
-// Check connection
 if (mysqli_connect_errno()) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$showPopup = isset($_POST['openPopup']);
+$imageIndex = isset($_POST['imageIndex']) ? (int)$_POST['imageIndex'] : 0;
+$selectedImages = [
+    isset($_SESSION['selectedImage0']) ? $_SESSION['selectedImage0'] : '',
+    isset($_SESSION['selectedImage1']) ? $_SESSION['selectedImage1'] : '',
+    isset($_SESSION['selectedImage2']) ? $_SESSION['selectedImage2'] : '',
+];
 
-function generateRoster($connection) {
+function generateRoster($connection, $imageIndex, $selectedImages) {
     $query = "SELECT * FROM afbeelding WHERE kleur = 'groen'";
     $result = mysqli_query($connection, $query);
 
     if ($result) {
-        echo '<div class="roster">';
+        echo '<div class="roster-content">';
         while ($row = mysqli_fetch_assoc($result)) {
-            $afbeeldingNaam = $row['naam'];
-            echo '<div class="roster-item"><img src="img/' . htmlspecialchars($afbeeldingNaam) . '.jpg" alt="' . htmlspecialchars($afbeeldingNaam) . '"></div>';
+            $afbeeldingNaam = htmlspecialchars($row['naam'], ENT_QUOTES, 'UTF-8');
+            $imagePath = "img/{$afbeeldingNaam}.jpg";
+            $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
+            echo "<div class='roster-item'>
+                    <form method='post' action='index.php'>
+                        <input type='hidden' name='selectedImage' value='{$imagePath}'>
+                        <input type='hidden' name='imageIndex' value='{$imageIndex}'>
+                        <button type='submit' class='image-button' {$isDisabled}>
+                            <img src='{$imagePath}' alt='{$afbeeldingNaam}'>
+                        </button>
+                    </form>
+                  </div>";
         }
         echo '</div>';
     } else {
@@ -29,25 +43,13 @@ function generateRoster($connection) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/image.css" media="screen, projection">
-    <link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection">
-    <title>Popup Roster</title>
+    <title>Select Image</title>
+    <link rel="stylesheet" href="css/popup.css">
 </head>
 <body>
-<?php if ($showPopup): ?>
-    <div id="popup" class="popup" style="display: block;">
-        <div class="popup-content">
-            <form method="post">
-                <button type="submit" name="closePopup" class="close">&times;</button>
-            </form>
-            <h2>Roster</h2>
-            <?php generateRoster($connection); ?>
-        </div>
-    </div>
-<?php endif; ?>
-
-<form method="post">
-    <button type="submit" name="openPopup" id="openPopup">Open Roster</button>
-</form>
+<h2>Select an Image</h2>
+<div class="popup-body">
+    <?php generateRoster($connection, $imageIndex, $selectedImages); ?>
+</div>
 </body>
 </html>
