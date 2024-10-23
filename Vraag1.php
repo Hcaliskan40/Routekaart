@@ -31,10 +31,11 @@
             <div class="photo-box">+</div>
             <input class="text-box" placeholder="...">
         </div>
+        <button class="button-1" type="button" onclick="alert('Hello world!')">Bevestigen</button>
     </div>
 </div>
 
-</div>
+
 
 
 
