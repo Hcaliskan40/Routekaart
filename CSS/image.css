@@ -1,0 +1,19 @@
+
+.roster {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.roster-item {
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.roster-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
