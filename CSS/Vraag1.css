@@ -15,11 +15,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw onder de container */
     padding: 20px;
     width: 90vw;
-    max-width: 800px;
+    max-width: 350px;
     height: auto;
     text-align: left;
     position: relative;
     height: auto;
+    min-height: 600px;
 }
 .titel-balk{
     background-color: #B1D249;
@@ -96,4 +97,38 @@ body {
     color: #B1D249;
 
     margin-right: 10px; /* Zorgt voor ruimte tussen nummer en de rest */
+}
+
+
+.button-1 {
+    background-color:#B1D249 ;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-1:hover,
+
+.button-1:focus {
+    background-color: rgba(177, 210, 73, 0.81);
 }
