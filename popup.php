@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 $showPopup = isset($_POST['openPopup']);
 
 function generateRoster($connection) {
-    $query = "SELECT * FROM afbeelding";
+    $query = "SELECT * FROM afbeelding WHERE kleur = 'groen'";
     $result = mysqli_query($connection, $query);
 
     if ($result) {
