@@ -2,36 +2,37 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Horizontaal centreren */
-    align-items: center;     /* Verticaal centreren */
-    height: 100vh;           /* De hoogte van het scherm */
-    background-color:white; /* Lichtgrijze achtergrondkleur zoals op de afbeelding */
-
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
 }
 
 .container {
-    background-color: white; /* Witte achtergrond voor de container */
-    border-radius: 10px;     /* Afgeronde hoeken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw onder de container */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 90vw;
-    max-width: 350px;
-    height: auto;
+    width: 95vw;
+    max-width: 800px;
+    height: 95vh;
     text-align: left;
     position: relative;
-    height: auto;
-    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
 }
-.titel-balk{
+
+.titel-balk {
     background-color: #B1D249;
     color: white;
-    margin-left: 20px;
     font-size: 30px;
     flex-grow: 1;
-    padding-left: 50px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .dot {
@@ -40,26 +41,24 @@ body {
     background-color: #B1D249;
     border-radius: 50%;
     display: flex;
-    justify-content: center; /* Horizontaal centreren van het nummer */
-    align-items: center;     /* Verticaal centreren van het nummer */
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
-    color: white; /* Verander de tekstkleur */
+    color: white;
     font-family: "Roboto Thin";
 }
 
-.header{
-    display: flex; /* Zorgt ervoor dat de cirkel en de tekst naast elkaar komen */
-    align-items: center; /* Verticaal uitlijnen van de items */
+.header {
+    display: flex;
+    align-items: center;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-
-
 .photo-box {
-    width: 60px;
+    width: 15%;
     height: 60px;
-    background-color: #E0E0E0; /* Grijze achtergrond als placeholder voor afbeelding */
+    background-color: #E0E0E0;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -67,14 +66,13 @@ body {
     font-size: 24px;
     color: #333;
     margin-right: 10px;
-    border: 2px dashed #B1D249; /* Groene gestippelde rand */
+    border: 2px dashed #B1D249;
+    flex-shrink: 0;
 }
 
 .text-box {
     flex-grow: 1;
-    width: 100%;
-    max-width: 300px;
-    height: 50px;
+    height: 60px;
     background-color: white;
     border-radius: 10px;
     border: 2px solid #B1D249;
@@ -86,22 +84,23 @@ body {
     resize: none;
     overflow: auto;
 }
+
 .row {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    flex-grow: 1;
 }
 
-.number.number {
+.number {
     font-size: 34px;
     color: #B1D249;
-
-    margin-right: 10px; /* Zorgt voor ruimte tussen nummer en de rest */
+    margin-right: 10px;
+    flex-shrink: 0;
 }
 
-
 .button-1 {
-    background-color:#B1D249 ;
+    background-color: #B1D249;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
@@ -109,15 +108,13 @@ body {
     cursor: pointer;
     display: inline-block;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
-    height: 40px;
+    height: 50px;
     line-height: 20px;
-    list-style: none;
-    margin: 0;
+    margin: 20px auto 0 auto;
     outline: none;
     padding: 10px 16px;
-    position: relative;
     text-align: center;
     text-decoration: none;
     transition: color 100ms;
@@ -125,10 +122,27 @@ body {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    width: 50%;
 }
 
 .button-1:hover,
-
 .button-1:focus {
     background-color: rgba(177, 210, 73, 0.81);
+}
+
+@media (min-width: 768px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        width: 700px;
+        padding: 50px;
+        height: 95vh;
+    }
+    .button-1 {
+        padding: 20px 40px;
+    }
 }

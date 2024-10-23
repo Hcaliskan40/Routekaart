@@ -11,9 +11,8 @@
 <div class="container">
     <div class="header">
         <span class="dot">1</span>
-    <h1 class="titel-balk">Like</h1>
-
-</div>
+        <h1 class="titel-balk">Like</h1>
+    </div>
 
     <div class="content">
         <div class="row">
@@ -35,10 +34,7 @@
     </div>
 </div>
 
-
-
-
-
-
 </body>
 </html>
+
+
