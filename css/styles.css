@@ -1,0 +1,18 @@
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image-button img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+}
