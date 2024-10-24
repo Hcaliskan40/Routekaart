@@ -17,15 +17,15 @@
     <div class="input-box">
         <div class="input-item">
             <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
-            <input type="text" placeholder="Bijvoorbeeld: Wandelen in de natuur"> <!-- Invoerveld met een voorbeeldactiviteit. -->
+            <textarea name="message" rows="10" cols="40" placeholder="Bijvoorbeeld: Muziek luisteren"> </textarea>
         </div>
         <div class="input-item">
-            <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
-            <input type="text" placeholder="Bijvoorbeeld: Muziek luisteren"> <!-- Invoerveld met een voorbeeldactiviteit. -->
+            <div class="image-placeholder">+</div>
+            <textarea name="message2" rows="3" cols="40" placeholder="Bijvoorbeeld: Tuinieren"></textarea>
         </div>
         <div class="input-item">
-            <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
-            <input type="text" placeholder="Bijvoorbeeld: Tuinieren"> <!-- Invoerveld met een voorbeeldactiviteit. -->
+            <div class="image-placeholder">+</div>
+            <textarea name="message3" rows="3" cols="40" placeholder="Bijvoorbeeld: Sporten"></textarea>
         </div>
     </div>
     <div class="button-group">
