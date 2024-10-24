@@ -1,17 +1,61 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-    <title>Mobile-Friendly PHP Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startpagina</title>
+
+    <style>
+        body {
+            text-align: center;
+
+        }
+        .FotoAlmere {
+            height: 500px;
+            background-image: url('img/AlmereMaps.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .BeginButton{
+            display: flow;
+            background-color: darkcyan;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            border-radius: 40px;
+            outline: none;
+            bottom: 40px;
+            position: absolute;
+            right: 100px;
+            left: 100px;
+        }
+
+        .BeginButton:hover {
+            background-color: aqua;
+            color: white;
+        }
+
+        .WindesheimLogo {
+            position: absolute;
+            top: 15%;
+            left: 0;
+            right: 0;
+        }
+
+    </style>
 </head>
-<body>
-<h1>Welcome to my mobile-friendly page!</h1>
-<?php
-// PHP code here
-$name = "John Doe";
-echo "<p>Hello, $name!</p>";
-?>
-</body>
 </html>
+<body>
+
+<div class="FotoAlmere"></div>
+<div class="WindesheimLogo" > <img src="img/WindesheimLogo.png" alt="WindesheimLogo" width="300" height="auto"> </div>
+<h1>(Beschrijving van de Routekaart)</h1>
+<input type="submit" value="Begin" class="BeginButton"/>
+
+</body>
