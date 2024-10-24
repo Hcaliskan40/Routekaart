@@ -13,7 +13,7 @@
         }
         .FotoAlmere {
             height: 500px;
-            background-image: url('img/AlmereMaps.png');
+            background-image: url('img/pic 11.png');
             background-size: cover;
             background-position: center;
         }
@@ -56,6 +56,13 @@
 <div class="FotoAlmere"></div>
 <div class="WindesheimLogo" > <img src="img/WindesheimLogo.png" alt="WindesheimLogo" width="300" height="auto"> </div>
 <h1>(Beschrijving van de Routekaart)</h1>
-<input type="submit" value="Begin" class="BeginButton"/>
+
+<button id="ga-naar-homepagina" class="BeginButton">Begin</button>
+
+<script>
+    document.getElementById("ga-naar-homepagina").addEventListener("click", function() {
+        window.location.href = "Home.php";
+    });
+</script>
 
 </body>
