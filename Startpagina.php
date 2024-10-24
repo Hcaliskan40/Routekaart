@@ -28,6 +28,12 @@
             text-decoration: none;
             display: inline-block;
             font-size: 32px;
+            border-radius: 40px;
+            outline: none;
+            bottom: 40px;
+            position: absolute;
+            right: 100px;
+            left: 100px;
         }
 
         .BeginButton:hover {
@@ -50,6 +56,13 @@
 <div class="FotoAlmere"></div>
 <div class="WindesheimLogo" > <img src="img/WindesheimLogo.png" alt="WindesheimLogo" width="300" height="auto"> </div>
 <h1>(Beschrijving van de Routekaart)</h1>
-<input type="submit" value="Begin" class="BeginButton"/>
+
+<button id="ga-naar-homepagina" class="BeginButton">Begin</button>
+
+<script>
+    document.getElementById("ga-naar-homepagina").addEventListener("click", function() {
+        window.location.href = "Vraag1.php";
+    });
+</script>
 
 </body>
