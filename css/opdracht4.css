@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    padding: 50px;
+    width: 90vw;
+    max-width: 800px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+}
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fac710;
+    padding-bottom: 15px;
+
+
+}
+.titel-balk{
+    background-color: #fac710;
+    color: white;
+    font-size: 30px;
+    flex-grow: 0.8;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #fac710;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-family: "Roboto Thin";
+
+}
+.image-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.image-placeholder:hover {
+    background-color: #cccccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+textarea {
+    flex: 1;
+    height: 150px;
+    border: 1px solid #ccc;
+    padding:25px;
+    border-radius: 5px;
+    resize: none;
+    width: calc(100% - 75px);
+    box-sizing: border-box;
+
+}
+textarea:focus {
+    border: 2px solid #fac710;
+    outline: none;
+    box-shadow: 0 0 5px rgb(250, 199, 16);
+}
+
+.input-box {
+    margin: 20px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .input-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .input-item .image-placeholder {
+        width: 60px;
+        height: 60px;
+        background-color: #e0e0e0;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        cursor: pointer;
+        font-size: 2em;
+        padding: 45px;
+    }
+    .image-placeholder {
+        width: 40px;
+        height: 40px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .input-item input {
+        flex-grow: 1;
+        padding: 45px;
+        border: 2px solid #fac710;
+        border-radius: 10px;
+        outline: none;
+        font-size:18px;
+    }
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
+        padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
+        padding-top: 10px;
+    }
+    .button-group button {
+        padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
+        border: none; /* Verwijdert de standaard rand van de knoppen. */
+        border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
+        cursor: pointer; /* Geeft aan dat de knop interactief is. */
+        font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
+    }
+    .button-group .confirm-btn {
+        background-color: #fac710; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
+        color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
+    }
+    .button-group .arrow-btn {
+        background-color: #ccc; /* Grijze achtergrondkleur voor de navigatieknoppen. */
+        color: #ffffff; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
+        border-radius: 50%;
+        font-weight: bold;
+    }
+    @media (min-width: 768px) {
+        body {
+            height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
+            display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
+            justify-content: center; /* Horizontale centrering van de inhoud. */
+            align-items: center; /* Verticale centrering van de inhoud. */
+        }
+
+        .container {
+            width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
+            padding: 50px; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
+            height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
+        }
+
+
+    }
+}
+.button-group{
+    float:left;
+    margin-right:5px;
+    justify-content: center;
+}
+
+
+.button-1 {
+    background-color: #fac710;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family:"Roboto Light";
+    font-size: 14px;
+
+
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+
+
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    justify-content: center;
+
+
+}

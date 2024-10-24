@@ -1,0 +1,209 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Achtergrondkleur van de pagina om een lichte en gebruiksvriendelijke uitstraling te geven. */
+    margin: 0; /* Verwijdert standaard marges om de pagina strak te houden. */
+    height: 100vh; /* De hoogte van de pagina wordt ingesteld op 100% van de viewport hoogte. */
+    display: flex; /* Flexbox om de inhoud op te vullen. */
+    justify-content: center; /* Zorgt ervoor dat de inhoud horizontaal in het midden staat. */
+    align-items: center; /* Zorgt ervoor dat de inhoud verticaal in het midden staat. */
+    background-color: white;
+}
+.container {
+    background: white; /* Achtergrondkleur van de container, zodat deze contrasteert met de pagina-achtergrond. */
+    border-radius: 10px; /* Maakt de hoeken van de container afgerond voor een vriendelijke uitstraling. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Voegt een lichte schaduw toe om de container van de achtergrond te scheiden. */
+    padding: 50px; /* Binnenruimte rondom de inhoud van de container. */
+    width: 90vw; /* Breedte van de container aangepast om meer ruimte in te nemen. */
+    max-width: 800px; /* Maximale breedte aangepast voor grotere schermen. */
+    height: 95vh; /* De hoogte van de container aangepast om de meeste ruimte op de pagina in te nemen. */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Verdeel de ruimte gelijkmatiger tussen de secties binnen de container. */
+    display: flex;
+}
+.header {
+    display: flex; /* Flexbox wordt gebruikt om de titel en afbeelding horizontaal te rangschikken. */
+    align-items: center; /* Zorgt ervoor dat de items in de header verticaal uitgelijnd zijn. */
+    font-size: 2em; /* Verhoogde lettergrootte van de titel voor duidelijke leesbaarheid. */
+    font-weight: bold; /* Maakt de titel vetgedrukt om deze te benadrukken. */
+    color: #b1d249; /* Groene kleur voor de tekst om een positieve uitstraling te geven. */
+    padding-bottom: 15px; /* Onderste padding om ruimte tussen de header en de volgende sectie te creëren. */
+
+
+}
+.titel-balk{
+    background-color: #b1d249;
+    color: white;
+    font-size: 30px;
+    flex-grow: 0.8;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #b1d249;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-family: "Roboto Thin";
+
+}
+.image-placeholder {
+    width: 60px; /* Breedte van de afbeelding-vakjes */
+    height: 60px; /* Hoogte van de afbeelding-vakjes */
+    background-color: #e0e0e0; /* Grijze kleur */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.image-placeholder:hover {
+    background-color: #cccccc; /* Donkerdere grijstint bij hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Voeg een subtiele schaduw toe */
+    transform: scale(1.05); /* Vergroot het vakje een beetje bij hover */
+}
+
+textarea {
+    flex: 1;
+    height: 150px; /* Match de hoogte van de image-placeholder */
+    border: 1px solid #ccc;
+    padding:25px;
+    border-radius: 5px;
+    resize: none; /* Voorkomt handmatig aanpassen van grootte */
+    width: calc(100% - 75px); /* Zorgt ervoor dat de textarea de resterende ruimte inneemt, rekening houdend met de breedte van de placeholder en marge */
+    box-sizing: border-box;
+
+}
+textarea:focus {
+    border: 2px solid #b1d249; /* Groene rand bij focus */
+    outline: none; /* Verwijdert de standaard focus-omranding van de browser */
+    box-shadow: 0 0 5px rgb(177, 210, 73); /* Voeg een subtiele schaduw toe */
+}
+
+.input-box {
+    margin: 20px 0; /* Boven- en onderruimte voor de invoervelden om ze visueel te scheiden van andere elementen. */
+    flex-grow: 1; /* Zorgt ervoor dat de input-box de resterende verticale ruimte inneemt. */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .input-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        width: 100%; /* Breedte gelijkmatig */
+    }
+
+    .input-item .image-placeholder {
+        width: 60px; /* Breedte van de afbeeldingsplaatsaanduiding. */
+        height: 60px; /* Hoogte van de afbeeldingsplaatsaanduiding. */
+        background-color: #e0e0e0; /* Grijze achtergrondkleur om aan te geven dat dit een plaatsaanduiding is. */
+        border-radius: 10px; /* Afronding van de hoeken voor een zachtere uitstraling. */
+        display: flex; /* Flexbox om de '+' in het midden van de plaatsaanduiding te centreren. */
+        align-items: center; /* Zorgt voor verticale centrering van de '+' in de plaatsaanduiding. */
+        justify-content: center; /* Zorgt voor horizontale centrering van de '+' in de plaatsaanduiding. */
+        margin-right: 15px; /* Vergroot de ruimte tussen de plaatsaanduiding en het invoerveld. */
+        cursor: pointer; /* Verandert de cursor om aan te geven dat hierop geklikt kan worden. */
+        font-size: 2em; /* Vergroot de lettergrootte voor betere zichtbaarheid. */
+        padding: 45px;
+    }
+    .image-placeholder {
+        width: 40px;
+        height: 40px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .input-item input {
+        flex-grow: 1; /* Zorgt ervoor dat het invoerveld de resterende ruimte binnen de input-item container inneemt. */
+        padding: 45px; /* Vergroot de binnenruimte van het invoerveld voor comfortabele tekstinvoer. */
+        border: 2px solid #b1d249; /* Rand van het invoerveld met een groene kleur zoals in het wireframe. */
+        border-radius: 10px; /* Vergroot de afronding van de hoeken van het invoerveld. */
+        outline: none; /* Verwijdert de standaard outline bij focus voor een strakkere uitstraling. */
+        font-size:18px;
+    }
+    .button-group {
+        display: flex; /* Flexbox om de knoppen in één lijn te rangschikken. */
+        justify-content: space-between; /* Zorgt ervoor dat de knoppen gelijkmatig worden verdeeld. */
+        align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
+        padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
+        padding-top: 10px;
+    }
+    .button-group button {
+        padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
+        border: none; /* Verwijdert de standaard rand van de knoppen. */
+        border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
+        cursor: pointer; /* Geeft aan dat de knop interactief is. */
+        font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
+    }
+    .button-group .confirm-btn {
+        background-color: #b1d249; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
+        color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
+    }
+
+    .button-group .arrow-btn {
+        background-color: #b1d249; /* Grijze achtergrondkleur voor de navigatieknoppen. */
+        color: #ffffff; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
+        border-radius: 50%;
+        font-weight: bold;
+    }
+
+}
+@media (min-width: 768px) {
+    body {
+        height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
+        display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
+        justify-content: center; /* Horizontale centrering van de inhoud. */
+        align-items: center; /* Verticale centrering van de inhoud. */
+    }
+
+    .container {
+        width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
+        padding: 50px; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
+        height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
+    }
+
+
+}
+
+.button-group{
+    float:left;
+    margin-right:1px;
+    justify-content: center;
+
+}
+
+
+.button-1 {
+    background-color: #b1d249;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Roboto Light";
+
+    line-height: 20px;
+    justify-content: center;
+}
+
+
+
+
+
