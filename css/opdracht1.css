@@ -26,13 +26,13 @@ body {
     align-items: center; /* Zorgt ervoor dat de items in de header verticaal uitgelijnd zijn. */
     font-size: 2em; /* Verhoogde lettergrootte van de titel voor duidelijke leesbaarheid. */
     font-weight: bold; /* Maakt de titel vetgedrukt om deze te benadrukken. */
-    color: #B1D249; /* Groene kleur voor de tekst om een positieve uitstraling te geven. */
+    color: #b1d249; /* Groene kleur voor de tekst om een positieve uitstraling te geven. */
     padding-bottom: 15px; /* Onderste padding om ruimte tussen de header en de volgende sectie te creëren. */
 
 
 }
 .titel-balk{
-    background-color: #B1D249;
+    background-color: #b1d249;
     color: white;
     font-size: 30px;
     flex-grow: 0.8;
@@ -46,7 +46,7 @@ body {
 .dot {
     height: 75px;
     width: 75px;
-    background-color: #B1D249;
+    background-color: #b1d249;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -78,16 +78,17 @@ textarea {
     flex: 1;
     height: 150px; /* Match de hoogte van de image-placeholder */
     border: 1px solid #ccc;
-    padding:15px;
+    padding:25px;
     border-radius: 5px;
     resize: none; /* Voorkomt handmatig aanpassen van grootte */
     width: calc(100% - 75px); /* Zorgt ervoor dat de textarea de resterende ruimte inneemt, rekening houdend met de breedte van de placeholder en marge */
     box-sizing: border-box;
+
 }
 textarea:focus {
-    border: 2px solid #B1D249; /* Groene rand bij focus */
+    border: 2px solid #b1d249; /* Groene rand bij focus */
     outline: none; /* Verwijdert de standaard focus-omranding van de browser */
-    box-shadow: 0 0 5px rgba(177, 210, 73, 0.5); /* Voeg een subtiele schaduw toe */
+    box-shadow: 0 0 5px rgb(177, 210, 73); /* Voeg een subtiele schaduw toe */
 }
 
 .input-box {
@@ -104,19 +105,19 @@ textarea:focus {
         width: 100%; /* Breedte gelijkmatig */
     }
 
-.input-item .image-placeholder {
-    width: 60px; /* Breedte van de afbeeldingsplaatsaanduiding. */
-    height: 60px; /* Hoogte van de afbeeldingsplaatsaanduiding. */
-    background-color: #e0e0e0; /* Grijze achtergrondkleur om aan te geven dat dit een plaatsaanduiding is. */
-    border-radius: 10px; /* Afronding van de hoeken voor een zachtere uitstraling. */
-    display: flex; /* Flexbox om de '+' in het midden van de plaatsaanduiding te centreren. */
-    align-items: center; /* Zorgt voor verticale centrering van de '+' in de plaatsaanduiding. */
-    justify-content: center; /* Zorgt voor horizontale centrering van de '+' in de plaatsaanduiding. */
-    margin-right: 15px; /* Vergroot de ruimte tussen de plaatsaanduiding en het invoerveld. */
-    cursor: pointer; /* Verandert de cursor om aan te geven dat hierop geklikt kan worden. */
-    font-size: 2em; /* Vergroot de lettergrootte voor betere zichtbaarheid. */
-    padding: 45px;
-}
+    .input-item .image-placeholder {
+        width: 60px; /* Breedte van de afbeeldingsplaatsaanduiding. */
+        height: 60px; /* Hoogte van de afbeeldingsplaatsaanduiding. */
+        background-color: #e0e0e0; /* Grijze achtergrondkleur om aan te geven dat dit een plaatsaanduiding is. */
+        border-radius: 10px; /* Afronding van de hoeken voor een zachtere uitstraling. */
+        display: flex; /* Flexbox om de '+' in het midden van de plaatsaanduiding te centreren. */
+        align-items: center; /* Zorgt voor verticale centrering van de '+' in de plaatsaanduiding. */
+        justify-content: center; /* Zorgt voor horizontale centrering van de '+' in de plaatsaanduiding. */
+        margin-right: 15px; /* Vergroot de ruimte tussen de plaatsaanduiding en het invoerveld. */
+        cursor: pointer; /* Verandert de cursor om aan te geven dat hierop geklikt kan worden. */
+        font-size: 2em; /* Vergroot de lettergrootte voor betere zichtbaarheid. */
+        padding: 45px;
+    }
     .image-placeholder {
         width: 40px;
         height: 40px;
@@ -131,34 +132,39 @@ textarea:focus {
     }
 
     .input-item input {
-    flex-grow: 1; /* Zorgt ervoor dat het invoerveld de resterende ruimte binnen de input-item container inneemt. */
-    padding: 45px; /* Vergroot de binnenruimte van het invoerveld voor comfortabele tekstinvoer. */
-    border: 2px solid #B1D249; /* Rand van het invoerveld met een groene kleur zoals in het wireframe. */
-    border-radius: 10px; /* Vergroot de afronding van de hoeken van het invoerveld. */
-    outline: none; /* Verwijdert de standaard outline bij focus voor een strakkere uitstraling. */
-    font-size:18px;
-}
-.button-group {
-    display: flex; /* Flexbox om de knoppen in één lijn te rangschikken. */
-    justify-content: space-between; /* Zorgt ervoor dat de knoppen gelijkmatig worden verdeeld. */
-    align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
-    padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
-    padding-top: 10px;
-}
-.button-group button {
-    padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
-    border: none; /* Verwijdert de standaard rand van de knoppen. */
-    border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
-    cursor: pointer; /* Geeft aan dat de knop interactief is. */
-    font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
-}
-.button-group .confirm-btn {
-    background-color: #B1D249; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
-    color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
-}
-.button-group .arrow-btn {
-    background-color: #ccc; /* Grijze achtergrondkleur voor de navigatieknoppen. */
-    color:#B1D249; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
+        flex-grow: 1; /* Zorgt ervoor dat het invoerveld de resterende ruimte binnen de input-item container inneemt. */
+        padding: 45px; /* Vergroot de binnenruimte van het invoerveld voor comfortabele tekstinvoer. */
+        border: 2px solid #b1d249; /* Rand van het invoerveld met een groene kleur zoals in het wireframe. */
+        border-radius: 10px; /* Vergroot de afronding van de hoeken van het invoerveld. */
+        outline: none; /* Verwijdert de standaard outline bij focus voor een strakkere uitstraling. */
+        font-size:18px;
+    }
+    .button-group {
+        display: flex; /* Flexbox om de knoppen in één lijn te rangschikken. */
+        justify-content: space-between; /* Zorgt ervoor dat de knoppen gelijkmatig worden verdeeld. */
+        align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
+        padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
+        padding-top: 10px;
+    }
+    .button-group button {
+        padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
+        border: none; /* Verwijdert de standaard rand van de knoppen. */
+        border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
+        cursor: pointer; /* Geeft aan dat de knop interactief is. */
+        font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
+    }
+    .button-group .confirm-btn {
+        background-color: #b1d249; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
+        color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
+    }
+
+    .button-group .arrow-btn {
+        background-color: #b1d249; /* Grijze achtergrondkleur voor de navigatieknoppen. */
+        color: #ffffff; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
+        border-radius: 50%;
+        font-weight: bold;
+    }
+
 }
 @media (min-width: 768px) {
     body {
@@ -176,48 +182,28 @@ textarea:focus {
 
 
 }
-}
+
 .button-group{
     float:left;
-    margin-right:5px;
+    margin-right:1px;
+    justify-content: center;
+
 }
 
 
-.button-1
-{
-    background-color: #B1D249;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
+.button-1 {
+    background-color: #b1d249;
+    border-radius: 10px;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    height: 40px;
+    font-family: "Roboto Light";
+
     line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-
-
-
+    justify-content: center;
 }
-.arrow-btn{
-    background-color: #B1D249;
-    border-radius: 50%;
-    color: white;
-    border-color: white;
-    font-family: "Roboto Thin";
 
-}
+
+
+
+
