@@ -43,11 +43,11 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Image</title>
+    <title>Afbeelding kiezen</title>
     <link rel="stylesheet" href="css/popup.css">
 </head>
 <body>
-<h2>Select an Image</h2>
+<h2>Kies een afbeelding</h2>
 <a href="index.php">Close</a>
 <div class="popup-body">
     <?php generateRoster($connection, $imageIndex, $selectedImages); ?>
