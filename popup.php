@@ -1,24 +1,23 @@
 <?php
 session_start();
-$connection = mysqli_connect('127.0.0.1', 'root', '', 'routekaart', '3306');
-if (mysqli_connect_errno()) {
-    die("Connection failed: " . mysqli_connect_error());
+$connection = new mysqli('127.0.0.1', 'root', '', 'routekaart', '3306');
+
+if ($connection->connect_errno) {
+    die("Connection failed: " . $connection->connect_error);
 }
 
 $imageIndex = isset($_POST['imageIndex']) ? (int)$_POST['imageIndex'] : 0;
 $selectedImages = [
-    isset($_SESSION['selectedImage0']) ? $_SESSION['selectedImage0'] : '',
-    isset($_SESSION['selectedImage1']) ? $_SESSION['selectedImage1'] : '',
-    isset($_SESSION['selectedImage2']) ? $_SESSION['selectedImage2'] : '',
+    $_SESSION['selectedImage0'] ?? '',
+    $_SESSION['selectedImage1'] ?? '',
+    $_SESSION['selectedImage2'] ?? '',
 ];
 
 function generateRoster($connection, $imageIndex, $selectedImages) {
     $query = "SELECT * FROM afbeelding WHERE kleur = 'groen'";
-    $result = mysqli_query($connection, $query);
-
-    if ($result) {
+    if ($result = $connection->query($query)) {
         echo '<div class="roster-content">';
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = $result->fetch_assoc()) {
             $afbeeldingNaam = htmlspecialchars($row['naam'], ENT_QUOTES, 'UTF-8');
             $imagePath = "img/{$afbeeldingNaam}.jpg";
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
@@ -33,8 +32,9 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
                   </div>";
         }
         echo '</div>';
+        $result->free();
     } else {
-        echo "Error: " . mysqli_error($connection);
+        echo "Error: " . $connection->error;
     }
 }
 ?>
