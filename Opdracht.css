@@ -40,6 +40,7 @@ body {
     padding-right: 20px;
 }
 
+
 .dot {
     height: 75px;
     width: 75px;
@@ -53,7 +54,19 @@ body {
     font-family: "Roboto Thin";
 
 }
-
+textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    width: 100px;
+}
+textarea:focus {
+    border: 2px solid #B1D249; /* Groene rand bij focus */
+    outline: none; /* Verwijdert de standaard focus-omranding van de browser */
+    box-shadow: 0 0 5px rgba(177, 210, 73, 0.5); /* Voeg een subtiele schaduw toe */
+}
 .input-box {
     margin: 20px 0; /* Boven- en onderruimte voor de invoervelden om ze visueel te scheiden van andere elementen. */
     flex-grow: 1; /* Zorgt ervoor dat de input-box de resterende verticale ruimte inneemt. */
@@ -65,7 +78,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    width: 100%;
+
 }
 
 .input-item .image-placeholder {
@@ -81,7 +94,20 @@ body {
     font-size: 2em; /* Vergroot de lettergrootte voor betere zichtbaarheid. */
     padding: 45px;
 }
-.input-item input {
+    .image-placeholder {
+        width: 40px;
+        height: 40px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-right: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .input-item input {
     flex-grow: 1; /* Zorgt ervoor dat het invoerveld de resterende ruimte binnen de input-item container inneemt. */
     padding: 45px; /* Vergroot de binnenruimte van het invoerveld voor comfortabele tekstinvoer. */
     border: 2px solid #B1D249; /* Rand van het invoerveld met een groene kleur zoals in het wireframe. */
