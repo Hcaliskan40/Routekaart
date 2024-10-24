@@ -10,22 +10,22 @@
 <body>
 <div class="container">
     <div class="header">
-        <img src="https://i.pinimg.com/564x/16/8a/01/168a013f36f0f648fe319774338e1910.jpg" alt="icon"> <!-- Afbeelding in de header die een visueel element toevoegt aan de titel. -->
-        <div> Like</div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
+        <span class="dot">1</span>
+        <div class="titel-balk"> Like</div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
     </div>
     <p>Hier krijg ik energie van en doe ik graag:</p> <!-- Beschrijving van de inhoud die de gebruiker gaat invullen. -->
     <div class="input-box">
         <div class="input-item">
             <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
-            <input type="text" placeholder="Bijvoorbeeld: Wandelen in de natuur"> <!-- Invoerveld met een voorbeeldactiviteit. -->
+            <textarea name="message" rows="10" cols="40" placeholder="Bijvoorbeeld: Muziek luisteren"> </textarea>
         </div>
         <div class="input-item">
-            <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
-            <input type="text" placeholder="Bijvoorbeeld: Muziek luisteren"> <!-- Invoerveld met een voorbeeldactiviteit. -->
+            <div class="image-placeholder">+</div>
+            <textarea name="message2" rows="3" cols="40" placeholder="Bijvoorbeeld: Tuinieren"></textarea>
         </div>
         <div class="input-item">
-            <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
-            <input type="text" placeholder="Bijvoorbeeld: Tuinieren"> <!-- Invoerveld met een voorbeeldactiviteit. -->
+            <div class="image-placeholder">+</div>
+            <textarea name="message3" rows="3" cols="40" placeholder="Bijvoorbeeld: Sporten"></textarea>
         </div>
     </div>
     <div class="button-group">
