@@ -13,7 +13,7 @@
         }
         .FotoAlmere {
             height: 500px;
-            background-image: url('img/pic 11.png');
+            background-image: url('img/AlmereMaps.png');
             background-size: cover;
             background-position: center;
         }
@@ -61,7 +61,7 @@
 
 <script>
     document.getElementById("ga-naar-homepagina").addEventListener("click", function() {
-        window.location.href = "Home.php";
+        window.location.href = "Vraag1.php";
     });
 </script>
 
