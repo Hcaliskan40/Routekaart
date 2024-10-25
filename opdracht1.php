@@ -18,6 +18,7 @@
         <div class="input-item">
             <div class="image-placeholder">+</div> <!-- Terug naar de '+' om aan te geven dat hier iets toegevoegd kan worden. -->
             <textarea name="message1" rows="10" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
+
         </div>
         <div class="input-item">
             <div class="image-placeholder">+</div>
