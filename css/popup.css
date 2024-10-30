@@ -1,0 +1,18 @@
+.roster-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.roster-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
