@@ -12,7 +12,7 @@ body {
     background: white; /* Achtergrondkleur van de container, zodat deze contrasteert met de pagina-achtergrond. */
     border-radius: 10px; /* Maakt de hoeken van de container afgerond voor een vriendelijke uitstraling. */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Voegt een lichte schaduw toe om de container van de achtergrond te scheiden. */
-    padding: 50px; /* Binnenruimte rondom de inhoud van de container. */
+    padding: 1rem 2rem; /* Binnenruimte rondom de inhoud van de container. */
     width: 90vw; /* Breedte van de container aangepast om meer ruimte in te nemen. */
     max-width: 800px; /* Maximale breedte aangepast voor grotere schermen. */
     height: 95vh; /* De hoogte van de container aangepast om de meeste ruimte op de pagina in te nemen. */
