@@ -79,9 +79,9 @@ textarea {
     height: 150px; /* Match de hoogte van de image-placeholder */
     border: 1px solid #ccc;
     padding: 1rem 2rem;
+    hyphens: auto;
     border-radius: 5px;
     resize: none; /* Voorkomt handmatig aanpassen van grootte */
-    width: calc(100% - 75px); /* Zorgt ervoor dat de textarea de resterende ruimte inneemt, rekening houdend met de breedte van de placeholder en marge */
     box-sizing: border-box;
 
 }
