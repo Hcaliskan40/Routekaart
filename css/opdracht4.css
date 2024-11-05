@@ -78,10 +78,10 @@ textarea {
     flex: 1;
     height: 150px;
     border: 1px solid #ccc;
-    padding:25px;
+    padding: 1rem 2rem;
     border-radius: 5px;
     resize: none;
-    width: calc(100% - 75px);
+    hyphens: auto;
     box-sizing: border-box;
 
 }
@@ -173,7 +173,7 @@ textarea:focus {
 
         .container {
             width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
-            padding: 50px; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
+            padding: 1rem 2rem; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
             height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
         }
 
