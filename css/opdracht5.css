@@ -6,18 +6,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 .container {
-    background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 50px;
+    padding: 1rem 2rem;
     width: 90vw;
     max-width: 800px;
     height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    display: flex;
 }
 
 /* Header styling */
@@ -28,6 +28,7 @@ body {
     font-weight: bold;
     color: #D63384;
     padding-bottom: 15px;
+    padding-top: 25px
 }
 .titel-balk {
     background-color: #D63384;
