@@ -29,11 +29,20 @@
 
         </div>
         <div class="button-group">
-            <button class="arrow-btn">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
-            <button class="button-1" role="button">Button 1</button>
-            <button class="arrow-btn">&#8250;</button> <!-- Rechter navigatieknop om verder te gaan. -->
+            <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+            <button class="button-1" role="button">Akkoord</button>
+            <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
         </div>
 
+        <script>
+            function goToPreviousPage() {
+                window.location.href = 'opdracht3.php';
+            }
+
+            function goToNextPage() {
+                window.location.href = 'opdracht5.php';
+            }
+        </script>
 
 
 
