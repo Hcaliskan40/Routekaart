@@ -55,6 +55,7 @@ body {
 
 /* Checkbox and section styles */
 .section {
+    padding: 25px;
     flex-grow: 1;
     overflow-y: auto;
 }
@@ -138,6 +139,7 @@ body {
     }
 
 
+}
 }
 .button-group{
     float:left;
