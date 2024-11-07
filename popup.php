@@ -22,7 +22,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
             $imagePath = "img/{$afbeeldingNaam}.jpg";
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
             echo "<div class='roster-item'>
-                    <form method='post' action='index.php'>
+                    <form method='post' action='opdracht1.php'>
                         <input type='hidden' name='selectedImage' value='{$imagePath}'>
                         <input type='hidden' name='imageIndex' value='{$imageIndex}'>
                         <button type='submit' class='image-button' {$isDisabled}>
@@ -48,7 +48,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
 </head>
 <body>
 <h2>Kies een afbeelding</h2>
-<a href="index.php">Close</a>
+<a href="opdracht1.php">Close</a>
 <div class="popup-body">
     <?php generateRoster($connection, $imageIndex, $selectedImages); ?>
 </div>
