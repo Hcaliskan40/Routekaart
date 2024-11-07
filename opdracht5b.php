@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <div class="header">
-        <span class="dot">6</span>
+        <span class="dot">5</span>
         <div class="titel-balk">Opleidingen</div>
     </div>
     <b>Dit is mijn TOP 3 sectoren:</b>
