@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['selectedImage'])) {
+        $imageIndex = (int)$_POST['imageIndex'];
+        $selectedImage = $_POST['selectedImage'];
+
+        // Check if the selected image is already chosen
+        if ($_SESSION["selectedImage{$imageIndex}"] !== $selectedImage) {
+            $_SESSION["selectedImage{$imageIndex}"] = $selectedImage;
+        }
+    }
+}
+
+$selectedImages = [
+    $_SESSION['selectedImage0'] ?? 'img/placeholder1.jpg',
+    $_SESSION['selectedImage1'] ?? 'img/placeholder2.jpg',
+    $_SESSION['selectedImage2'] ?? 'img/placeholder3.jpg',
+];
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
