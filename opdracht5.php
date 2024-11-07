@@ -121,7 +121,7 @@
         }
 
         function goToNextPage() {
-            window.location.href = 'opdracht6.php';
+            window.location.href = 'opdracht5b.php';
         }
     </script>
 

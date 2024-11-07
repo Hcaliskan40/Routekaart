@@ -30,12 +30,23 @@
             <input type="text" class="dotted-input" placeholder="Beroepen">
             <input type="text" class="rounded-input" placeholder="Waarom dit beroep?">
         </div>
+
         <div class="button-group">
-            <button class="arrow-btn">&#8249;</button>
-            <button class="button-1" role="button">Button 1</button>
-            <button class="arrow-btn">&#8250;</button>
+            <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+            <button class="button-1" role="button">Akkoord</button>
+            <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
         </div>
+
     </div>
+    <script>
+        function goToPreviousPage() {
+            window.location.href = 'opdracht5.php';
+        }
+
+        function goToNextPage() {
+            window.location.href = 'opdracht6.php';
+        }
+    </script>
 
 </body>
 </html>
