@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage'])) {
 }
 
 function generateRoster($connection, $imageIndex, $selectedImages) {
-    $query = "SELECT * FROM afbeelding WHERE kleur = 'oranje'";
+    $query = "SELECT * FROM afbeelding WHERE kleur = 'groen'";
     if ($result = $connection->query($query)) {
         echo '<div class="roster-content">';
         while ($row = $result->fetch_assoc()) {
