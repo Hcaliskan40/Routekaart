@@ -118,18 +118,7 @@ textarea:focus {
         font-size: 2em; /* Vergroot de lettergrootte voor betere zichtbaarheid. */
         padding: 45px;
     }
-    .image-placeholder {
-        width: 40px;
-        height: 40px;
-        background-color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        margin-right: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+
 
     .input-item input {
         flex-grow: 1; /* Zorgt ervoor dat het invoerveld de resterende ruimte binnen de input-item container inneemt. */
