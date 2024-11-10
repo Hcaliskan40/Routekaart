@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage']) && isset($_POST['imageIndex'])) {
+    $selectedImage = $_POST['selectedImage'];
+    $imageIndex = (int)$_POST['imageIndex'];
+    $_SESSION["selectedImage{$imageIndex}"] = $selectedImage;
+    $selectedImages[$imageIndex] = $selectedImage;
+}
+
 // Controleer of we de sessie moeten resetten
 if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
     session_unset(); // Leegt de sessiegegevens
@@ -79,6 +86,7 @@ $selectedImages = [
             <textarea name="message3" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
         </div>
     </div>
+
 
     <div class="button-group">
         <button class="arrow-btn">&#8249;</button> <!-- Linker navigatieknop -->
