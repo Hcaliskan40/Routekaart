@@ -30,7 +30,7 @@
         </div>
         <div class="button-group">
             <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-            <button class="button-1" role="button">Akkoord</button>
+
             <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
         </div>
 
