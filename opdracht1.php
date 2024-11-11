@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage']) && isset($_POST['imageIndex'])) {
-    $selectedImage = $_POST['selectedImage'];
-    $imageIndex = (int)$_POST['imageIndex'];
-    $_SESSION["selectedImage{$imageIndex}"] = $selectedImage;
-    $selectedImages[$imageIndex] = $selectedImage;
-}
 
 // Controleer of we de sessie moeten resetten
 if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
@@ -45,9 +39,10 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="0">
-                <button type="submit" class="image-button-placeholder">
+                <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[0] != ''): ?>
-                        <img src="<?php echo htmlspecialchars($selectedImages[0], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
+                        <img src="<?php echo htmlspecialchars($selectedImages[0], ENT_QUOTES, 'UTF-8'); ?>"
+                             alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
                         <div class="image-placeholder">+</div>
                     <?php endif; ?>
@@ -60,9 +55,10 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="1">
-                <button type="submit" class="image-button-placeholder">
+                <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[1] != ''): ?>
-                        <img src="<?php echo htmlspecialchars($selectedImages[1], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
+                        <img src="<?php echo htmlspecialchars($selectedImages[1], ENT_QUOTES, 'UTF-8'); ?>"
+                             alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
                         <div class="image-placeholder">+</div>
                     <?php endif; ?>
@@ -75,9 +71,10 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="2">
-                <button type="submit" class="image-button-placeholder">
+                <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[2] != ''): ?>
-                        <img src="<?php echo htmlspecialchars($selectedImages[2], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
+                        <img src="<?php echo htmlspecialchars($selectedImages[2], ENT_QUOTES, 'UTF-8'); ?>"
+                             alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
                         <div class="image-placeholder">+</div>
                     <?php endif; ?>
@@ -89,10 +86,22 @@ $selectedImages = [
 
 
     <div class="button-group">
-        <button class="arrow-btn">&#8249;</button> <!-- Linker navigatieknop -->
+        <button class="arrow-btn"onclick="goToPreviousPage()">&#8249;</button> <!-- Linker navigatieknop -->
 
-        <button class="arrow-btn">&#8250;</button> <!-- Rechter navigatieknop -->
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop -->
     </div>
-</div>
+
+
+
+
+        </div>
+        <script>
+            function goToPreviousPage() {
+            window.location.href = 'startpagina.php';}
+
+
+            function goToNextPage() {
+            window.location.href = 'opdracht2.php';}
+        </script>
 </body>
 </html>
