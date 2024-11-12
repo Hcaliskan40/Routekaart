@@ -50,7 +50,7 @@
     }
 
     function goToNextPage() {
-        window.location.href = 'opdracht9.php';
+        window.location.href = 'mail.php';
     }
 </script>
 </body>
