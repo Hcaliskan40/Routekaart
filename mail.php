@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Invuller - Resultaten Versturen</title>
     <link rel="stylesheet" type="text/css" href="css/mail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <div class="container">
@@ -12,11 +13,11 @@
 
     <div class="email-section">
         <label for="email" class="email-input-wrapper">
-            <span class="email-icon">📧</span>
+            <span class="email-icon"><i class="fas fa-envelope"></i></span>
             <input type="email" id="email" placeholder="Voer je emailadres in..." required>
             <span class="remove-icon" onclick="clearInput()">✖</span>
         </label>
-        <div class="info-icon">ℹ️</div>
+        <div class="info-icon"><i class="fas fa-info-circle"></i></div>
     </div>
 
     <div class="checkbox-section">
