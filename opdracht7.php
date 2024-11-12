@@ -11,7 +11,6 @@
     <div class="header">
         <span class="dot">7</span>
         <div class="titel-balk">Verlanglijst</div>
-    </div>
     <b>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</b>
 
     <div class="options">
