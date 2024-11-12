@@ -37,7 +37,7 @@
         }
 
         .BeginButton:hover {
-            background-color: aqua;
+            background-color: #055959;
             color: white;
         }
 
