@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verlanglijst - Ronde Checkboxes</title>
+    <title>Verlanglijst - Vraag 7</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht7.css">
 </head>
 <body>
@@ -30,12 +30,46 @@
         <label class="option-item">
             <input type="checkbox" class="option-checkbox"> Op kamers
         </label>
-        <!-- Add more items as necessary -->
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> In de buurt van mijn woonplaats
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Veel begeleiding
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Veel zelfstandig werken
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> 2 jaar
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> 4 jaar
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Veel groepswerk
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Goede studenttevredenheid
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Hoog salaris toekomstig beroep
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Kleine klassen
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Grote klassen
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Veel praktijk
+        </label>
+        <label class="option-item">
+            <input type="checkbox" class="option-checkbox"> Veel theorie
+        </label>
     </div>
 
     <div class="button-group">
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-        <button class="button-1" role="button">Bevestigen</button>
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
     </div>
 </div>
