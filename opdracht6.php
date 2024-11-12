@@ -32,7 +32,6 @@
         </div>
         <div class="button-group">
             <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
-            <button class="button-1" role="button">Button 1</button>
             <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop om verder te gaan. -->
         </div>
 
