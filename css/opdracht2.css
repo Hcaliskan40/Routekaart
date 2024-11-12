@@ -78,10 +78,10 @@ textarea {
     flex: 1;
     height: 150px; /* Match de hoogte van de image-placeholder */
     border: 1px solid #ccc;
-    padding:25px;
+    padding: 1rem 2rem;
+    hyphens: auto;
     border-radius: 5px;
     resize: none; /* Voorkomt handmatig aanpassen van grootte */
-    width: calc(100% - 75px); /* Zorgt ervoor dat de textarea de resterende ruimte inneemt, rekening houdend met de breedte van de placeholder en marge */
     box-sizing: border-box;
 
 }
@@ -118,18 +118,7 @@ textarea:focus {
         font-size: 2em; /* Vergroot de lettergrootte voor betere zichtbaarheid. */
         padding: 45px;
     }
-    .image-placeholder {
-        width: 40px;
-        height: 40px;
-        background-color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        margin-right: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+
 
     .input-item input {
         flex-grow: 1; /* Zorgt ervoor dat het invoerveld de resterende ruimte binnen de input-item container inneemt. */

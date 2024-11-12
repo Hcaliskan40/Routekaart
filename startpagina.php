@@ -61,7 +61,7 @@
 
 <script>
     document.getElementById("ga-naar-homepagina").addEventListener("click", function() {
-        window.location.href = "Vraag1.php";
+        window.location.href = "opdracht1.php";
     });
 </script>
 
