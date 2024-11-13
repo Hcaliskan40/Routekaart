@@ -21,7 +21,7 @@ $selectedImages = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Like Section</title>
+    <title>Opdracht 1 - Like Section</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht1.css">
 </head>
 <body>
@@ -38,7 +38,8 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="0">
-                <button type="submit" class="image-button-placeholder">
+                <input type="hidden" name="caller" value="opdracht1.php"> <!-- Nieuw: caller toevoegen -->
+                <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[0] != ''): ?>
                         <img src="<?php echo htmlspecialchars($selectedImages[0], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
@@ -53,7 +54,8 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="1">
-                <button type="submit" class="image-button-placeholder">
+                <input type="hidden" name="caller" value="opdracht1.php"> <!-- Nieuw: caller toevoegen -->
+                <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[1] != ''): ?>
                         <img src="<?php echo htmlspecialchars($selectedImages[1], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
@@ -68,7 +70,8 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="2">
-                <button type="submit" class="image-button-placeholder">
+                <input type="hidden" name="caller" value="opdracht1.php"> <!-- Nieuw: caller toevoegen -->
+                <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[2] != ''): ?>
                         <img src="<?php echo htmlspecialchars($selectedImages[2], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
@@ -79,12 +82,23 @@ $selectedImages = [
             <textarea name="message3" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
         </div>
     </div>
-
     <div class="button-group">
-        <button class="arrow-btn">&#8249;</button> <!-- Linker navigatieknop -->
-        <button class="button-1" role="button">Button 1</button> <!-- Centrale knop -->
-        <button class="arrow-btn">&#8250;</button> <!-- Rechter navigatieknop -->
+        <button class="arrow-btn"onclick="goToPreviousPage()">&#8249;</button> <!-- Linker navigatieknop -->
+
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop -->
     </div>
+
+
+
+
 </div>
+<script>
+    function goToPreviousPage() {
+        window.location.href = 'startpagina.php';}
+
+
+    function goToNextPage() {
+        window.location.href = 'opdracht2.php';}
+</script>
 </body>
 </html>

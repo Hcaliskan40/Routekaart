@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/Lijnen.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency to let background show through */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 40vw;
+    max-width: 600px;
+    min-width: 320px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    width: 50%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.email-section {
+    margin: 20px 0;
+    position: relative;
+}
+
+.email-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid #d1d1d1;
+    border-radius: 25px;
+    padding: 10px;
+    width: 100%;
+    background: #ffffff;
+}
+
+.email-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+input[type="email"] {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1em;
+}
+
+input[type="email"]::placeholder {
+    color: #9b9b9b;
+}
+
+.remove-icon {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #9b9b9b;
+}
+
+.info-icon {
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.checkbox-section {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.checkbox-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.confirmation-text {
+    color: red;
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+
+.confirm-btn {
+    background-color: #00b0b9;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #008a8f;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 85vw; /* Makes container wider for better mobile view */
+        padding: 20px;
+    }
+
+    .logo {
+        width: 60%;
+    }
+
+    .email-section label {
+        padding: 8px;
+    }
+
+    .checkbox-section label {
+        font-size: 0.9em;
+    }
+
+    .confirm-btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
