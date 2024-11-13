@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 // Controleer of we de sessie moeten resetten
 if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
     session_unset(); // Leegt de sessiegegevens
@@ -22,7 +21,7 @@ $selectedImages = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Like Section</title>
+    <title>Opdracht 1 - Like Section</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht1.css">
 </head>
 <body>
@@ -39,10 +38,10 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="0">
+                <input type="hidden" name="caller" value="opdracht1.php"> <!-- Nieuw: caller toevoegen -->
                 <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[0] != ''): ?>
-                        <img src="<?php echo htmlspecialchars($selectedImages[0], ENT_QUOTES, 'UTF-8'); ?>"
-                             alt="Gekozen afbeelding" class="image-placeholder">
+                        <img src="<?php echo htmlspecialchars($selectedImages[0], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
                         <div class="image-placeholder">+</div>
                     <?php endif; ?>
@@ -55,10 +54,10 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="1">
+                <input type="hidden" name="caller" value="opdracht1.php"> <!-- Nieuw: caller toevoegen -->
                 <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[1] != ''): ?>
-                        <img src="<?php echo htmlspecialchars($selectedImages[1], ENT_QUOTES, 'UTF-8'); ?>"
-                             alt="Gekozen afbeelding" class="image-placeholder">
+                        <img src="<?php echo htmlspecialchars($selectedImages[1], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
                         <div class="image-placeholder">+</div>
                     <?php endif; ?>
@@ -71,10 +70,10 @@ $selectedImages = [
         <div class="input-item">
             <form method="post" action="popup.php">
                 <input type="hidden" name="imageIndex" value="2">
+                <input type="hidden" name="caller" value="opdracht1.php"> <!-- Nieuw: caller toevoegen -->
                 <button type="submit" class="image-placeholder">
                     <?php if ($selectedImages[2] != ''): ?>
-                        <img src="<?php echo htmlspecialchars($selectedImages[2], ENT_QUOTES, 'UTF-8'); ?>"
-                             alt="Gekozen afbeelding" class="image-placeholder">
+                        <img src="<?php echo htmlspecialchars($selectedImages[2], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
                     <?php else: ?>
                         <div class="image-placeholder">+</div>
                     <?php endif; ?>
@@ -83,8 +82,6 @@ $selectedImages = [
             <textarea name="message3" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
         </div>
     </div>
-
-
     <div class="button-group">
         <button class="arrow-btn"onclick="goToPreviousPage()">&#8249;</button> <!-- Linker navigatieknop -->
 
@@ -94,14 +91,14 @@ $selectedImages = [
 
 
 
-        </div>
-        <script>
-            function goToPreviousPage() {
-            window.location.href = 'startpagina.php';}
+</div>
+<script>
+    function goToPreviousPage() {
+        window.location.href = 'startpagina.php';}
 
 
-            function goToNextPage() {
-            window.location.href = 'opdracht2.php';}
-        </script>
+    function goToNextPage() {
+        window.location.href = 'opdracht2.php';}
+</script>
 </body>
 </html>
