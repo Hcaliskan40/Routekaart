@@ -1,0 +1,65 @@
+/* startpagina_fixedbutton.css */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background: url('../img/Lijnen.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-section {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.logo {
+    max-width: 80%;
+    max-height: 90%;
+}
+
+.begin-btn {
+    background-color: #00b0b9;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.begin-btn:hover {
+    background-color: #008a8f;
+}
+
+.rocket-icon {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 90%;
+    }
+
+    .begin-btn {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+
+}
