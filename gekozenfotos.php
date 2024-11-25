@@ -25,6 +25,14 @@ $selectedImagesOpdracht4 = [
     $_SESSION['selectedImage_opdracht4_1'] ?? 'img/placeholder11.jpg',
     $_SESSION['selectedImage_opdracht4_2'] ?? 'img/placeholder12.jpg',
 ];
+
+// Debugging: Print the image paths
+//echo '<pre>';
+//print_r($selectedImagesOpdracht1);
+//print_r($selectedImageOpdracht2);
+//print_r($selectedImagesOpdracht3);
+//print_r($selectedImagesOpdracht4);
+//echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,19 +40,18 @@ $selectedImagesOpdracht4 = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chosen Images</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pdf.css">
-
+    <link rel="stylesheet" href="http://localhost:80/Routekaart/css/styles.css">
+    <link rel="stylesheet" href="http://localhost:80/Routekaart/css/pdf.css">
 </head>
 <body>
-<img id="logo" src="img/WindesheimLogo.png" alt="Windesheim Logo" style="display: block; margin: 0 auto;">
+<img id="logo" src="http://localhost:80/Routekaart/img/WindesheimLogo.png" alt="Windesheim Logo" style="display: block; margin: 0 auto;">
 <div class="intro">
-<h1>Studiekeuze Routekaart</h1>
-<p>Bedankt voor het invullen van jouw studiekeuzevragen. Hier vind je een overzicht van jouw antwoorden en keuzes.
-Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
+    <h1>Studiekeuze Routekaart</h1>
+    <p>Bedankt voor het invullen van jouw studiekeuzevragen. Hier vind je een overzicht van jouw antwoorden en keuzes.
+        Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
+    <a href="generate-pdf.php" class="button">Download PDF</a>
 </div>
 <div class="container">
-
     <div class="header1">
         <span class="dot1">1</span>
         <div class="titel-balk1"> Like</div>
@@ -53,7 +60,7 @@ Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht1 as $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
@@ -61,14 +68,15 @@ Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
     <div class="chosen-images">
         <?php foreach ($selectedImageOpdracht2 as $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
+    </div>
     <h2>Chosen Images for Opdracht 3</h2>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht3 as $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
@@ -76,7 +84,7 @@ Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht4 as $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
