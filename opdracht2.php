@@ -63,7 +63,7 @@ $selectedImagesOpdracht2 = [
                     <?php endif; ?>
                 </button>
             </form>
-            <textarea name="message5" rows="3" cols="40" placeholder="Dit wil ik leren/ontdekken omdat..."></textarea>
+            <textarea name="message5" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
         </div>
 
         <!-- Derde input-item voor Opdracht 2 -->
