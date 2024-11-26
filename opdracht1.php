@@ -14,6 +14,9 @@ $selectedImages = [
     $_SESSION['selectedImage1'] ?? '',
     $_SESSION['selectedImage2'] ?? '',
 ];
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +50,7 @@ $selectedImages = [
                     <?php endif; ?>
                 </button>
             </form>
-            <textarea name="message1" rows="10" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
+            <textarea id="message1" rows="10" cols="40" placeholder="Wat vind ik hier leuk aan?" oninput="saveText('message1')"></textarea>
         </div>
 
         <!-- Tweede input-item -->
@@ -63,7 +66,7 @@ $selectedImages = [
                     <?php endif; ?>
                 </button>
             </form>
-            <textarea name="message2" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
+            <textarea id="message2" rows="10" cols="40" placeholder="Wat vind ik hier leuk aan?" oninput="saveText('message2')"></textarea>
         </div>
 
         <!-- Derde input-item -->
@@ -79,7 +82,7 @@ $selectedImages = [
                     <?php endif; ?>
                 </button>
             </form>
-            <textarea name="message3" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?"></textarea>
+            <textarea id="message3" rows="3" cols="40" placeholder="Wat vind ik hier leuk aan?" oninput="saveText('message3')"></textarea>
         </div>
     </div>
     <div class="button-group">
@@ -93,12 +96,40 @@ $selectedImages = [
 
 </div>
 <script>
+    // Laad opgeslagen waarden bij het laden van de pagina
+    window.onload = function() {
+        document.getElementById('message1').value = localStorage.getItem('message1') || '';
+        document.getElementById('message2').value = localStorage.getItem('message2') || '';
+        document.getElementById('message3').value = localStorage.getItem('message3') || '';
+    }
+
+    // Functie om de tekst op te slaan in localStorage wanneer er iets verandert
+    function saveText(id) {
+        const value = document.getElementById(id).value;
+        localStorage.setItem(id, value);
+    }
+
+    // Voeg event listeners toe voor elke textarea
+    document.getElementById('message1').addEventListener('input', function() {
+        saveText('message1');
+    });
+
+    document.getElementById('message2').addEventListener('input', function() {
+        saveText('message2');
+    });
+
+    document.getElementById('message3').addEventListener('input', function() {
+        saveText('message3');
+
+    });
+
     function goToPreviousPage() {
         window.location.href = 'startpagina.php';}
 
 
     function goToNextPage() {
         window.location.href = 'opdracht2.php';}
+</script>
 </script>
 </body>
 </html>
