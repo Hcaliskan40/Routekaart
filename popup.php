@@ -40,6 +40,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
             // Controleer of de afbeelding al is geselecteerd in een andere opdracht
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
 
+
             echo "<div class='roster-item'>
                     <form method='post' action=''>
                         <input type='hidden' name='selectedImage' value='{$imagePath}'>
