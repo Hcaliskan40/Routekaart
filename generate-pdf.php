@@ -32,4 +32,3 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 $dompdf->stream("chosen_images.pdf", ["Attachment" => 1]);
-?>

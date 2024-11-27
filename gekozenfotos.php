@@ -40,11 +40,11 @@ $selectedImagesOpdracht4 = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chosen Images</title>
-    <link rel="stylesheet" href="http://localhost:80/Routekaart/css/styles.css">
-    <link rel="stylesheet" href="http://localhost:80/Routekaart/css/pdf.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pdf.css">
 </head>
 <body>
-<img id="logo" src="http://localhost:80/Routekaart/img/WindesheimLogo.png" alt="Windesheim Logo" style="display: block; margin: 0 auto;">
+<img id="logo" src="http://localhost:80/Routekaart/img/WindesheimLogo.png" alt="Windesheim Logo">
 <div class="intro">
     <h1>Studiekeuze Routekaart</h1>
     <p>Bedankt voor het invullen van jouw studiekeuzevragen. Hier vind je een overzicht van jouw antwoorden en keuzes.
@@ -60,7 +60,7 @@ $selectedImagesOpdracht4 = [
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht1 as $image): ?>
             <div class="image-item">
-                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
@@ -68,7 +68,7 @@ $selectedImagesOpdracht4 = [
     <div class="chosen-images">
         <?php foreach ($selectedImageOpdracht2 as $image): ?>
             <div class="image-item">
-                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
@@ -76,7 +76,7 @@ $selectedImagesOpdracht4 = [
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht3 as $image): ?>
             <div class="image-item">
-                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
@@ -84,7 +84,7 @@ $selectedImagesOpdracht4 = [
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht4 as $image): ?>
             <div class="image-item">
-                <img src="http://localhost:80/Routekaart/<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Chosen Image">
             </div>
         <?php endforeach; ?>
     </div>
