@@ -1,9 +1,25 @@
+<?php
+session_start();
+
+// Opslaan van de geselecteerde waarden in de sessie
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['sector'])) {
+        foreach ($_POST['sector'] as $key => $value) {
+            $_SESSION['selectedSectors'][$key] = $value === 'on' ? true : false;
+        }
+    }
+}
+
+// Stel de gekozen opties in
+$selectedSectors = $_SESSION['selectedSectors'] ?? [];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professions</title>
+    <title>Professions - Vraag 5</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht5.css">
 </head>
 <body>
@@ -19,80 +35,51 @@
     <div class="section">
         <p>Hier zie ik mezelf later werken (sectoren):</p>
         <div class="checkbox-group">
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Bouw / Architectuur</span>
-                <button class="info-button" title="More information about Bouw / Architectuur">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Communicatie / Media</span>
-                <button class="info-button" title="More information about Communicatie / Media">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Economie / Financiën</span>
-                <button class="info-button" title="More information about Economie / Financiën">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Facilitaire dienstverlening / Horeca</span>
-                <button class="info-button" title="More information about Facilitaire dienstverlening / Horeca">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Fashion / Design</span>
-                <button class="info-button" title="More information about Fashion / Design">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Gezondheidszorg / Life science</span>
-                <button class="info-button" title="More information about Gezondheidszorg / Life science">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> ICT / IT</span>
-                <button class="info-button" title="More information about ICT / IT">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Juridisch / Recht</span>
-                <button class="info-button" title="More information about Juridisch / Recht">i</button>
-                </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Kunst / Cultuur / Entertainment</span>
-                <button class="info-button" title="More information about Kunst / Cultuur / Entertainment">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Management / Ondernemen</span>
-                <button class="info-button" title="More information about Management / Ondernemen">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Natuur (planten, dieren en milieu)</span>
-                <button class="info-button" title="More information about Natuur (planten, dieren en milieu)">i</button>
-            </label>
-            <label>
-               <span><input type="checkbox" class="sector-checkbox"> Onderwijs</span>
-                <button class="info-button" title="More information about Onderwijs">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Sociaal welzijn</span>
-                <button class="info-button" title="More information about Sociaal welzijn">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Sport / Voeding / Beweging</span>
-                <button class="info-button" title="More information about Sport / Voeding / Beweging">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Techniek</span>
-                <button class="info-button" title="More information about Techniek">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Toerisme / Recreatie</span>
-                <button class="info-button" title="More information about Toerisme / Recreatie">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Transport / Logistiek</span>
-                <button class="info-button" title="More information about Transport / Logistiek">i</button>
-            </label>
-            <label>
-                <span><input type="checkbox" class="sector-checkbox"> Veiligheid</span>
-                <button class="info-button" title="More information about Veiligheid">i</button>
-            </label>
+            <form method="post" action="opdracht5.php">
+
+                <!-- Keuzemogelijkheden met sessie opslag -->
+                <?php
+                $options = [
+                    'bouw' => 'Bouw / Architectuur',
+                    'communicatie' => 'Communicatie / Media',
+                    'economie' => 'Economie / Financiën',
+                    'facilitaire' => 'Facilitaire dienstverlening / Horeca',
+                    'fashion' => 'Fashion / Design',
+                    'gezondheidszorg' => 'Gezondheidszorg / Life science',
+                    'ict' => 'ICT / IT',
+                    'juridisch' => 'Juridisch / Recht',
+                    'kunst' => 'Kunst / Cultuur / Entertainment',
+                    'management' => 'Management / Ondernemen',
+                    'natuur' => 'Natuur (planten, dieren en milieu)',
+                    'onderwijs' => 'Onderwijs',
+                    'sociaal' => 'Sociaal welzijn',
+                    'sport' => 'Sport / Voeding / Beweging',
+                    'techniek' => 'Techniek',
+                    'toerisme' => 'Toerisme / Recreatie',
+                    'transport' => 'Transport / Logistiek',
+                    'veiligheid' => 'Veiligheid'
+                ];
+
+                foreach ($options as $key => $label) {
+                    $isChecked = isset($selectedSectors[$key]) && $selectedSectors[$key] ? 'checked' : '';
+                    echo '<label>';
+                    echo '<span><input type="checkbox" name="sector[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="sector-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
+                    echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</span>';
+                    echo '<button class="info-button" title="More information about ' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '">i</button>';
+                    echo '</label>';
+                }
+                ?>
+
+            </form>
         </div>
     </div>
+
+    <!-- Navigatieknoppen -->
+    <div class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+    </div>
+
     <script>
         // JavaScript to limit checkbox selection to 3
         const checkboxes = document.querySelectorAll('.sector-checkbox');
@@ -108,13 +95,7 @@
                 }
             });
         });
-    </script>
-    <div class="button-group">
-        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
-    </div>
 
-    <script>
         function goToPreviousPage() {
             window.location.href = 'opdracht4.php';
         }
@@ -123,6 +104,5 @@
             window.location.href = 'opdracht5b.php';
         }
     </script>
-
 </body>
 </html>
