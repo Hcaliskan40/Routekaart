@@ -64,6 +64,8 @@ input[type="email"]::placeholder {
     font-size: 1.2em;
     cursor: pointer;
     color: #9b9b9b;
+    position: relative;
+    right: 20px;
 }
 
 .info-icon {
@@ -114,6 +116,23 @@ input[type="checkbox"] {
 .confirm-btn:hover {
     background-color: #008a8f;
 }
+
+
+.result-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4594D3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.result-button:hover {
+    background-color: #3579a9;
 
 /* Responsive styles */
 @media (max-width: 768px) {

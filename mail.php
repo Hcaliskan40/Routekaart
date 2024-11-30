@@ -14,7 +14,7 @@
     <div class="email-section">
         <label for="email" class="email-input-wrapper">
             <span class="email-icon"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="email" placeholder="Voer je emailadres in..." required>
+            <input type="email" id="email" placeholder="Voer je emailadres in... (niet verplicht)" required>
             <span class="remove-icon" onclick="clearInput()">✖</span>
         </label>
         <div class="info-icon"><i class="fas fa-info-circle"></i></div>
@@ -31,10 +31,19 @@
             <input type="checkbox" required> Ga je akkoord met je gegevens delen?
         </label>
     </div>
+    <button class="confirm-btn" onclick="handleClick()">Resultaat</button>
 
     <p class="confirmation-text">Je uitslag wordt verstuurd naar je email</p>
-    <button class="confirm-btn">Akkoord</button>
+    <button class="confirm-btn">Klaar</button>
+
+
+    <script>
+        function handleClick() {
+            alert('Button clicked!');
+        }
+    </script>
 </div>
+
 <script>
     function clearInput() {
         document.getElementById("email").value = "";
