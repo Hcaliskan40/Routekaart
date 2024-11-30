@@ -1,79 +1,114 @@
 <?php
 session_start();
-$connection = new mysqli('127.0.0.1', 'root', '', 'routekaart', '3306');
 
-if ($connection->connect_errno) {
-    die("Connection failed: " . $connection->connect_error);
+// Controleer of we de sessie moeten resetten
+if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
+    session_unset(); // Leegt de sessiegegevens
+    session_destroy(); // Vernietigt de sessie
+    session_start(); // Start een nieuwe lege sessie
 }
 
-$imageIndex = isset($_POST['imageIndex']) ? (int)$_POST['imageIndex'] : 0;
-$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht3.php';
-
-// Verzamel alle gekozen afbeeldingen uit alle opdrachten om dubbele selecties te voorkomen
+// Stel de gekozen afbeeldingen in, of laat de placeholders leeg als er nog geen afbeeldingen zijn gekozen
 $selectedImages = [
-    $_SESSION['selectedImage0'] ?? '',
-    $_SESSION['selectedImage1'] ?? '',
-    $_SESSION['selectedImage2'] ?? '',
-    $_SESSION['selectedImage3'] ?? '',
-    $_SESSION['selectedImage4'] ?? '',
-    $_SESSION['selectedImage5'] ?? '',
     $_SESSION['selectedImage_opdracht3_0'] ?? '',
     $_SESSION['selectedImage_opdracht3_1'] ?? '',
     $_SESSION['selectedImage_opdracht3_2'] ?? '',
 ];
-
-// Controleer of een afbeelding is geselecteerd en sla deze op in de sessie
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage'])) {
-    $selectedImage = $_POST['selectedImage'];
-    $_SESSION["selectedImage_opdracht3_{$imageIndex}"] = $selectedImage;
-
-    // Redirect terug naar de juiste opdrachtpagina
-    header("Location: $caller");
-    exit();
-}
-
-function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
-    $query = "SELECT * FROM afbeelding WHERE kleur = 'blauw'";
-    if ($result = $connection->query($query)) {
-        echo '<div class="roster-content">';
-        while ($row = $result->fetch_assoc()) {
-            $afbeeldingNaam = htmlspecialchars($row['naam'], ENT_QUOTES, 'UTF-8');
-            $imagePath = "img/{$afbeeldingNaam}.jpg";
-
-            // Controleer of de afbeelding al is geselecteerd
-            $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
-
-            echo "<div class='roster-item'>
-                    <form method='post' action=''>
-                        <input type='hidden' name='selectedImage' value='{$imagePath}'>
-                        <input type='hidden' name='imageIndex' value='{$imageIndex}'>
-                        <input type='hidden' name='caller' value='{$caller}'>
-                        <button type='submit' class='image-button' {$isDisabled}>
-                            <img src='{$imagePath}' alt='{$afbeeldingNaam}'>
-                        </button>
-                    </form>
-                  </div>";
-        }
-        echo '</div>';
-        $result->free();
-    } else {
-        echo "Error: " . $connection->error;
-    }
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afbeelding kiezen - Opdracht 3</title>
-    <link rel="stylesheet" href="css/popup.css">
+    <title>Opdracht 3 - Trots</title>
+    <link rel="stylesheet" type="text/css" href="css/opdracht3.css">
 </head>
 <body>
-<h2>Kies een afbeelding</h2>
-<a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>">Sluiten</a>
-<div class="popup-body">
-    <?php generateRoster($connection, $imageIndex, $selectedImages, $caller); ?>
+<div class="container">
+    <div class="header">
+        <span class="dot">3</span>
+        <div class="titel-balk">Trots</div>
+    </div>
+    <p>Wanneer gebruik ik mijn talenten?</p>
+    <div class="input-box">
+
+        <!-- Eerste input-item -->
+        <div class="input-item">
+            <form method="post" action="popup3.php">
+                <input type="hidden" name="imageIndex" value="0">
+                <input type="hidden" name="caller" value="opdracht3.php">
+                <button type="submit" class="image-placeholder">
+                    <?php if ($selectedImages[0] != ''): ?>
+                        <img src="<?php echo htmlspecialchars($selectedImages[0], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
+                    <?php else: ?>
+                        <div class="image-placeholder">+</div>
+                    <?php endif; ?>
+                </button>
+            </form>
+            <textarea id="message7" rows="10" cols="40" placeholder="Wanneer gebruik ik mijn talenten?" oninput="saveText('message7')"></textarea>
+        </div>
+
+        <!-- Tweede input-item -->
+        <div class="input-item">
+            <form method="post" action="popup3.php">
+                <input type="hidden" name="imageIndex" value="1">
+                <input type="hidden" name="caller" value="opdracht3.php">
+                <button type="submit" class="image-placeholder">
+                    <?php if ($selectedImages[1] != ''): ?>
+                        <img src="<?php echo htmlspecialchars($selectedImages[1], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
+                    <?php else: ?>
+                        <div class="image-placeholder">+</div>
+                    <?php endif; ?>
+                </button>
+            </form>
+            <textarea id="message8" rows="10" cols="40" placeholder="Wanneer gebruik ik mijn talenten?" oninput="saveText('message8')"></textarea>
+        </div>
+
+        <!-- Derde input-item -->
+        <div class="input-item">
+            <form method="post" action="popup3.php">
+                <input type="hidden" name="imageIndex" value="2">
+                <input type="hidden" name="caller" value="opdracht3.php">
+                <button type="submit" class="image-placeholder">
+                    <?php if ($selectedImages[2] != ''): ?>
+                        <img src="<?php echo htmlspecialchars($selectedImages[2], ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen afbeelding" class="image-placeholder">
+                    <?php else: ?>
+                        <div class="image-placeholder">+</div>
+                    <?php endif; ?>
+                </button>
+            </form>
+            <textarea id="message9" rows="10" cols="40" placeholder="Wanneer gebruik ik mijn talenten?" oninput="saveText('message9')"></textarea>
+        </div>
+
+    </div>
+    <div class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+    </div>
 </div>
+
+<script>
+    // Laad opgeslagen waarden bij het laden van de pagina
+    window.onload = function () {
+        document.getElementById('message7').value = localStorage.getItem('message7') || '';
+        document.getElementById('message8').value = localStorage.getItem('message8') || '';
+        document.getElementById('message9').value = localStorage.getItem('message9') || '';
+    }
+
+    // Functie om de tekst op te slaan in localStorage wanneer er iets verandert
+    function saveText(id) {
+        const value = document.getElementById(id).value;
+        localStorage.setItem(id, value);
+    }
+
+    function goToPreviousPage() {
+        window.location.href = 'opdracht2.php';
+    }
+
+    function goToNextPage() {
+        window.location.href = 'opdracht4.php';
+    }
+</script>
 </body>
 </html>
