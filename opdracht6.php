@@ -18,17 +18,18 @@
         <div class="input-item">
             <div class="input-number">1</div>
             <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input type="text" class="rounded-input" placeholder="Opleiding(en)">
+            <input id="message6a"type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6a')">
+
         </div>
         <div class="input-item">
             <div class="input-number">2</div>
             <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input type="text" class="rounded-input" placeholder="Opleiding(en)">
+            <input id="message6b"type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6b')">
         </div>
         <div class="input-item">
             <div class="input-number">3</div>
             <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input type="text" class="rounded-input" placeholder="Opleiding(en)">
+            <input id="message6c" type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6c')">
         </div>
         <div class="button-group">
             <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
@@ -37,6 +38,17 @@
 
 
         <script>
+            window.onload = function () {
+                document.getElementById('message6a').value = localStorage.getItem('message6a') || '';
+                document.getElementById('message6b').value = localStorage.getItem('message6b') || '';
+                document.getElementById('message6c').value = localStorage.getItem('message6c') || '';
+            }
+
+            // Functie om de tekst op te slaan in localStorage wanneer er iets verandert
+            function saveText(id) {
+                const value = document.getElementById(id).value;
+                localStorage.setItem(id, value);
+            }
             function goToPreviousPage() {
                 window.location.href = 'opdracht5b.php';
             }
