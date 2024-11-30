@@ -16,13 +16,13 @@
 
     <div class="options">
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Engelstalig
+            <input type="checkbox" class="option-checkbox"> Bouw / Architectuur
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Nederlandstalig
+            <input type="checkbox" class="option-checkbox"> Communicatie / Media
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Kleine hogeschool
+            <input type="checkbox" class="option-checkbox"> Economie / Financiën
         </label>
         <label class="option-item">
             <input type="checkbox" class="option-checkbox"> Grote hogeschool
