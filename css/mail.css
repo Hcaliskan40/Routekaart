@@ -117,44 +117,42 @@ input[type="checkbox"] {
     background-color: #008a8f;
 }
 
-
-.result-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
+.result-btn {
     background-color: #4594D3;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.result-button:hover {
-    background-color: #3579a9;
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .container {
-        width: 85vw; /* Makes container wider for better mobile view */
-        padding: 20px;
-    }
-
-    .logo {
-        width: 60%;
-    }
-
-    .email-section label {
-        padding: 8px;
-    }
-
-    .checkbox-section label {
-        font-size: 0.9em;
-    }
-
-    .confirm-btn {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
+.result-btn:hover {
+    background-color: #008a8f;
 }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .container {
+            width: 85vw; /* Makes container wider for better mobile view */
+            padding: 20px;
+        }
+
+        .logo {
+            width: 60%;
+        }
+
+        .email-section label {
+            padding: 8px;
+        }
+
+        .checkbox-section label {
+            font-size: 0.9em;
+        }
+
+        .confirm-btn {
+            font-size: 1em;
+            padding: 10px 20px;
+        }
+    }

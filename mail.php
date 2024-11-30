@@ -31,7 +31,8 @@
             <input type="checkbox" required> Ga je akkoord met je gegevens delen?
         </label>
     </div>
-    <button class="confirm-btn" onclick="handleClick()">Resultaat</button>
+
+    <button class="result-btn" onclick="handleClick()">Resultaat</button>
 
     <p class="confirmation-text">Je uitslag wordt verstuurd naar je email</p>
     <button class="confirm-btn">Klaar</button>
