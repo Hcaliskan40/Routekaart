@@ -124,7 +124,7 @@ $selectedImages = [
     });
 
     function goToPreviousPage() {
-        window.location.href = 'startpagina.php';}
+        window.location.href = 'index.php';}
 
 
     function goToNextPage() {
