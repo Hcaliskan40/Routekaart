@@ -25,46 +25,46 @@
             <input type="checkbox" class="option-checkbox"> Economie / Financiën
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Grote hogeschool
+            <input type="checkbox" class="option-checkbox"> Facilitaire dienstverlening / Horeca
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Op kamers
+            <input type="checkbox" class="option-checkbox"> Fashion / Design
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> In de buurt van mijn woonplaats
+            <input type="checkbox" class="option-checkbox"> Gezondheidszorg / Life science
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel begeleiding
+            <input type="checkbox" class="option-checkbox"> ICT / IT
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel zelfstandig werken
+            <input type="checkbox" class="option-checkbox"> Juridisch / Recht
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> 2 jaar
+            <input type="checkbox" class="option-checkbox"> Kunst / Cultuur / Entertainment
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> 4 jaar
+            <input type="checkbox" class="option-checkbox"> Management / Ondernemen
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel groepswerk
+            <input type="checkbox" class="option-checkbox"> Natuur (planten, dieren en milieu)
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Goede studenttevredenheid
+            <input type="checkbox" class="option-checkbox"> Onderwijs
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Hoog salaris toekomstig beroep
+            <input type="checkbox" class="option-checkbox"> Sport / Voeding / Beweging
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Kleine klassen
+            <input type="checkbox" class="option-checkbox"> Techniek
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Grote klassen
+            <input type="checkbox" class="option-checkbox"> Toerisme / Recreatie
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel praktijk
+            <input type="checkbox" class="option-checkbox"> Transport / Logistiek
         </label>
         <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel theorie
+            <input type="checkbox" class="option-checkbox"> Veiligheid
         </label>
     </div>
 
