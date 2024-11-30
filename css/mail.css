@@ -72,7 +72,7 @@ input[type="email"]::placeholder {
     font-size: 1.2em;
     position: absolute;
     top: 50%;
-    right: -30px;
+    right: -14px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -102,6 +102,21 @@ input[type="checkbox"] {
     margin: 20px 0;
 }
 
+.resultaat-btn {
+    background-color: #4594D3;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resultaat-btn:hover {
+    background-color: #008a8f;
+}
+
 .confirm-btn {
     background-color: #00b0b9;
     color: white;
@@ -117,20 +132,6 @@ input[type="checkbox"] {
     background-color: #008a8f;
 }
 
-.result-btn {
-    background-color: #4594D3;
-    color: white;
-    font-size: 1.2em;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.result-btn:hover {
-    background-color: #008a8f;
-}
 
     /* Responsive styles */
     @media (max-width: 768px) {

@@ -32,18 +32,18 @@
         </label>
     </div>
 
-    <button class="result-btn" onclick="handleClick()">Resultaat</button>
+    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
 
     <p class="confirmation-text">Je uitslag wordt verstuurd naar je email</p>
     <button class="confirm-btn">Klaar</button>
 
 
     <script>
-        function handleClick() {
-            alert('Button clicked!');
+        function goToNextPage() {
+            window.location.href = 'gekozenfotos.php';
         }
-    </script>
-</div>
+        </script>
+        </div>
 
 <script>
     function clearInput() {
