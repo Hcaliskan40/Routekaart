@@ -36,7 +36,8 @@
 
     <div class="feedback-section">
         <label for="feedback">En wat vind jij hiervan?</label>
-        <textarea id="feedback" placeholder="Schrijf hier je feedback..."></textarea>
+        <textarea id="feedback" placeholder="Schrijf hier je feedback..." oninput="saveText('feedback')"></textarea>
+
     </div>
 
     <div class="button-group">
@@ -45,6 +46,16 @@
     </div>
 </div>
 <script>
+    window.onload = function () {
+        document.getElementById('feedback').value = localStorage.getItem('feedback') || '';
+
+    }
+
+    // Functie om de tekst op te slaan in localStorage wanneer er iets verandert
+    function saveText(id) {
+        const value = document.getElementById(id).value;
+        localStorage.setItem(id, value);
+    }
     function goToPreviousPage() {
         window.location.href = 'opdracht7.php';
     }
