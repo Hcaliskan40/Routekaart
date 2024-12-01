@@ -6,20 +6,25 @@ if ($connection->connect_errno) {
     die("Connection failed: " . $connection->connect_error);
 }
 
+
 $imageIndex = isset($_POST['imageIndex']) ? (int)$_POST['imageIndex'] : 0;
-$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht3.php';
+$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht4.php';
 
 // Verzamel alle gekozen afbeeldingen uit alle opdrachten om dubbele selecties te voorkomen
 $selectedImages = [
+    // Afbeeldingen van opdracht 1
     $_SESSION['selectedImage0'] ?? '',
     $_SESSION['selectedImage1'] ?? '',
     $_SESSION['selectedImage2'] ?? '',
+    // Afbeeldingen van opdracht 2
     $_SESSION['selectedImage3'] ?? '',
     $_SESSION['selectedImage4'] ?? '',
     $_SESSION['selectedImage5'] ?? '',
+    // Afbeeldingen van opdracht 3
     $_SESSION['selectedImage_opdracht3_0'] ?? '',
     $_SESSION['selectedImage_opdracht3_1'] ?? '',
     $_SESSION['selectedImage_opdracht3_2'] ?? '',
+
 ];
 
 // Controleer of een afbeelding is geselecteerd en sla deze op in de sessie
@@ -33,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage'])) {
 }
 
 function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
+    // Selecteer afbeeldingen met kleur 'oranje'
     $query = "SELECT * FROM afbeelding WHERE kleur = 'blauw'";
     if ($result = $connection->query($query)) {
         echo '<div class="roster-content">';
@@ -66,7 +72,7 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afbeelding kiezen - Opdracht 3</title>
+    <title>Afbeelding kiezen - Opdracht 4</title>
     <link rel="stylesheet" href="css/popup.css">
 </head>
 <body>
