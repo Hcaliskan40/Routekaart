@@ -1,3 +1,4 @@
+/* opdracht7_vraag.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -7,16 +8,17 @@ body {
     justify-content: center;
     align-items: center;
     background-color: white;
+    overflow: hidden; /* Prevent unnecessary scrolling */
 }
 
 .container {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px; /* Adjusted padding for better fitting */
     width: 90vw;
-    max-width: 800px;
-    height: 95vh;
+    max-width: 600px; /* Reduced max-width to fit better on the screen */
+    height: auto; /* Automatically adjust height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,12 +29,12 @@ body {
     align-items: center;
     font-size: 2em;
     font-weight: bold;
-    color: #6a0dad;
+    color: #D63384;
     padding-bottom: 15px;
 }
 
 .titel-balk {
-    background-color: #6a0dad;
+    background-color: #D63384;
     color: white;
     font-size: 24px; /* Reduced font size to match smaller container */
     flex-grow: 1;
@@ -43,7 +45,7 @@ body {
 .dot {
     height: 60px; /* Adjusted for better proportion */
     width: 60px; /* Adjusted for better proportion */
-    background-color: #6a0dad;
+    background-color: #D63384;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -74,7 +76,7 @@ body {
     appearance: none;
     width: 20px; /* Reduced size for fitting */
     height: 20px; /* Reduced size for fitting */
-    border: 2px solid #6a0dad;
+    border: 2px solid #D63384;
     border-radius: 50%;
     margin-right: 15px;
     cursor: pointer;
@@ -83,8 +85,8 @@ body {
 }
 
 .option-checkbox:checked {
-    background-color: #6a0dad;
-    border-color: #6a0dad;
+    background-color: #D63384;
+    border-color: #D63384;
 }
 
 .option-checkbox:checked::after {
@@ -94,9 +96,28 @@ body {
     left: 50%;
     width: 12px; /* Adjusted size of the inner circle */
     height: 12px;
-    background-color: #6a0dad;
+    background-color: #D63384;
     border-radius: 50%;
     transform: translate(-50%, -50%);
+}
+
+.info-button {
+    background-color: #8B0000;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.info-button:hover {
+    background-color: #a83232;
 }
 
 .button-group {
@@ -107,7 +128,7 @@ body {
 }
 
 .arrow-btn {
-    background-color: #6a0dad;
+    background-color: #D63384;
     color: #ffffff;
     border: none;
     border-radius: 50%;
@@ -120,7 +141,7 @@ body {
 }
 
 .arrow-btn:hover {
-    background-color: #5500a1;
+    background-color: #D63400;
 }
 
 @media (min-width: 768px) {
