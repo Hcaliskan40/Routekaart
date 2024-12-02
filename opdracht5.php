@@ -20,7 +20,7 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professions - Vraag 5</title>
-    <link rel="stylesheet" type="text/css" href="css/opdracht5.css">
+    <link rel="stylesheet" type="text/css" href="css/opdracht5.1.css">
 </head>
 <body>
 
