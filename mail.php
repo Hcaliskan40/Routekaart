@@ -14,7 +14,7 @@
     <div class="email-section">
         <label for="email" class="email-input-wrapper">
             <span class="email-icon"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="email" placeholder="Voer je emailadres in..." required>
+            <input type="email" id="email" placeholder="Voer je emailadres in... (niet verplicht)" required>
             <span class="remove-icon" onclick="clearInput()">✖</span>
         </label>
         <div class="info-icon"><i class="fas fa-info-circle"></i></div>
@@ -33,8 +33,19 @@
     </div>
 
     <p class="confirmation-text">Je uitslag wordt verstuurd naar je email</p>
-    <button class="confirm-btn">Akkoord</button>
-</div>
+
+    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button> <br> <br>
+
+    <button class="confirm-btn">Klaar</button>
+
+
+    <script>
+        function goToNextPage() {
+            window.location.href = 'gekozenfotos.php';
+        }
+        </script>
+        </div>
+
 <script>
     function clearInput() {
         document.getElementById("email").value = "";

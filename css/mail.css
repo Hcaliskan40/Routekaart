@@ -64,13 +64,15 @@ input[type="email"]::placeholder {
     font-size: 1.2em;
     cursor: pointer;
     color: #9b9b9b;
+    position: relative;
+    right: 20px;
 }
 
 .info-icon {
     font-size: 1.2em;
     position: absolute;
     top: 50%;
-    right: -30px;
+    right: -13px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -100,6 +102,21 @@ input[type="checkbox"] {
     margin: 20px 0;
 }
 
+.resultaat-btn {
+    background-color: #4594D3;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resultaat-btn:hover {
+    background-color: #008a8f;
+}
+
 .confirm-btn {
     background-color: #00b0b9;
     color: white;
@@ -115,27 +132,28 @@ input[type="checkbox"] {
     background-color: #008a8f;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .container {
-        width: 85vw; /* Makes container wider for better mobile view */
-        padding: 20px;
-    }
 
-    .logo {
-        width: 60%;
-    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .container {
+            width: 85vw; /* Makes container wider for better mobile view */
+            padding: 20px;
+        }
 
-    .email-section label {
-        padding: 8px;
-    }
+        .logo {
+            width: 60%;
+        }
 
-    .checkbox-section label {
-        font-size: 0.9em;
-    }
+        .email-section label {
+            padding: 8px;
+        }
 
-    .confirm-btn {
-        font-size: 1em;
-        padding: 10px 20px;
+        .checkbox-section label {
+            font-size: 0.9em;
+        }
+
+        .confirm-btn {
+            font-size: 1em;
+            padding: 10px 20px;
+        }
     }
-}

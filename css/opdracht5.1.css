@@ -1,0 +1,152 @@
+/* opdracht7_vraag.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden; /* Prevent unnecessary scrolling */
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px; /* Adjusted padding for better fitting */
+    width: 90vw;
+    max-width: 600px; /* Reduced max-width to fit better on the screen */
+    height: auto; /* Automatically adjust height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #D63384;
+    padding-bottom: 15px;
+}
+
+.titel-balk {
+    background-color: #D63384;
+    color: white;
+    font-size: 24px; /* Reduced font size to match smaller container */
+    flex-grow: 1;
+    padding: 10px 20px;
+    border-radius: 8px; /* Add some rounding for consistency */
+}
+
+.dot {
+    height: 60px; /* Adjusted for better proportion */
+    width: 60px; /* Adjusted for better proportion */
+    background-color: #D63384;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px; /* Adjusted font size */
+    color: white;
+    font-family: "Roboto Thin";
+    margin-right: 15px; /* Space between number dot and title */
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    max-height: 50vh; /* Limit the height of the options */
+    overflow-y: auto; /* Add scrolling if there are many options */
+}
+
+.option-item {
+    font-size: 1.1em; /* Adjusted font size for better fitting */
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.option-checkbox {
+    appearance: none;
+    width: 20px; /* Reduced size for fitting */
+    height: 20px; /* Reduced size for fitting */
+    border: 2px solid #D63384;
+    border-radius: 50%;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.option-checkbox:checked {
+    background-color: #D63384;
+    border-color: #D63384;
+}
+
+.option-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px; /* Adjusted size of the inner circle */
+    height: 12px;
+    background-color: #D63384;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-button {
+    background-color: #8B0000;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.info-button:hover {
+    background-color: #a83232;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.arrow-btn {
+    background-color: #D63384;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    width: 45px; /* Adjusted for better fitting */
+    height: 45px; /* Adjusted for better fitting */
+    font-size: 1.3em;
+    transition: background-color 0.3s;
+}
+
+.arrow-btn:hover {
+    background-color: #D63400;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 500px; /* Reduced width for better display */
+        padding: 1rem 2rem;
+    }
+}
