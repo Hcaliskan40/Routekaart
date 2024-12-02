@@ -1,5 +1,21 @@
+<?php
+session_start();
+
+// Opslaan van de geselecteerde waarden in de sessie
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['option'])) {
+        foreach ($_POST['option'] as $key => $value) {
+            $_SESSION['selectedOptions'][$key] = $value === 'on' ? true : false;
+        }
+    }
+}
+
+// Stel de gekozen opties in
+$selectedOptions = $_SESSION['selectedOptions'] ?? [];
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,57 +31,40 @@
     <b>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</b>
 
     <div class="options">
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Engelstalig
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Nederlandstalig
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Kleine hogeschool
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Grote hogeschool
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Op kamers
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> In de buurt van mijn woonplaats
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel begeleiding
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel zelfstandig werken
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> 2 jaar
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> 4 jaar
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel groepswerk
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Goede studenttevredenheid
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Hoog salaris toekomstig beroep
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Kleine klassen
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Grote klassen
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel praktijk
-        </label>
-        <label class="option-item">
-            <input type="checkbox" class="option-checkbox"> Veel theorie
-        </label>
+        <form method="post" action="opdracht7.php">
+
+            <!-- Keuzemogelijkheden -->
+            <?php
+            $options = [
+                'engels' => 'Engelstalig',
+                'nederlands' => 'Nederlandstalig',
+                'kleine_hogeschool' => 'Kleine hogeschool',
+                'grote_hogeschool' => 'Grote hogeschool',
+                'op_kamers' => 'Op kamers',
+                'in_buurt' => 'In de buurt van mijn woonplaats',
+                'veel_begeleiding' => 'Veel begeleiding',
+                'zelfstandig_werken' => 'Veel zelfstandig werken',
+                'twee_jaar' => '2 jaar',
+                'vier_jaar' => '4 jaar',
+                'veel_groepswerk' => 'Veel groepswerk',
+                'student_tevr' => 'Goede studenttevredenheid',
+                'hoog_salaris' => 'Hoog salaris toekomstig beroep',
+                'kleine_klassen' => 'Kleine klassen',
+                'grote_klassen' => 'Grote klassen',
+                'veel_praktijk' => 'Veel praktijk',
+                'veel_theorie' => 'Veel theorie',
+            ];
+
+            foreach ($options as $key => $label) {
+                $isChecked = isset($selectedOptions[$key]) && $selectedOptions[$key] ? 'checked' : '';
+                echo '<label class="option-item">';
+                echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
+                echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8');
+                echo '</label>';
+            }
+            ?>
+
+        </form>
     </div>
 
     <div class="button-group">
