@@ -24,6 +24,9 @@ $html = ob_get_clean();
 // Ensure CSS paths are absolute URLs
 $html = preg_replace('/href="css\//', 'href="http://localhost:80/Routekaart/css/', $html);
 
+// Remove the download button
+$html = preg_replace('<a href="generate-pdf.php" class="button">Download PDF</a>', '', $html);
+
 // Ensure image paths are absolute URLs
 //$html = preg_replace('/src="img\//', 'src="http://localhost:80/Routekaart/img/', $html);
 
