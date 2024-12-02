@@ -32,9 +32,10 @@
         </label>
     </div>
 
-    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
-
     <p class="confirmation-text">Je uitslag wordt verstuurd naar je email</p>
+
+    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button> <br> <br>
+
     <button class="confirm-btn">Klaar</button>
 
 
