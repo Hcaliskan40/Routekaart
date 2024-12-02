@@ -17,18 +17,18 @@
     <div class="input-box">
         <div class="input-item">
             <div class="input-number">1</div>
-            <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input type="text" class="rounded-input" placeholder="Waarom dit beroep?">
+            <input id= 'message51' type="text" class="dotted-input" placeholder="Beroepen" oninput="saveText('message51')">
+            <input id='message5a' type="text" class="rounded-input" placeholder="Waarom dit beroep?" oninput="saveText('message5a')">
         </div>
         <div class="input-item">
             <div class="input-number">2</div>
-            <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input type="text" class="rounded-input" placeholder="Waarom dit beroep?">
+            <input id= 'message52' type="text" class="dotted-input" placeholder="Beroepen" oninput="saveText('message52')">
+            <input id='message5b' type="text" class="rounded-input" placeholder="Waarom dit beroep?"oninput="saveText('message5b')">
         </div>
         <div class="input-item">
             <div class="input-number">3</div>
-            <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input type="text" class="rounded-input" placeholder="Waarom dit beroep?">
+            <input id= 'message53' type="text" class="dotted-input" placeholder="Beroepen" oninput="saveText('message53')">
+            <input id ='message5c' type="text" class="rounded-input" placeholder="Waarom dit beroep?" oninput="saveText('message5c')">
         </div>
 
         <div class="button-group">
@@ -38,6 +38,20 @@
 
     </div>
     <script>
+        window.onload = function () {
+            document.getElementById('message51').value = localStorage.getItem('message51') || '';
+            document.getElementById('message52').value = localStorage.getItem('message52') || '';
+            document.getElementById('message53').value = localStorage.getItem('message53') || '';
+            document.getElementById('message5a').value = localStorage.getItem('message5a') || '';
+            document.getElementById('message5b').value = localStorage.getItem('message5b') || '';
+            document.getElementById('message5c').value = localStorage.getItem('message5c') || '';
+        }
+
+        // Functie om de tekst op te slaan in localStorage wanneer er iets verandert
+        function saveText(id) {
+            const value = document.getElementById(id).value;
+            localStorage.setItem(id, value);
+        }
         function goToPreviousPage() {
             window.location.href = 'opdracht5.php';
         }
