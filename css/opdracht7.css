@@ -7,19 +7,21 @@ body {
     justify-content: center;
     align-items: center;
     background-color: white;
+    overflow: hidden; /* Prevent unnecessary scrolling */
 }
 
 .container {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px; /* Adjusted padding for better fitting */
     width: 90vw;
-    max-width: 800px;
-    height: 95vh;
+    max-width: 600px; /* Reduced max-width to fit better on the screen */
+    height: auto; /* Automatically adjust height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 4px solid #ffffff;  /* Outer purple border */
 }
 
 .header {
