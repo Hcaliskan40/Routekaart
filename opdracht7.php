@@ -1,16 +1,23 @@
 <?php
-session_start(); // Start een nieuwe sessie of hervat de bestaande sessie, zodat gegevens voor de gebruiker bewaard blijven tijdens het navigeren.
-
+session_start(); // Start of hervat de bestaande sessie
 
 // Opslaan van de geselecteerde waarden in de sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Controleer of er 'option' waarden zijn verzonden via het formulier
     if (isset($_POST['option'])) {
+        // Loop door de opties uit het formulier en sla deze op in de sessie.
         foreach ($_POST['option'] as $key => $value) {
-            // Sla elke geselecteerde optie op in de sessie, zodat deze later opnieuw gebruikt kan worden.
-            // Gebruik een boolean waarde om aan te geven of de optie is geselecteerd.
-            $_SESSION['selectedOptions'][$key] = $value === 'on' ? true : false;
+            $_SESSION['selectedOptions'][$key] = true; // Zet de waarde op true in de sessie
         }
+
+        // Controleer of er opties zijn verwijderd en haal deze uit de sessie
+        foreach ($_SESSION['selectedOptions'] as $key => $value) {
+            if (!isset($_POST['option'][$key])) {
+                unset($_SESSION['selectedOptions'][$key]);
+            }
+        }
+    } else {
+        // Als er geen opties zijn aangevinkt, verwijder dan alle geselecteerde opties
+        $_SESSION['selectedOptions'] = [];
     }
 }
 
@@ -37,8 +44,9 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
     <div class="options">
         <form method="post" action="opdracht7.php"> <!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
 
+            <!-- Keuzemogelijkheden -->
             <?php
-            // Lijst van wat je kan selecteren
+            // Lijst van alle beschikbare opties die een student kan selecteren
             $options = [
                 'engels' => 'Engelstalig',
                 'nederlands' => 'Nederlandstalig',
@@ -64,7 +72,7 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
                 // Controleer of een optie al is geselecteerd in de sessie
                 $isChecked = isset($selectedOptions[$key]) && $selectedOptions[$key] ? 'checked' : '';
 
-                // Render elke optie als een checkbox en zorg ervoor dat deze direct wordt opgeslagen wanneer de gebruiker deze selecteert.
+                // Render elke optie als een checkbox en zorg ervoor dat deze direct wordt opgeslagen wanneer de gebruiker deze selecteert of deselecteert.
                 echo '<label class="option-item">';
                 echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
                 echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); // Zorg ervoor dat alle tekst veilig is voor weergave
@@ -77,19 +85,19 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
 
     <div class="button-group">
         <!-- Navigatieknoppen om naar de vorige of volgende vraag te gaan -->
-        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button> <!-- Vorige pagina -->
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Volgende pagina -->
     </div>
 </div>
 <script>
-    // Naar de vorige pagina gaan
+    // JavaScript functie om naar de vorige pagina te navigeren
     function goToPreviousPage() {
-        window.location.href = 'opdracht6.php';
+        window.location.href = 'opdracht6.php'; // Stuur de gebruiker naar opdracht 6
     }
 
-    //  Naar de volgende pagina gaan
+    // JavaScript functie om naar de volgende pagina te navigeren
     function goToNextPage() {
-        window.location.href = 'opdracht8.php';
+        window.location.href = 'opdracht8.php'; // Stuur de gebruiker naar opdracht 8
     }
 </script>
 </body>
