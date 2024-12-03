@@ -1,16 +1,20 @@
 <?php
-session_start();
+session_start(); // Start een nieuwe sessie of hervat de bestaande sessie, zodat gegevens voor de gebruiker bewaard blijven tijdens het navigeren.
+
 
 // Opslaan van de geselecteerde waarden in de sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Controleer of er 'option' waarden zijn verzonden via het formulier
     if (isset($_POST['option'])) {
         foreach ($_POST['option'] as $key => $value) {
+            // Sla elke geselecteerde optie op in de sessie, zodat deze later opnieuw gebruikt kan worden.
+            // Gebruik een boolean waarde om aan te geven of de optie is geselecteerd.
             $_SESSION['selectedOptions'][$key] = $value === 'on' ? true : false;
         }
     }
 }
 
-// Stel de gekozen opties in
+// Stel de gekozen opties in; gebruik de opgeslagen waarden in de sessie, of een lege array als er nog niets is geselecteerd
 $selectedOptions = $_SESSION['selectedOptions'] ?? [];
 ?>
 
@@ -31,10 +35,10 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
     <b>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</b>
 
     <div class="options">
-        <form method="post" action="opdracht7.php">
+        <form method="post" action="opdracht7.php"> <!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
 
-            <!-- Keuzemogelijkheden -->
             <?php
+            // Lijst van wat je kan selecteren
             $options = [
                 'engels' => 'Engelstalig',
                 'nederlands' => 'Nederlandstalig',
@@ -55,11 +59,15 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
                 'veel_theorie' => 'Veel theorie',
             ];
 
+            // Loop door de opties heen om ze dynamisch weer te geven in het formulier
             foreach ($options as $key => $label) {
+                // Controleer of een optie al is geselecteerd in de sessie
                 $isChecked = isset($selectedOptions[$key]) && $selectedOptions[$key] ? 'checked' : '';
+
+                // Render elke optie als een checkbox en zorg ervoor dat deze direct wordt opgeslagen wanneer de gebruiker deze selecteert.
                 echo '<label class="option-item">';
                 echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
-                echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8');
+                echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); // Zorg ervoor dat alle tekst veilig is voor weergave
                 echo '</label>';
             }
             ?>
@@ -68,15 +76,18 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
     </div>
 
     <div class="button-group">
+        <!-- Navigatieknoppen om naar de vorige of volgende vraag te gaan -->
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
     </div>
 </div>
 <script>
+    // Naar de vorige pagina gaan
     function goToPreviousPage() {
         window.location.href = 'opdracht6.php';
     }
 
+    //  Naar de volgende pagina gaan
     function goToNextPage() {
         window.location.href = 'opdracht8.php';
     }
