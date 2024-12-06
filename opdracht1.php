@@ -26,15 +26,20 @@ $selectedImages = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opdracht 1 - Like Section</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht1.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="header">
         <span class="dot">1</span>
-        <div class="titel-balk"> Like</div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
+        <div class="titel-balk"> Like <i class="em em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i> </div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
         <a href="opdracht1.php?reset=true" class="reset-link">Reset keuzes</a> <!-- Link om de sessie te resetten -->
     </div>
     <p>Hier krijg ik energie van en doe ik graag:</p>
+
+    <div class="bubble medium bottom">je kan mij klikken om plaatjes uit te kiezen</div>
+
+
     <div class="input-box">
 
         <!-- Eerste input-item -->
