@@ -35,19 +35,19 @@ body {
     padding-top: 25px
 }
 .titel-balk {
-    background-color: #D63384;
+    background-color: #d63384;
     color: white;
     font-size: 30px;
     flex-grow: 0.8;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-right: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
+
 .dot {
     height: 75px;
     width: 75px;
-    background-color: #D63384;
+    background-color: #d63384;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -55,6 +55,8 @@ body {
     font-size: 30px;
     color: white;
     font-family: "Roboto Thin";
+    margin-right: -20px;
+
 }
 
 /* Checkbox and section styles */
