@@ -38,6 +38,11 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    margin: 0;
+    line-height: 1;
+    flex-grow: 1;
+    align-items: center;
+
 }
 
 .dot {
@@ -52,8 +57,10 @@ body {
     color: white;
     font-family: "Roboto Thin";
     margin-right: -20px;
-
+    margin-top: 0;
+    margin-bottom: 0;
 }
+
 
 /*.image-placeholder {*/
 /*    width: 60px;*/

@@ -10,21 +10,8 @@ body {
     overflow: hidden; /* Prevent unnecessary scrolling */
 }
 
-.container {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px 20px; /* Adjusted padding for better fitting */
-    width: 90vw;
-    max-width: 600px; /* Reduced max-width to fit better on the screen */
-    height: auto; /* Automatically adjust height */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 4px solid #ffffff;  /* Outer purple border */
-}
 
-/* Header styling */
+
 .header {
     display: flex;
     align-items: center;
@@ -32,7 +19,9 @@ body {
     font-weight: bold;
     color: #D63384;
     padding-bottom: 15px;
-    padding-top: 25px
+    padding-top: 25px;
+    padding: 0;
+    margin: 0;
 }
 .titel-balk {
     background-color: #d63384;
@@ -42,6 +31,11 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
+    margin: 0;
+    line-height: 1;
+    flex-grow: 1;
+    align-items: center;
+
 }
 
 .dot {
@@ -56,7 +50,8 @@ body {
     color: white;
     font-family: "Roboto Thin";
     margin-right: -20px;
-
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Checkbox and section styles */
