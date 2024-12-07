@@ -14,9 +14,6 @@ $selectedImages = [
     $_SESSION['selectedImage1'] ?? '',
     $_SESSION['selectedImage2'] ?? '',
 ];
-
-
-
 ?>
 
 <!DOCTYPE html>
