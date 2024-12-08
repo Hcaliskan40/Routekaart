@@ -10,7 +10,7 @@
 <div class="container">
     <div class="header">
         <span class="dot">6</span>
-        <div class="titel-balk">Opleidingen</div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
+        <div class="titel-balk">Beroepen</div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
     </div>
     <b>Dit is mijn TOP 3 beroepen:</b>
     <p>Deze opleidingen passen hierbij en wil ik verder verkennen:</p>
