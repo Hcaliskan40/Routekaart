@@ -1,0 +1,147 @@
+/* Algemene opmaak */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Voorkomt scrollbalken */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Bovenste achtergrond met logo */
+.background-top {
+    width: 100%;
+    height: 50%; /* Vul de bovenste helft */
+    position: relative;
+}
+
+.background-top .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorg dat de afbeelding volledig zichtbaar is */
+}
+
+.logo-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.logo-overlay .logo {
+    width: 300px; /* Grotere breedte voor het logo */
+    height: auto; /* Behoud de verhouding */
+}
+
+@media (max-width: 768px) {
+    .logo-overlay .logo {
+        width: 200px; /* Kleiner logo op mobiel */
+    }
+}
+
+/* Zwarte lijn tussen afbeeldingen */
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+}
+
+/* Onderste achtergrond */
+.background-bottom {
+    width: 100%;
+    height: 50%; /* Vul de onderste helft */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.background-bottom .lines {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Vul de ruimte zonder vervorming */
+}
+
+/* Inhoud (video, tekst en knop) */
+.content {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column; /* Plaats items onder elkaar */
+    justify-content: center; /* Centreer alles verticaal */
+    align-items: center; /* Centreer alles horizontaal */
+    z-index: 10; /* Zorgt ervoor dat dit bovenop de achtergrondafbeelding staat */
+    text-align: center;
+}
+
+/* Video-placeholder */
+.video-placeholder {
+    background: #f4f4f4;
+    border: 2px solid #d1d1d1;
+    border-radius: 5px; /* Minder afgerond voor een rechthoekig kader */
+    width: 60%; /* Maak het videokader smaller */
+    max-width: 350px; /* Beperk de maximale breedte */
+    height: 180px; /* Houd de hoogte hetzelfde */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Ruimte onder de video */
+}
+
+.play-icon {
+    font-size: 3em;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Video-tekst */
+.video-text {
+    font-size: 1em;
+    margin-bottom: 20px; /* Ruimte onder de tekst */
+    color: #333;
+}
+
+/* Start-knop */
+.start-button {
+    background-color: #4594D3;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 70px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #2d76a3;
+}
+
+/* Responsieve aanpassingen */
+@media (max-width: 768px) {
+    .video-placeholder {
+        width: 80%; /* Maak het videokader breder op kleinere schermen */
+        height: 120px; /* Verklein de hoogte op mobiel */
+    }
+
+    .play-icon {
+        font-size: 2.5em;
+    }
+
+    .start-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
