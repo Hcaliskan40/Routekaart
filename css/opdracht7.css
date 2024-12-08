@@ -1,46 +1,29 @@
 /* Algemene body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
-}
-
-.container {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-    width: 90vw;
-    max-width: 800px;
-    height: 95vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Geen container-omlijsting */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header stijl */
 .header {
     display: flex;
     align-items: center;
-    font-size: 2em;
-    font-weight: bold;
-    color: #6a0dad;
-    padding-bottom: 15px;
-}
-
-.titel-balk {
-    background-color: #6a0dad;
-    color: white;
-    font-size: 30px;
-    flex-grow: 0.8;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .dot {
@@ -54,14 +37,27 @@ body {
     font-size: 30px;
     color: white;
     font-family: "Roboto Thin";
-    margin-right: -20px;
+    margin-right: -10px;
+    z-index: 1;
+}
+
+.titel-balk {
+    background-color: #6a0dad;
+    color: white;
+    font-size: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 0 10px 10px 0; /* Afgeronde hoeken rechts */
+    margin-left: -10px; /* Overlap met de cirkel */
 }
 
 /* Opties-sectie styling met scrollbalk */
 .options {
-    flex-grow: 1; /* Laat de opties-sectie groeien */
     overflow-y: auto; /* Scrollbalk binnen de opties-sectie */
     padding-right: 10px; /* Ruimte rechts voor de scrollbalk */
+    max-height: calc(100vh - 200px); /* Hoogte aanpassen zodat knoppen zichtbaar blijven */
     display: flex;
     flex-direction: column; /* Items in een verticale richting */
     gap: 15px; /* Ruimte tussen checkboxen en tekst */
@@ -132,7 +128,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    transform: translateY(-50%); /* Correcte uitlijning */
+    transform: translateY(-50%);
 }
 
 .arrow-btn {
