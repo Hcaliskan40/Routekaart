@@ -29,7 +29,7 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
     <!-- Header Section -->
     <div class="header">
         <div class="dot">5</div>
-        <div class="titel-balk">Beroepen</div>
+        <div class="titel-balk">Sectoren</div>
     </div>
 
     <!-- Content Section (form and checkboxes) -->
