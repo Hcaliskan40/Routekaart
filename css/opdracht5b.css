@@ -167,26 +167,27 @@ textarea:focus {
 .button-group {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
-    padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
+    align-items: center;
     padding-top: 10px;
 }
+
 .button-group button {
-    padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
-    border: none; /* Verwijdert de standaard rand van de knoppen. */
-    border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
-    cursor: pointer; /* Geeft aan dat de knop interactief is. */
-    font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
 }
-.button-group .confirm-btn {
-    background-color: #d63384; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
-    color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
-}
-.button-group .arrow-btn {
-    background-color: #ccc; /* Grijze achtergrondkleur voor de navigatieknoppen. */
-    color: #ffffff; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
+
+.arrow-btn {
+    background-color: #d63384;
+    color: #FFFFFF;
     border-radius: 50%;
     font-weight: bold;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
 }
 @media (min-width: 768px) {
     body {
