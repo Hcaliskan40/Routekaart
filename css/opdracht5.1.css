@@ -10,6 +10,7 @@ body {
     height: 100vh; /* Hele schermhoogte benutten */
 }
 
+
 /* Container styling */
 .container {
     background-color: white;
@@ -22,10 +23,12 @@ body {
     gap: 20px; /* Ruimte tussen elementen */
 }
 
-/* Header styling */
+
+
 .header {
     display: flex;
     align-items: center;
+
     gap: 10px;
     margin-bottom: 10px; /* Ruimte onder de header */
 }
@@ -36,6 +39,7 @@ body {
     background-color: #D63384;
     color: white;
     font-size: 1.5rem;
+
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -45,10 +49,12 @@ body {
 .header .titel-balk {
     background-color: #D63384;
     color: white;
+
     font-size: 1.5rem;
     padding: 10px 20px;
     flex-grow: 1;
     text-align: center; /* Centraal uitlijnen van de tekst */
+
 }
 
 /* Sectie styling */

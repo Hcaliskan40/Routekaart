@@ -36,10 +36,10 @@ body {
     color: white;
     font-size: 30px;
     flex-grow: 0.8;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-right: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .dot {
@@ -53,6 +53,8 @@ body {
     font-size: 30px;
     color: white;
     font-family: "Roboto Thin";
+    margin-right: -20px;
+
 }
 
 .options {

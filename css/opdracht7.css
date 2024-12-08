@@ -10,6 +10,7 @@ body {
     align-items: center;
 }
 
+
 /* Container styling */
 .container {
     background-color: white; /* Zorg dat de container ook wit is */
@@ -37,11 +38,14 @@ body {
     height: 50px;
     background-color: #6a0dad; /* Kleur voor opdracht 7 */
     color: white;
+
     font-size: 1.5rem;
+
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .header .titel-balk {
@@ -58,6 +62,7 @@ body {
     flex-grow: 1; /* Laat de sectie met opties de resterende ruimte vullen */
     overflow-y: auto; /* Scrollbalk binnen de sectie */
     padding-right: 10px; /* Ruimte rechts voor de scrollbalk */
+
     display: flex;
     flex-direction: column; /* Zet de items in een verticale richting */
     gap: 15px; /* Ruimte tussen de checkboxen en tekst */

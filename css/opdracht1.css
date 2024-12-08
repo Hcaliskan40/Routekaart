@@ -37,6 +37,9 @@ body {
     font-size: 30px;
     flex-grow: 0.8;
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .dot {
@@ -50,6 +53,7 @@ body {
     font-size: 30px;
     color: white;
     font-family: "Roboto Thin";
+    margin-right: -20px;
 }
 
 .image-button-placeholder {
