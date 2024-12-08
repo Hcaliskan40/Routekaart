@@ -172,3 +172,45 @@ body {
         line-height: 1.6; /* Meer ruimte tussen regels */
     }
 }
+/* Popup-styling */
+.popup {
+    display: none; /* Verborgen totdat het wordt geopend */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #D63384;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #e04190;
+}
+
+#popupText {
+    font-size: 1rem;
+    line-height: 1.5;
+}
