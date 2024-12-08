@@ -1,13 +1,26 @@
+/* Algemene body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: white; /* Algemene achtergrondkleur */
     margin: 0;
-    height: 100vh;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh; /* Hele schermhoogte benutten */
+}
+
+
+/* Container styling */
+.container {
     background-color: white;
-    overflow: hidden; /* Prevent unnecessary scrolling */
+    padding: 20px; /* Ruimte rondom */
+    width: 100%;
+    max-width: 800px; /* Maximale breedte consistent met pagina 4 */
+    height: 100%; /* Pagina vult volledige hoogte */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Ruimte tussen elementen */
 }
 
 
@@ -15,166 +28,147 @@ body {
 .header {
     display: flex;
     align-items: center;
-    font-size: 2em;
-    font-weight: bold;
-    color: #D63384;
-    padding-bottom: 15px;
-    padding-top: 25px;
-    padding: 0;
-    margin: 0;
+
+    gap: 10px;
+    margin-bottom: 10px; /* Ruimte onder de header */
 }
-.titel-balk {
-    background-color: #d63384;
+
+.header .dot {
+    width: 50px;
+    height: 50px;
+    background-color: #D63384;
     color: white;
-    font-size: 30px;
-    flex-grow: 0.8;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    line-height: 1;
-    flex-grow: 1;
-    align-items: center;
+    font-size: 1.5rem;
 
-}
-
-.dot {
-    height: 75px;
-    width: 75px;
-    background-color: #d63384;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    color: white;
-    font-family: "Roboto Thin";
-    margin-right: -20px;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
-/* Checkbox and section styles */
-.section {
-    padding: 25px;
+.header .titel-balk {
+    background-color: #D63384;
+    color: white;
+
+    font-size: 1.5rem;
+    padding: 10px 20px;
     flex-grow: 1;
-    overflow-y: auto;
+    text-align: center; /* Centraal uitlijnen van de tekst */
+
 }
-.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+
+/* Sectie styling */
+.section {
+    flex-grow: 1;
+    overflow-y: auto; /* Scrollbalk blijft behouden */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 }
+
+/* Scrollbar styling */
+.section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background-color: #D63384;
+    border-radius: 10px;
+}
+
+.section::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexibele kolommen */
+    gap: 15px;
+}
+
+/* Checkbox label styling */
 .checkbox-group label {
     display: flex;
     align-items: center;
-}
-.checkbox-group input[type="checkbox"] {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 2px solid #D63384;
-    border-radius: 50%;
-    margin-right: 8px;
+    flex-wrap: wrap; /* Tekst die te lang is springt naar een nieuwe regel */
+    padding: 10px; /* Padding voor grotere klikbare labels */
+    font-size: 1rem; /* Tekstformaat */
     cursor: pointer;
-    position: relative;
-}
-.checkbox-group input[type="checkbox"]:checked {
-    background-color: #D63384;
-}
-.info-button {
-    background-color: #8B0000;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 8px;
-}
-.info-button:hover {
-    background-color: #D63384;
+    transition: background-color 0.2s ease;
+    gap: 10px; /* Ruimte tussen checkbox en tekst */
+    line-height: 1.4; /* Betere ruimte tussen regels */
 }
 
+/* Tekst die netjes naast checkbox blijft */
+.checkbox-group label span {
+    flex: 1; /* Zorgt ervoor dat de tekst de resterende ruimte benut */
+    word-wrap: break-word; /* Breek woorden als ze te lang zijn */
+}
+
+/* Checkbox styling */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 15px;
+    accent-color: #D63384;
+    width: 20px; /* Grootte van checkbox */
+    height: 20px; /* Grootte van checkbox */
+    cursor: pointer;
+}
+
+/* Info-knop styling */
+.info-button {
+    margin-left: auto;
+    background-color: #D63384;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Navigatieknoppen */
 .button-group {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
-    padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
-    padding-top: 10px;
-}
-.button-group button {
-    padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
-    border: none; /* Verwijdert de standaard rand van de knoppen. */
-    border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
-    cursor: pointer; /* Geeft aan dat de knop interactief is. */
-    font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
-}
-.button-group .confirm-btn {
-    background-color: #D63384; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
-    color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
-}
-.button-group .arrow-btn {
-    background-color: #D63384; /* Grijze achtergrondkleur voor de navigatieknoppen. */
-    color: #ffffff; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
-    border-radius: 50%;
-    font-weight: bold;
-}
-@media (min-width: 768px) {
-    body {
-        height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
-        display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
-        justify-content: center; /* Horizontale centrering van de inhoud. */
-        align-items: center; /* Verticale centrering van de inhoud. */
-    }
-
-    .container {
-        width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
-        padding: 1rem 2rem; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
-        height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
-    }
-
-
-}
-}
-.button-group{
-    float:left;
-    margin-right:5px;
-    justify-content: center;
+    padding: 10px 0;
 }
 
-
-.button-1 {
+.arrow-btn {
     background-color: #D63384;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
     cursor: pointer;
-    display: inline-block;
-    font-family:"Roboto Light";
-    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
 
+.arrow-btn:hover {
+    background-color: #e04190;
+}
 
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
+/* Responsiviteit */
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr; /* Eén kolom op mobiele schermen */
+    }
 
+    .arrow-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
 
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    justify-content: center;
+    .checkbox-group input[type="checkbox"] {
+        width: 22px; /* Grotere checkbox op mobiel */
+        height: 22px; /* Grotere checkbox op mobiel */
+    }
 
-
+    .checkbox-group label {
+        font-size: 1.1rem; /* Iets grotere tekst op mobiele schermen */
+        line-height: 1.6; /* Meer ruimte tussen regels */
+    }
 }
