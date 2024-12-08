@@ -23,14 +23,18 @@ $selectedImages = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opdracht 2 - Nieuwsgierig</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht2.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="header">
         <span class="dot">2</span>
-        <div class="titel-balk">Nieuwsgierig</div>
+        <div class="titel-balk">Nieuwsgierig <i class="em em-eyes" aria-role="presentation" aria-label="EYES"></i> </div>
     </div>
     <p>Dit wil ik leren/ontdekken:</p>
+
+    <div class="bubble medium bottom">je kan mij klikken om plaatjes uit te kiezen</div>
+
     <div class="input-box">
 
         <!-- Eerste input-item -->

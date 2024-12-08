@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Invuller - Resultaten Versturen</title>
+    <title>Bedankt voor het invullen!</title>
     <link rel="stylesheet" type="text/css" href="css/mail.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Confetti-bibliotheek -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 <div class="container">
+    <!-- Afbeelding van het logo -->
     <img src="img/WindesheimLogo.png" alt="Windesheim Logo" class="logo">
 
-    <div class="email-section">
-        <label for="email" class="email-input-wrapper">
-            <span class="email-icon"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="email" placeholder="Voer je emailadres in... (niet verplicht)" required>
-            <span class="remove-icon" onclick="clearInput()">✖</span>
-        </label>
-        <div class="info-icon"><i class="fas fa-info-circle"></i></div>
-    </div>
-
-    <div class="checkbox-section">
-        <label>
-            <input type="checkbox" required> Is alles in de toets ingevuld?
-        </label>
-        <label>
-            <input type="checkbox" required> Is je email ingevuld?
-        </label>
-        <label>
-            <input type="checkbox" required> Ga je akkoord met je gegevens delen?
-        </label>
-    </div>
-
-    <p class="confirmation-text">Je uitslag wordt verstuurd naar je email</p>
-
-    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button> <br> <br>
-
-    <button class="confirm-btn">Klaar</button>
-    <button class="redo-btn" onclick="redoTest()">Opnieuw</button>
-
-    <script>
-        function goToNextPage() {
-            window.location.href = 'gekozenfotos.php';
-        }
-
-        function clearInput() {
-            document.getElementById("email").value = "";
-        }
-
-        function redoTest() {
-            // Clear php session storage
-            <?php session_start(); session_unset(); ?>
-            // Clear local storage
-            localStorage.clear();
-
-            // Redirect to opdracht1.php
-            window.location.href = 'opdracht1.php';
-        }
-    </script>
+    <h2>Bedankt voor het invullen van de quiz!</h2>
+    <p>
+        Je hebt zojuist een belangrijke stap gezet in jouw ontdekkingstocht. Op basis van jouw antwoorden hebben we een passend resultaat voor je samengesteld.
+        Klik op de knop hieronder om jouw persoonlijke resultaten te bekijken. Veel succes met jouw volgende stappen!
+    </p>
+    <br><br>
+    <!-- Knop met klasse voor styling -->
+    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
 </div>
+
+<script>
+    // Functie om confetti te laten zien
+    function launchConfetti() {
+        const duration = 2000; // Duur in milliseconden
+        const end = Date.now() + duration;
+
+        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#00ffff', '#ffff00'];
+
+        (function frame() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: Math.random() },
+                colors: colors,
+            });
+
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: Math.random() },
+                colors: colors,
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    }
+
+    // Functie om naar de volgende pagina te gaan
+    function goToNextPage() {
+        window.location.href = 'gekozenfotos.php';
+    }
+
+    // Start confetti wanneer de pagina geladen wordt
+    window.onload = launchConfetti;
+</script>
 </body>
 </html>

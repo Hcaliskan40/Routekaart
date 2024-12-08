@@ -17,18 +17,18 @@
     <div class="input-box">
         <div class="input-item">
             <div class="input-number">1</div>
-            <input id= "message61" type="text" class="dotted-input" placeholder="Beroepen"oninput="saveText('message61')">
+            <input type="text" class="dotted-input" placeholder="Beroepen">
             <input id="message6a"type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6a')">
 
         </div>
         <div class="input-item">
             <div class="input-number">2</div>
-            <input id="message62" type="text" class="dotted-input" placeholder="Beroepen"oninput="saveText('message62')">
+            <input type="text" class="dotted-input" placeholder="Beroepen">
             <input id="message6b"type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6b')">
         </div>
         <div class="input-item">
             <div class="input-number">3</div>
-            <input id="message63" type="text" class="dotted-input" placeholder="Beroepen"oninput="saveText('message63')">
+            <input type="text" class="dotted-input" placeholder="Beroepen">
             <input id="message6c" type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6c')">
         </div>
         <div class="button-group">
@@ -42,9 +42,6 @@
                 document.getElementById('message6a').value = localStorage.getItem('message6a') || '';
                 document.getElementById('message6b').value = localStorage.getItem('message6b') || '';
                 document.getElementById('message6c').value = localStorage.getItem('message6c') || '';
-                document.getElementById('message61').value = localStorage.getItem('message61') || '';
-                document.getElementById('message62').value = localStorage.getItem('message62') || '';
-                document.getElementById('message63').value = localStorage.getItem('message63') || '';
             }
 
             // Functie om de tekst op te slaan in localStorage wanneer er iets verandert
