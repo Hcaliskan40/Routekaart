@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage'])) {
     exit();
 }
 
-function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
+function generateRoster($connection, $imageIndex, $selectedImages, $caller)
+{
     // Selecteer afbeeldingen met kleur 'oranje'
     $query = "SELECT * FROM afbeelding WHERE kleur = 'oranje'";
     if ($result = $connection->query($query)) {
@@ -50,6 +51,7 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
 
             // Controleer of de afbeelding al is geselecteerd
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
+            $isGrey = in_array($imagePath, $selectedImages) ? 'style="filter: grayscale(100%);"' : '';
 
             echo "<div class='roster-item'>
                     <form method='post' action=''>
@@ -57,7 +59,7 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
                         <input type='hidden' name='imageIndex' value='{$imageIndex}'>
                         <input type='hidden' name='caller' value='{$caller}'>
                         <button type='submit' class='image-button' {$isDisabled}>
-                            <img src='{$imagePath}' alt='{$afbeeldingNaam}'>
+                            <img src='{$imagePath}' alt='{$afbeeldingNaam}' {$isGrey}>
                         </button>
                     </form>
                   </div>";
@@ -68,14 +70,15 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
         echo "Error: " . $connection->error;
     }
 }
+
 ?>
 <!DOCTYPE html>
-<html lang="nl">
+<html lang='nl'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Afbeelding kiezen - Opdracht 4</title>
-    <link rel="stylesheet" href="css/popup.css">
+    <link rel='stylesheet' href='css/popup.css'>
 </head>
 <body>
 <h2>Kies een afbeelding</h2>

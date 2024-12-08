@@ -15,15 +15,31 @@
 
     <h2>Bedankt voor het invullen van de quiz!</h2>
     <p>
-        Je hebt zojuist een belangrijke stap gezet in jouw ontdekkingstocht. Op basis van jouw antwoorden hebben we een passend resultaat voor je samengesteld.
+        Je hebt zojuist een belangrijke stap gezet in jouw ontdekkingstocht. Op basis van jouw antwoorden hebben we een
+        passend resultaat voor je samengesteld.
         Klik op de knop hieronder om jouw persoonlijke resultaten te bekijken. Veel succes met jouw volgende stappen!
     </p>
     <br><br>
     <!-- Knop met klasse voor styling -->
     <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
+    <button class="redo-btn" onclick="redoTest()">Opnieuw</button>
+
+
 </div>
 
 <script>
+    function redoTest() {
+        // Clear php session
+        <?php session_start(); session_destroy(); ?>
+
+        //Clear local storage
+        localStorage.clear();
+
+        // Redirect to first page
+        window.location.href = 'opdracht1.php';
+
+    }
+
     // Functie om confetti te laten zien
     function launchConfetti() {
         const duration = 2000; // Duur in milliseconden
@@ -36,7 +52,7 @@
                 particleCount: 5,
                 angle: 60,
                 spread: 55,
-                origin: { x: Math.random() },
+                origin: {x: Math.random()},
                 colors: colors,
             });
 
@@ -44,7 +60,7 @@
                 particleCount: 5,
                 angle: 120,
                 spread: 55,
-                origin: { x: Math.random() },
+                origin: {x: Math.random()},
                 colors: colors,
             });
 

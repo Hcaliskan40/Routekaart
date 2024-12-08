@@ -37,16 +37,16 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
             $afbeeldingNaam = htmlspecialchars($row['naam'], ENT_QUOTES, 'UTF-8');
             $imagePath = "http://localhost:80/Routekaart/img/{$afbeeldingNaam}.jpg";
 
-            // Controleer of de afbeelding al is geselecteerd in een andere opdracht
+            // Check if the image is already selected in another assignment
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
-
+            $isGrey = in_array($imagePath, $selectedImages) ? 'style="filter: grayscale(100%);"' : '';
 
             echo "<div class='roster-item'>
                     <form method='post' action=''>
                         <input type='hidden' name='selectedImage' value='{$imagePath}'>
                         <input type='hidden' name='imageIndex' value='{$imageIndex}'>
-                        <input type='hidden' name='caller' value='{$_POST['caller']}'> <!-- Caller wordt opnieuw meegegeven -->
-                        <button type='submit' class='image-button' {$isDisabled}>
+                        <input type='hidden' name='caller' value='{$_POST['caller']}'> <!-- Caller is passed again -->
+                        <button type='submit' class='image-button' {$isDisabled} {$isGrey}>
                             <img src='{$imagePath}' alt='{$afbeeldingNaam}'>
                         </button>
                     </form>
@@ -58,6 +58,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
         echo "Error: " . $connection->error;
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="nl">

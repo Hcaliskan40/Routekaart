@@ -48,13 +48,14 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
 
             // Controleer of de afbeelding al is geselecteerd
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
+            $isGrey = in_array($imagePath, $selectedImages) ? 'style="filter: grayscale(100%);"' : '';
 
             echo "<div class='roster-item'>
                     <form method='post' action=''>
                         <input type='hidden' name='selectedImage' value='{$imagePath}'>
                         <input type='hidden' name='imageIndex' value='{$imageIndex}'>
                         <input type='hidden' name='caller' value='{$caller}'>
-                        <button type='submit' class='image-button' {$isDisabled}>
+                        <button type='submit' class='image-button' {$isDisabled}{$isGrey}>
                             <img src='{$imagePath}' alt='{$afbeeldingNaam}'>
                         </button>
                     </form>
