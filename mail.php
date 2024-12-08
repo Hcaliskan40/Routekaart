@@ -37,19 +37,27 @@
     <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button> <br> <br>
 
     <button class="confirm-btn">Klaar</button>
-
+    <button class="redo-btn" onclick="redoTest()">Opnieuw</button>
 
     <script>
         function goToNextPage() {
             window.location.href = 'gekozenfotos.php';
         }
-        </script>
-        </div>
 
-<script>
-    function clearInput() {
-        document.getElementById("email").value = "";
-    }
-</script>
+        function clearInput() {
+            document.getElementById("email").value = "";
+        }
+
+        function redoTest() {
+            // Clear php session storage
+            <?php session_start(); session_unset(); ?>
+            // Clear local storage
+            localStorage.clear();
+
+            // Redirect to opdracht1.php
+            window.location.href = 'opdracht1.php';
+        }
+    </script>
+</div>
 </body>
 </html>
