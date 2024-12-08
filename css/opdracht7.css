@@ -136,20 +136,18 @@ body {
 }
 
 .arrow-btn {
-    background-color: #6a0dad; /* Consistente kleur */
+    background-color: #6a0dad;
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 45px; /* Formaat van de knoppen */
-    height: 45px;
-    font-size: 1.3rem;
-    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 .arrow-btn:hover {
-    background-color: #5500a1;
+    background-color: #e04190;
 }
 
 /* Responsiviteit */
