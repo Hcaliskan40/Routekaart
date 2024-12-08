@@ -23,14 +23,18 @@ $selectedImages = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opdracht 4 - Belangrijk</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht4.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="header">
         <span class="dot">4</span>
-        <div class="titel-balk">Belangrijk</div> <!-- Tekst die aangeeft dat dit sectie 4 is, met het onderwerp 'Belangrijk'. -->
+        <div class="titel-balk">Belangrijk <i class="em em-bangbang" aria-role="presentation" aria-label="DOUBLE EXCLAMATION MARK"></i></div> <!-- Tekst die aangeeft dat dit sectie 4 is, met het onderwerp 'Belangrijk'. -->
     </div>
     <p>Dit is belangrijk in mijn leven:</p>
+
+    <div class="bubble medium bottom">je kan mij klikken om plaatjes uit te kiezen</div>
+
     <div class="input-box">
 
         <!-- Eerste input-item -->
