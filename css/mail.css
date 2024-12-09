@@ -1,0 +1,73 @@
+/* mail.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/Lijnen.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Lichte transparantie */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 40vw;
+    max-width: 600px;
+    min-width: 320px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    width: 50%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.resultaat-btn {
+    background-color: #4594D3;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resultaat-btn:hover {
+    background-color: #008a8f;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 85vw; /* Breder voor betere mobiele weergave */
+        padding: 20px;
+    }
+
+    .logo {
+        width: 60%;
+    }
+
+    .resultaat-btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

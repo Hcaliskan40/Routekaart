@@ -1,0 +1,169 @@
+/* Algemene body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Geen container-omlijsting */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header stijl */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #6a0dad;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-family: "Roboto Thin";
+    margin-right: -10px;
+    z-index: 1;
+}
+
+.titel-balk {
+    background-color: #6a0dad;
+    color: white;
+    font-size: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 0 10px 10px 0; /* Afgeronde hoeken rechts */
+    margin-left: -10px; /* Overlap met de cirkel */
+}
+
+/* Opties-sectie styling met scrollbalk */
+.options {
+    overflow-y: auto; /* Scrollbalk binnen de opties-sectie */
+    padding-right: 10px; /* Ruimte rechts voor de scrollbalk */
+    max-height: calc(100vh - 200px); /* Hoogte aanpassen zodat knoppen zichtbaar blijven */
+    display: flex;
+    flex-direction: column; /* Items in een verticale richting */
+    gap: 15px; /* Ruimte tussen checkboxen en tekst */
+}
+
+/* Scrollbalk styling */
+.options::-webkit-scrollbar {
+    width: 8px; /* Breedte van de scrollbalk */
+}
+
+.options::-webkit-scrollbar-thumb {
+    background-color: #6a0dad; /* Kleur van de scrollbar */
+    border-radius: 10px; /* Afronding van de scrollbar */
+}
+
+.options::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Achtergrondkleur van de scrollbar */
+}
+
+/* Optie-item styling */
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Ruimte tussen checkbox en tekst */
+    font-size: 1.2rem; /* Grotere tekst voor betere leesbaarheid */
+    padding: 12px; /* Ruimte rondom de tekst */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Checkbox styling */
+.option-checkbox {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #6a0dad;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer
+    transition: all 0.3s ease;
+}
+
+.option-checkbox:checked {
+    background-color: #6a0dad;
+    border-color: #6a0dad;
+}
+
+.option-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigatieknoppen links en rechts */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.button-group button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.arrow-btn {
+    background-color: #6a0dad;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsiviteit */
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr; /* Eén kolom op mobiele schermen */
+    }
+
+    .arrow-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        width: 22px; /* Grotere checkbox op mobiel */
+        height: 22px; /* Grotere checkbox op mobiel */
+    }
+
+    .checkbox-group label {
+        font-size: 1.1rem; /* Iets grotere tekst op mobiele schermen */
+        line-height: 1.6; /* Meer ruimte tussen regels */
+    }
+}

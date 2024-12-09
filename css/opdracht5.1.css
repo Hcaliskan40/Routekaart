@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    padding: 20px;
+    width: 90vw;
+    max-width: 800px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #d63384;
+    padding-bottom: 15px;
+}
+
+.titel-balk {
+    background-color: #d63384;
+    color: white;
+    font-size: 30px;
+    flex-grow: 0.8;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.dot {
+    height: 75px;
+    width: 75px;
+    background-color: #d63384;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-family: "Roboto Thin";
+    margin-right: -20px;
+}
+
+/* Sectie styling */
+.section {
+    flex-grow: 1;
+    overflow-y: auto; /* Scrollbalk blijft behouden */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: -115px
+}
+
+/* Scrollbar styling */
+.section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background-color: #D63384;
+    border-radius: 10px;
+}
+
+.section::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexibele kolommen */
+    gap: 15px;
+}
+
+/* Checkbox label styling */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Tekst die te lang is springt naar een nieuwe regel */
+    padding: 10px; /* Padding voor grotere klikbare labels */
+    font-size: 1rem; /* Tekstformaat */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    gap: 10px; /* Ruimte tussen checkbox en tekst */
+    line-height: 1.4; /* Betere ruimte tussen regels */
+}
+
+/* Tekst die netjes naast checkbox blijft */
+.checkbox-group label span {
+    flex: 1; /* Zorgt ervoor dat de tekst de resterende ruimte benut */
+    word-wrap: break-word; /* Breek woorden als ze te lang zijn */
+}
+
+/* Checkbox styling */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 15px;
+    accent-color: #D63384;
+    width: 20px; /* Grootte van checkbox */
+    height: 20px; /* Grootte van checkbox */
+    cursor: pointer;
+}
+
+/* Info-knop styling */
+.info-button {
+    margin-left: auto;
+    background-color: #D63384;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Navigatieknoppen */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 180px;
+}
+
+.button-group button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.arrow-btn {
+    background-color: #d63384;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsiviteit */
+@media (max-width: 768px) {
+    .checkbox-group {
+        grid-template-columns: 1fr; /* Eén kolom op mobiele schermen */
+    }
+
+
+    .checkbox-group input[type="checkbox"] {
+        width: 22px; /* Grotere checkbox op mobiel */
+        height: 22px; /* Grotere checkbox op mobiel */
+    }
+
+    .checkbox-group label {
+        font-size: 1.1rem; /* Iets grotere tekst op mobiele schermen */
+        line-height: 1.6; /* Meer ruimte tussen regels */
+    }
+}
+/* Popup-styling */
+.popup {
+    display: none; /* Verborgen totdat het wordt geopend */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #D63384;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #e04190;
+}
+
+#popupText {
+    font-size: 1rem;
+    line-height: 1.5;
+}

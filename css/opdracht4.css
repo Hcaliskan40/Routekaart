@@ -8,6 +8,7 @@ body {
     align-items: center;
     background-color: white;
 }
+
 .container {
     background: white;
     border-radius: 10px;
@@ -19,8 +20,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    display: flex;
 }
+
 .header {
     display: flex;
     align-items: center;
@@ -28,20 +29,21 @@ body {
     font-weight: bold;
     color: #fac710;
     padding-bottom: 15px;
-
-
 }
-.titel-balk{
+
+.titel-balk {
     background-color: #fac710;
     color: white;
     font-size: 30px;
     flex-grow: 0.8;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-right: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin:0;
+    line-height: 1;
+    align-items: center;
+    flex-grow: 1;
 }
-
 
 .dot {
     height: 75px;
@@ -54,37 +56,56 @@ body {
     font-size: 30px;
     color: white;
     font-family: "Roboto Thin";
+    margin-right: -20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
 
 }
+
+.image-button-placeholder {
+    background-color: transparent;
+    border: none;
+    padding: 20;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .image-placeholder {
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 150px;
     background-color: #e0e0e0;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
-    margin-right: 15px;
+    font-size: 1em;
     cursor: pointer;
+    border:none;
 }
-.image-placeholder:hover {
-    background-color: #cccccc;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+
+.image-button-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
 }
 
 textarea {
     flex: 1;
     height: 150px;
     border: 1px solid #ccc;
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 5px;
     resize: none;
-    hyphens: auto;
     box-sizing: border-box;
-
 }
+
 textarea:focus {
     border: 2px solid #fac710;
     outline: none;
@@ -97,122 +118,108 @@ textarea:focus {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
-    .input-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-        width: 100%;
-    }
-
-    .input-item .image-placeholder {
-        width: 60px;
-        height: 60px;
-        background-color: #e0e0e0;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 15px;
-        cursor: pointer;
-        font-size: 2em;
-        padding: 45px;
-    }
-    .image-placeholder {
-        width: 40px;
-        height: 40px;
-        background-color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        margin-right: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .input-item input {
-        flex-grow: 1;
-        padding: 45px;
-        border: 2px solid #fac710;
-        border-radius: 10px;
-        outline: none;
-        font-size:18px;
-    }
-    .button-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; /* Zorgt ervoor dat de knoppen verticaal uitgelijnd zijn. */
-        padding-top: 20px; /* Bovenruimte om de knoppen van de rest van de inhoud te scheiden. */
-        padding-top: 10px;
-    }
-    .button-group button {
-        padding: 15px 25px; /* Vergroot de binnenruimte van de knoppen voor comfortabele interactie. */
-        border: none; /* Verwijdert de standaard rand van de knoppen. */
-        border-radius: 10px; /* Vergroot de afronding van de hoeken van de knoppen. */
-        cursor: pointer; /* Geeft aan dat de knop interactief is. */
-        font-size: 1.1em; /* Verhoog de lettergrootte van de knoptekst voor leesbaarheid. */
-    }
-    .button-group .confirm-btn {
-        background-color: #fac710; /* Groene achtergrondkleur om de bevestigingsknop te benadrukken. */
-        color: white; /* Witte tekstkleur voor contrast met de groene achtergrond. */
-    }
-    .button-group .arrow-btn {
-        background-color: #ccc; /* Grijze achtergrondkleur voor de navigatieknoppen. */
-        color: #ffffff; /* Donkergrijze tekstkleur voor contrast met de knopachtergrond. */
-        border-radius: 50%;
-        font-weight: bold;
-    }
-    @media (min-width: 768px) {
-        body {
-            height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
-            display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
-            justify-content: center; /* Horizontale centrering van de inhoud. */
-            align-items: center; /* Verticale centrering van de inhoud. */
-        }
-
-        .container {
-            width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
-            padding: 1rem 2rem; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
-            height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
-        }
-
-
-    }
-}
-.button-group{
-    float:left;
-    margin-right:5px;
-    justify-content: center;
 }
 
+.input-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
 
-.button-1 {
-    background-color: #fac710;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.button-group button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    display: inline-block;
-    font-family:"Roboto Light";
-    font-size: 14px;
+    font-size: 1.1em;
+}
 
+.arrow-btn {
+    background-color: #fac710;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
 
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nYivN04w.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nRivN04w.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nWivN04w.woff2) format('woff2');
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nbivN04w.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.bubble {
+    top: 25px;
     position: relative;
+    display: inline-block;
+    margin: 20px;
     text-align: center;
+    font-family: "Press Start 2P", cursive;
+    font-size: 16px;
+    line-height: 1.1em;
+    background-color: #fff;
+    color: #000;
+    padding: 6px;
+    box-shadow: 0 -4px #fff, 0 -8px #000, 4px 0 #fff, 4px -4px #000, 8px 0 #000, 0 4px #fff, 0 8px #000, -4px 0 #fff, -4px 4px #000, -8px 0 #000, -4px -4px #000, 4px 4px #000;
+    box-sizing: border-box;
+    width: 300px;
+}
+.bubble::after {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+}
 
-
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    justify-content: center;
-
-
+.bubble.bottom::after {
+    height: 4px;
+    width: 4px;
+    bottom: -8px;
+    left: 32px;
+    box-shadow: 0 4px #000, 0 8px #000, 0 12px #000, 0 16px #000, -4px 12px #000, -8px 8px #000, -12px 4px #000, -4px 4px #fff, -8px 4px #fff, -4px 8px #fff, -4px 0 #fff, -8px 0 #fff, -12px 0 #fff;
 }
