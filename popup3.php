@@ -8,7 +8,7 @@ if ($connection->connect_errno) {
 
 
 $imageIndex = isset($_POST['imageIndex']) ? (int)$_POST['imageIndex'] : 0;
-$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht4.php';
+$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht3.php';
 
 // Verzamel alle gekozen afbeeldingen uit alle opdrachten om dubbele selecties te voorkomen
 $selectedImages = [
@@ -37,14 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage'])) {
     exit();
 }
 
-function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
-    // Selecteer afbeeldingen met kleur 'oranje'
+function generateRoster($connection, $imageIndex, $selectedImages) {
     $query = "SELECT * FROM afbeelding WHERE kleur = 'blauw'";
     if ($result = $connection->query($query)) {
         echo '<div class="roster-content">';
         while ($row = $result->fetch_assoc()) {
             $afbeeldingNaam = htmlspecialchars($row['naam'], ENT_QUOTES, 'UTF-8');
-            $imagePath = "img/{$afbeeldingNaam}.jpg";
+            $imagePath = "http://localhost:80/Routekaart/img/{$afbeeldingNaam}.jpg";
 
             // Controleer of de afbeelding al is geselecteerd
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
@@ -54,8 +53,8 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller) {
                     <form method='post' action=''>
                         <input type='hidden' name='selectedImage' value='{$imagePath}'>
                         <input type='hidden' name='imageIndex' value='{$imageIndex}'>
-                        <input type='hidden' name='caller' value='{$caller}'>
-                        <button type='submit' class='image-button' {$isDisabled}{$isGrey}>
+                        <input type='hidden' name='caller' value='{$_POST['caller']}'> <!-- Caller is passed again -->
+                        <button type='submit' class='image-button' {$isDisabled} {$isGrey}>
                             <img src='{$imagePath}' alt='{$afbeeldingNaam}'>
                         </button>
                     </form>
