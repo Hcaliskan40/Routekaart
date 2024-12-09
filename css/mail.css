@@ -55,6 +55,21 @@ p {
     background-color: #008a8f;
 }
 
+.redo-btn {
+    background-color: #4594D3;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.redo-btn:hover {
+    background-color: #008a8f;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .container {
@@ -70,4 +85,12 @@ p {
         font-size: 1em;
         padding: 10px 20px;
     }
+    .redo-btn{
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+
 }
+
+
