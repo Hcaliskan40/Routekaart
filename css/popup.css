@@ -16,3 +16,30 @@
     padding: 0;
     cursor: pointer;
 }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000; /* Purple button */
+    text-decoration: none; /* Remove underline */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Add hover effect */
+    box-shadow: -10px 8px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+    right: 15px;
+    position: absolute;
+    top: 12px
+}
+
+.button:active {
+        transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+
+.button:hover {
+    background-color: #000000ad; /* Darker purple on hover */
+}

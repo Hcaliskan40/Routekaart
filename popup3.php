@@ -76,8 +76,12 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
     <link rel="stylesheet" href="css/popup.css">
 </head>
 <body>
-<h2>Kies een afbeelding</h2>
-<a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>">Sluiten</a>
+<h2>Hier ben ik trots op</h2>
+<a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>"class="button">
+
+<span>Sluiten</span>
+
+</a>
 <div class="popup-body">
     <?php generateRoster($connection, $imageIndex, $selectedImages, $caller); ?>
 </div>

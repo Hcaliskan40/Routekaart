@@ -14,11 +14,13 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 /* Header stijl */
 .header {
+    font-size: 2em;
+    font-weight: bold;
     display: flex;
     align-items: center;
     margin-bottom: 15px;
@@ -48,7 +50,6 @@ body {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    border-radius: 0 10px 10px 0; /* Afgeronde hoeken rechts */
     margin-left: -10px; /* Overlap met de cirkel */
 }
 
@@ -56,7 +57,7 @@ body {
 .options {
     overflow-y: auto; /* Scrollbalk binnen de opties-sectie */
     padding-right: 10px; /* Ruimte rechts voor de scrollbalk */
-    max-height: calc(100vh - 200px); /* Hoogte aanpassen zodat knoppen zichtbaar blijven */
+    max-height: calc(100vh - 300px); /* Hoogte aanpassen zodat knoppen zichtbaar blijven */
     display: flex;
     flex-direction: column; /* Items in een verticale richting */
     gap: 15px; /* Ruimte tussen checkboxen en tekst */
@@ -93,14 +94,14 @@ body {
 
 /* Checkbox styling */
 .option-checkbox {
-    appearance: none;
+    appearance: none; /* Remove the default checkbox */
     width: 25px;
     height: 25px;
-    border: 2px solid #6a0dad;
-    border-radius: 4px;
-    margin-right: 10px;
-    cursor: pointer
-    transition: all 0.3s ease;
+    border: 2px solid #6d00ad; /* Purple border */
+    border-radius: 4px; /* Rounded corners */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
 }
 
 .option-checkbox:checked {
@@ -109,14 +110,15 @@ body {
 }
 
 .option-checkbox:checked::after {
-    content: "";
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    transform: translate(-50%, -50%);
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 /* Navigatieknoppen links en rechts */
@@ -124,7 +126,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 70px;
 }
 
 .button-group button {

@@ -30,11 +30,10 @@ $selectedImages = [
     <div class="header">
         <span class="dot">1</span>
         <div class="titel-balk"> Like <i class="em em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i> </div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
-        <a href="opdracht1.php?reset=true" class="reset-link">Reset keuzes</a> <!-- Link om de sessie te resetten -->
     </div>
     <p>Hier krijg ik energie van en doe ik graag:</p>
 
-    <div class="bubble medium bottom">je kan mij klikken om plaatjes uit te kiezen</div>
+    <div class="bubble medium bottom">Je kan mij klikken om activiteiten uit te kiezen</div>
 
 
     <div class="input-box">

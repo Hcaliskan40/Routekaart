@@ -81,11 +81,34 @@ body {
     text-align: left;
 }
 
+
 .option-checkbox {
-    margin-left: 15px;
-    width: 30px;
-    height: 30px;
+    appearance: none; /* Remove the default checkbox */
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ee3135; /* Purple border */
+    border-radius: 4px; /* Rounded corners */
+    display: inline-block;
+    position: relative;
     cursor: pointer;
+    padding: 20px;
+}
+
+.option-checkbox:checked {
+    background-color: #ee3135;
+    border-color: #ee3135;
+}
+
+.option-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 14px;
+    width: 10px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 .feedback-section {

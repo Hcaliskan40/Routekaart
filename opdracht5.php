@@ -110,6 +110,21 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
     </div>
 
     <script>
+
+            function handleCheckboxChange() {
+            // Get all checkboxes with the class "sector-checkbox"
+            const checkboxes = document.querySelectorAll('.sector-checkbox');
+
+            // Loop through the checkboxes to check their state
+            checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+            console.log(`Checked: ${checkbox.value}`);
+        } else {
+            console.log(`Unchecked: ${checkbox.value}`);
+        }
+        });
+        }
+
         // Open het popup-venster met informatie
         function showPopup(infoText) {
             const popup = document.getElementById('infoPopup');

@@ -13,22 +13,22 @@
         <div class="titel-balk">Beroepen</div>
     </div>
     <b>Dit is mijn TOP 3 sectoren:</b>
-    <p>Deze beroepen passen hierbij voor mij:</p>
+    <p>Deze beroepen passen bij deze sectoren</p>
     <div class="input-box">
         <div class="input-item">
             <div class="input-number">1</div>
-            <input id= 'message51' type="text" class="dotted-input" placeholder="Beroepen" oninput="saveText('message51')">
-            <input id='message5a' type="text" class="rounded-input" placeholder="Waarom dit beroep?" oninput="saveText('message5a')">
+            <input id= 'message51' type="text" class="dotted-input" placeholder="Sector" oninput="saveText('message51')">
+            <input id='message5a' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5a')">
         </div>
         <div class="input-item">
             <div class="input-number">2</div>
-            <input id= 'message52' type="text" class="dotted-input" placeholder="Beroepen" oninput="saveText('message52')">
-            <input id='message5b' type="text" class="rounded-input" placeholder="Waarom dit beroep?"oninput="saveText('message5b')">
+            <input id= 'message52' type="text" class="dotted-input" placeholder="Sector" oninput="saveText('message52')">
+            <input id='message5b' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?"oninput="saveText('message5b')">
         </div>
         <div class="input-item">
             <div class="input-number">3</div>
-            <input id= 'message53' type="text" class="dotted-input" placeholder="Beroepen" oninput="saveText('message53')">
-            <input id ='message5c' type="text" class="rounded-input" placeholder="Waarom dit beroep?" oninput="saveText('message5c')">
+            <input id= 'message53' type="text" class="dotted-input" placeholder="Sector" oninput="saveText('message53')">
+            <input id ='message5c' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5c')">
         </div>
 
         <div class="button-group">
