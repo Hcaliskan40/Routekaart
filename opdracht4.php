@@ -33,8 +33,6 @@ $selectedImages = [
     </div>
     <p>Dit is belangrijk in mijn leven:</p>
 
-    <div class="bubble medium bottom">je kan mij klikken om plaatjes uit te kiezen</div>
-
     <div class="input-box">
 
         <!-- Eerste input-item -->

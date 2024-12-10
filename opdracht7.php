@@ -39,10 +39,10 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
         <span class="dot">7</span>
         <div class="titel-balk">Verlanglijst</div>
     </div>
-    <b>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</b>
+    <p>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</p>
 
     <div class="options">
-        <form method="post" action="opdracht7.php"> <!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
+        <form method="post" action="opdracht7.php"><!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
 
             <!-- Keuzemogelijkheden -->
             <?php

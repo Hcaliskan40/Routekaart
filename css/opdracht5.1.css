@@ -13,7 +13,7 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 50px;
+    padding: 20px;
     width: 90vw;
     max-width: 800px;
     height: 95vh;
@@ -64,6 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-bottom: -115px
 }
 
 /* Scrollbar styling */
@@ -81,11 +82,6 @@ body {
 }
 
 /* Checkbox group styling */
-.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexibele kolommen */
-    gap: 15px;
-}
 
 /* Checkbox label styling */
 .checkbox-group label {
@@ -107,13 +103,7 @@ body {
 }
 
 /* Checkbox styling */
-.checkbox-group input[type="checkbox"] {
-    margin-right: 15px;
-    accent-color: #D63384;
-    width: 20px; /* Grootte van checkbox */
-    height: 20px; /* Grootte van checkbox */
-    cursor: pointer;
-}
+
 
 /* Info-knop styling */
 .info-button {
@@ -132,38 +122,33 @@ body {
 .button-group {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    align-items: center;
+    padding-top: 180px;
+}
+
+.button-group button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
 .arrow-btn {
-    background-color: #D63384;
-    color: white;
+    background-color: #d63384;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 15px;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
+    font-size: 1.5em;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.arrow-btn:hover {
-    background-color: #e04190;
 }
 
 /* Responsiviteit */
 @media (max-width: 768px) {
     .checkbox-group {
         grid-template-columns: 1fr; /* Eén kolom op mobiele schermen */
-    }
-
-    .arrow-btn {
-        font-size: 1rem;
-        padding: 8px 15px;
-    }
-
-    .checkbox-group input[type="checkbox"] {
-        width: 22px; /* Grotere checkbox op mobiel */
-        height: 22px; /* Grotere checkbox op mobiel */
     }
 
     .checkbox-group label {
