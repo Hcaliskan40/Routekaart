@@ -13,7 +13,6 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 20px;
     width: 90vw;
     max-width: 800px;
     height: 95vh;
@@ -64,7 +63,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: -115px
+    margin-bottom: 18%;
 }
 
 /* Scrollbar styling */
@@ -82,6 +81,7 @@ body {
 }
 
 /* Checkbox group styling */
+
 
 /* Checkbox label styling */
 .checkbox-group label {
@@ -104,7 +104,6 @@ body {
 
 /* Checkbox styling */
 
-
 /* Info-knop styling */
 .info-button {
     margin-left: auto;
@@ -123,7 +122,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 180px;
+    padding-top: 10px;
 }
 
 .button-group button {
@@ -135,7 +134,7 @@ body {
 }
 
 .arrow-btn {
-    background-color: #d63384;
+    background-color: #D63384;
     color: #FFFFFF;
     border-radius: 50%;
     font-weight: bold;
@@ -149,6 +148,11 @@ body {
 @media (max-width: 768px) {
     .checkbox-group {
         grid-template-columns: 1fr; /* Eén kolom op mobiele schermen */
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        width: 22px; /* Grotere checkbox op mobiel */
+        height: 22px; /* Grotere checkbox op mobiel */
     }
 
     .checkbox-group label {
