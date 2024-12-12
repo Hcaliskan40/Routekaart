@@ -31,10 +31,6 @@
             <input type="text" class="dotted-input" placeholder="Beroepen">
             <input id="message6c" type="text" class="rounded-input" placeholder="Welke opleiding heb je nodig?"oninput="saveText('message6c')">
         </div>
-        <div class="button-group">
-            <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
-            <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop om verder te gaan. -->
-        </div>
 
 
         <script>
@@ -58,6 +54,12 @@
             }
         </script>
     </div>
+
+    <footer class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop om verder te gaan. -->
+    </footer>
+
 
 </body>
 </html>
