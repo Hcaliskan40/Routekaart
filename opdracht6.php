@@ -13,27 +13,23 @@
         <div class="titel-balk">Opleidingen</div> <!-- Tekst die aangeeft dat dit sectie 1 is, met het onderwerp 'Like'. -->
     </div>
     <b>Dit is mijn TOP 3 beroepen:</b>
-    <p>Deze opleidingen passen hierbij en wil ik verder verkennen:</p>
+    <p>Deze opleidingen passen hierbij:</p>
     <div class="input-box">
         <div class="input-item">
             <div class="input-number">1</div>
             <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input id="message6a"type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6a')">
+            <input id="message6a"type="text" class="rounded-input" placeholder="Welke opleiding heb je nodig?"oninput="saveText('message6a')">
 
         </div>
         <div class="input-item">
             <div class="input-number">2</div>
             <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input id="message6b"type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6b')">
+            <input id="message6b"type="text" class="rounded-input" placeholder="Welke opleiding heb je nodig?"oninput="saveText('message6b')">
         </div>
         <div class="input-item">
             <div class="input-number">3</div>
             <input type="text" class="dotted-input" placeholder="Beroepen">
-            <input id="message6c" type="text" class="rounded-input" placeholder="Opleiding(en)"oninput="saveText('message6c')">
-        </div>
-        <div class="button-group">
-            <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
-            <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop om verder te gaan. -->
+            <input id="message6c" type="text" class="rounded-input" placeholder="Welke opleiding heb je nodig?"oninput="saveText('message6c')">
         </div>
 
 
@@ -58,6 +54,12 @@
             }
         </script>
     </div>
+
+    <footer class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button><!-- Linker navigatieknop om terug te gaan. -->
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Rechter navigatieknop om verder te gaan. -->
+    </footer>
+
 
 </body>
 </html>

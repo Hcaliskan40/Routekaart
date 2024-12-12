@@ -45,7 +45,7 @@ $feedback = $_SESSION['feedback'] ?? '';
     <p>Wat past het beste bij jou op basis van je ontdekkingstocht?</p>
 
     <div class="options">
-        <form method="post" action="opdracht8.php">
+        <form method="post" action="opdracht8.php" style="display: contents;">
             <!-- Keuzemogelijkheden -->
             <?php
             $options = [
@@ -72,11 +72,14 @@ $feedback = $_SESSION['feedback'] ?? '';
         </form>
     </div>
 
-    <div class="button-group">
+    <footer class="button-group">
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
-    </div>
+    </footer>
+
 </div>
+
+
 <script>
     function goToPreviousPage() {
         window.location.href = 'opdracht7.php';
@@ -86,5 +89,7 @@ $feedback = $_SESSION['feedback'] ?? '';
         window.location.href = 'mail.php';
     }
 </script>
+
+
 </body>
 </html>

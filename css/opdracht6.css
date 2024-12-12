@@ -12,7 +12,7 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 50px;
+    padding: 20px;
     width: 90vw;
     max-width: 800px;
     height: 95vh;
@@ -20,14 +20,20 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+.dotted-input, .rounded-input {
+    padding: 15px;  /* Verhoog de padding voor meer ruimte binnenin de inputvelden */
+    box-sizing: border-box;  /* Zorg ervoor dat de padding correct wordt berekend binnen de breedte en hoogte van het element */
+}
+
 .header {
     display: flex;
     align-items: center;
-    font-size: 2em;
+    max-height: 80px; /* Maximale hoogte instellen */
+    overflow: hidden; /* Tekst buiten de container verbergen */
+    text-overflow: ellipsis; /* Voeg "..." toe bij te lange tekst */
+    word-wrap: break-word; /* Breek woorden af die te lang zijn */
+    margin-bottom: 15px;
     font-weight: bold;
-    color: #fadb10;
-    padding-bottom: 15px;
-
 
 }
 .titel-balk {
@@ -39,6 +45,7 @@ body {
     display: flex;
     align-items: center;
     flex-grow: 1;
+    font-weight: bold
 }
 
 .dot {
@@ -92,11 +99,12 @@ textarea:focus {
 }
 
 .input-box {
-    margin: 10px 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-top: -50px;
+  }
 
     .input-item {
         display: flex;
@@ -106,6 +114,7 @@ textarea:focus {
         width: 100%;
         padding: 10px; /* Add padding between input items */
     }
+
 
     .input-number {
         font-size: 1.5em;
@@ -117,6 +126,7 @@ textarea:focus {
         width: 40px;
         color: #fadb10;
     }
+
     .dotted-input {
         border: none;
         border-bottom: 2px dotted #000;
@@ -124,7 +134,7 @@ textarea:focus {
         flex-grow: 1;
         margin-right: 10px;
         border-radius: 5px;
-        width: 100%;
+        width: 95%;
         height: 50px;
         text-align: left;
         vertical-align: bottom;
@@ -144,7 +154,7 @@ textarea:focus {
         flex-grow: 1;
         border-radius: 10px;
         margin-top: 10px; /* Add margin to create white space */
-        width: 100%; /* Adjust width */
+        width: 95%; /* Adjust width */
         height: 50px; /* Adjust height */
         font-size: 1.1em;
         word-wrap: break-word; /* Ensure long words break and wrap to the next line */
@@ -156,55 +166,31 @@ textarea:focus {
         outline: none;
     }
 
-    .button-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 10px;
-    }
-
-    .button-group button {
-        padding: 15px 25px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1.1em;
-    }
-
-    .arrow-btn {
-        background-color: #fadb10;
-        color: #FFFFFF;
-        border-radius: 50%;
-        font-weight: bold;
-        padding: 15px;
-        border: none;
-        font-size: 1.5em;
-        cursor: pointer;
-    }
-
-
-    @media (min-width: 768px) {
-        body {
-            height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
-            display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
-            justify-content: center; /* Horizontale centrering van de inhoud. */
-            align-items: center; /* Verticale centrering van de inhoud. */
-        }
-
-        .container {
-            width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
-            padding: 1rem 2rem; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
-            height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
-        }
-
-
-    }
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.button-group{
-    float:left;
-    margin-right:5px;
-    justify-content: center;
+
+.button-group button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
 }
+
+.arrow-btn {
+    background-color: #fadb10;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
 
 
 .button-1 {

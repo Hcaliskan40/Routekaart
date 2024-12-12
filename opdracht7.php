@@ -39,10 +39,10 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
         <span class="dot">7</span>
         <div class="titel-balk">Verlanglijst</div>
     </div>
-    <b>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</b>
+    <p>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</p>
 
     <div class="options">
-        <form method="post" action="opdracht7.php"> <!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
+        <form method="post" action="opdracht7.php"><!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
 
             <!-- Keuzemogelijkheden -->
             <?php
@@ -83,11 +83,11 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
         </form>
     </div>
 
-    <div class="button-group">
+    <footer class="button-group">
         <!-- Navigatieknoppen om naar de vorige of volgende vraag te gaan -->
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button> <!-- Vorige pagina -->
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Volgende pagina -->
-    </div>
+    </footer>
 </div>
 <script>
     // JavaScript functie om naar de vorige pagina te navigeren
