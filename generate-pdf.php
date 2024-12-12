@@ -110,7 +110,9 @@ $html = preg_replace('/href="css\//', 'href="http://localhost:80/Routekaart/css/
 $dompdf->loadHtml($html);
 //$dompdf->loadHtml('hello world');
 
-$dompdf->setPaper('A4', 'portrait');
+$customPaper = array(0,0,300,4000); // Pas de laatste twee waarden aan voor breedte en hoogte.
+$dompdf->setPaper($customPaper);
+//$dompdf->setPaper('A4', 'portrait');
 
 // Render the HTML as PDF
 $dompdf->render();
