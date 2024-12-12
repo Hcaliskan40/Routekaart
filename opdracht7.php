@@ -83,11 +83,11 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
         </form>
     </div>
 
-    <div class="button-group">
+    <footer class="button-group">
         <!-- Navigatieknoppen om naar de vorige of volgende vraag te gaan -->
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button> <!-- Vorige pagina -->
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Volgende pagina -->
-    </div>
+    </footer>
 </div>
 <script>
     // JavaScript functie om naar de vorige pagina te navigeren

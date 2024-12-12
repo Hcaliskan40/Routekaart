@@ -16,7 +16,7 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,11 +103,7 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
         </div>
     </div>
 
-    <!-- Navigatieknoppen -->
-    <div class="button-group">
-        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
-    </div>
+
 
     <script>
 
@@ -169,5 +165,13 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
             window.location.href = 'opdracht5b.php';
         }
     </script>
+
+
+    <!-- Navigatieknoppen -->
+    <footer class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+    </footer>
+
 </body>
 </html>

@@ -31,10 +31,6 @@
             <input id ='message5c' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5c')">
         </div>
 
-        <div class="button-group">
-            <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-            <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
-        </div>
 
     </div>
     <script>
@@ -60,6 +56,11 @@
             window.location.href = 'opdracht6.php';
         }
     </script>
+
+    <footer class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+    </footer>
 
 </body>
 </html>

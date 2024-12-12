@@ -33,6 +33,7 @@ body {
     text-overflow: ellipsis; /* Voeg "..." toe bij te lange tekst */
     word-wrap: break-word; /* Breek woorden af die te lang zijn */
     margin-bottom: 15px;
+    font-weight: bold;
 
 }
 .titel-balk {
@@ -98,11 +99,11 @@ textarea:focus {
 }
 
 .input-box {
-    margin: 10px 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-top: -50px;
   }
 
     .input-item {
@@ -169,7 +170,6 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: -50px;
 }
 
 .button-group button {
@@ -190,28 +190,7 @@ textarea:focus {
     font-size: 1.5em;
     cursor: pointer;
 }
-    @media (min-width: 768px) {
-        body {
-            height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
-            display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
-            justify-content: center; /* Horizontale centrering van de inhoud. */
-            align-items: center; /* Verticale centrering van de inhoud. */
-        }
 
-        .container {
-            width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
-            padding: 1rem 2rem; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
-            height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
-        }
-
-
-    }
-
-.button-group{
-    float:left;
-    margin-right:5px;
-    justify-content: center;
-}
 
 
 .button-1 {

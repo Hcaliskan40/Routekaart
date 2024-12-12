@@ -135,7 +135,7 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 70px;
 }
 
 .button-group button {
@@ -158,10 +158,3 @@ textarea:focus {
 }
 
 
-@media (min-width: 768px) {
-    .container {
-        width: 700px;
-        padding: 1rem 2rem;
-        height: auto;
-    }
-}
