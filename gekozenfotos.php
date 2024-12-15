@@ -1,5 +1,9 @@
 <?php
 session_start();
+// Debugging: Print session variables
+echo '<pre>';
+print_r($_SESSION);
+echo '</pre>';
 
 // Collect all chosen images from the session
 $selectedImagesOpdracht1 = [
