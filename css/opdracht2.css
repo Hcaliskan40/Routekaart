@@ -97,6 +97,7 @@ textarea {
     border-radius: 5px;
     resize: none;
     box-sizing: border-box;
+    margin: 0;
 }
 
 textarea:focus {
@@ -115,9 +116,11 @@ textarea:focus {
 
 .input-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 15px;
     width: 100%;
+
+
 }
 
 .button-group {
