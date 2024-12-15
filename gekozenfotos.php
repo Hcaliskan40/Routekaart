@@ -13,9 +13,9 @@ $selectedImagesOpdracht2 = [
     $_SESSION['selectedImage5'] ?? 'img/placeholder5.jpg',
 ];
 $selectedImagesOpdracht3 = [
-    $_SESSION['selectedImage6'] ?? 'img/placeholder6.jpg',
-    $_SESSION['selectedImage7'] ?? 'img/placeholder7.jpg',
-    $_SESSION['selectedImage8'] ?? 'img/placeholder8.jpg',
+    $_SESSION['selectedImage_opdracht3_0'] ?? 'img/placeholder0.jpg',
+    $_SESSION['selectedImage_opdracht3_1'] ?? 'img/placeholder1.jpg',
+    $_SESSION['selectedImage_opdracht3_2'] ?? 'img/placeholder2.jpg',
 ];
 
 // Haal de ingevoerde berichten op uit de sessie
@@ -35,6 +35,7 @@ $messages3 = [
     $_SESSION['message9'] ?? 'Geen tekst ingevoerd.',
 ];
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -113,7 +114,7 @@ $messages3 = [
     <h1>Studiekeuze Routekaart</h1>
     <p>Bedankt voor het invullen van jouw studiekeuzevragen. Hier vind je een overzicht van jouw antwoorden en keuzes.
         Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
-    <a href="generate-pdf.php" class="button">Download PDF</a>
+    <a href="generate-pdf.php">Download PDF</a>
 </div>
 
 <!-- Opdracht 1 -->
