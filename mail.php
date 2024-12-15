@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -20,29 +21,36 @@
         Klik op de knop hieronder om jouw persoonlijke resultaten te bekijken. Veel succes met jouw volgende stappen!
     </p>
     <br><br>
-    <!-- Knop met klasse voor styling -->
+    <!-- Knoppen -->
     <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
     <button class="redo-btn" onclick="redoTest()">Opnieuw</button>
-
-
 </div>
 
 <script>
+    // Functie om de test te resetten
     function redoTest() {
-        // Clear php session
-        <?php session_start(); session_destroy(); ?>
+        // Verzoek om de PHP-sessie te vernietigen
+        fetch('reset_session.php', {
+            method: 'GET',
+        }).then(() => {
+            // Wis de lokale opslag
+            localStorage.clear();
 
-        //Clear local storage
-        localStorage.clear();
-
-        // Redirect to first page
-        window.location.href = 'opdracht1.php';
-
+            // Redirect naar de eerste opdracht
+            window.location.href = 'opdracht1.php';
+        }).catch(error => {
+            console.error('Fout bij het resetten:', error);
+        });
     }
 
-    // Functie om confetti te laten zien
+    // Functie om naar de resultatenpagina te gaan
+    function goToNextPage() {
+        window.location.href = 'gekozenfotos.php';
+    }
+
+    // Functie om confetti te laten zien (optioneel)
     function launchConfetti() {
-        const duration = 2000; // Duur in milliseconden
+        const duration = 2000;
         const end = Date.now() + duration;
 
         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#00ffff', '#ffff00'];
@@ -68,11 +76,6 @@
                 requestAnimationFrame(frame);
             }
         })();
-    }
-
-    // Functie om naar de volgende pagina te gaan
-    function goToNextPage() {
-        window.location.href = 'gekozenfotos.php';
     }
 
     // Start confetti wanneer de pagina geladen wordt
