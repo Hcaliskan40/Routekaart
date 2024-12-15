@@ -72,7 +72,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
 <h2>Hier krijg ik energie van</h2>
 <a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>"class="button">
 
-<span>Sluiten</span>
+<span>X</span>
 
 </a>
 <div class="popup-body">

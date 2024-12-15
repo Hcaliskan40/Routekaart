@@ -83,7 +83,7 @@ function generateRoster($connection, $imageIndex, $selectedImages, $caller)
 <body>
 <h2>Dit is belangrijk in mijn leven</h2>
 <a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>"class="button">
-    <span>Sluiten</span>
+    <span>X</span>
 </a>
 <div class="popup-body">
     <?php generateRoster($connection, $imageIndex, $selectedImages, $caller); ?>
