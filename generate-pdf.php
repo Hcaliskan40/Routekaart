@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
 require 'vendor/autoload.php';
@@ -29,18 +29,8 @@ $dompdf->loadHtml($html);
 // Stel het papierformaat in
 $dompdf->setPaper('A4', 'portrait');
 
-
-$options->set('isRemoteEnabled', true);
-
 // Genereer de PDF
 $dompdf->render();
 
 // Stream de PDF als download
-$dompdf->stream("routekaart.pdf", ["Attachment" => true]);
-// Laad de HTML en genereer de PDF
-$dompdf->loadHtml($html);
-$dompdf->setPaper('A4', 'portrait');
-$dompdf->render();
-
-// Stream de PDF naar de browser
 $dompdf->stream("routekaart.pdf", ["Attachment" => true]);

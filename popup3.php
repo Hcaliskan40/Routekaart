@@ -43,7 +43,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
         echo '<div class="roster-content">';
         while ($row = $result->fetch_assoc()) {
             $afbeeldingNaam = htmlspecialchars($row['naam'], ENT_QUOTES, 'UTF-8');
-            $imagePath = "http://localhost:8080/Routekaart/img/{$afbeeldingNaam}.jpg";
+            $imagePath = "img/{$afbeeldingNaam}.jpg";
 
             // Controleer of de afbeelding al is geselecteerd
             $isDisabled = in_array($imagePath, $selectedImages) ? 'disabled' : '';
@@ -79,7 +79,7 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
 <h2>Hier ben ik trots op</h2>
 <a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>"class="button">
 
-<span>X</span>
+<span>Sluiten</span>
 
 </a>
 <div class="popup-body">

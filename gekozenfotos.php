@@ -1,5 +1,9 @@
 <?php
 session_start();
+// Debugging: Print session variables
+//echo '<pre>';
+//print_r($_SESSION);
+//echo '</pre>';
 
 // Verzamel alle gekozen afbeeldingen voor opdracht 1, 2 en 3 uit de sessie
 $selectedImagesOpdracht1 = [
@@ -101,6 +105,11 @@ $messages3 = [
             margin: 0 auto;
         }
 
+        .resized-image {
+            width: 200px; /* Set the desired width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
         .message-item {
             margin-top: 10px;
             padding: 10px;
@@ -124,7 +133,7 @@ $messages3 = [
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht1 as $index => $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding" class="resized-image">
                 <div class="message-item">
                     <strong>Antwoord <?php echo $index + 1; ?>:</strong>
                     <?php echo htmlspecialchars($messages1[$index], ENT_QUOTES, 'UTF-8'); ?>
@@ -141,7 +150,7 @@ $messages3 = [
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht2 as $index => $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding" class="resized-image">
                 <div class="message-item">
                     <strong>Antwoord <?php echo $index + 1; ?>:</strong>
                     <?php echo htmlspecialchars($messages2[$index], ENT_QUOTES, 'UTF-8'); ?>
@@ -158,7 +167,7 @@ $messages3 = [
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht3 as $index => $image): ?>
             <div class="image-item">
-                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding" class="resized-image">
                 <div class="message-item">
                     <strong>Antwoord <?php echo $index + 1; ?>:</strong>
                     <?php echo htmlspecialchars($messages3[$index], ENT_QUOTES, 'UTF-8'); ?>

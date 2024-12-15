@@ -7,9 +7,9 @@ if ($connection->connect_errno) {
 }
 
 $imageIndex = isset($_POST['imageIndex']) ? (int)$_POST['imageIndex'] : 0;
-$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht1.php'; // Default naar opdracht1.php als caller niet is ingesteld
+$caller = isset($_POST['caller']) ? $_POST['caller'] : 'opdracht1.php'; // Default to opdracht1.php if caller is not set
 
-// Verzamel alle gekozen afbeeldingen uit zowel opdracht 1 als opdracht 2
+// Collect all chosen images from both opdracht 1 and opdracht 2
 $selectedImages = [
     $_SESSION['selectedImage0'] ?? '',
     $_SESSION['selectedImage1'] ?? '',
@@ -19,12 +19,17 @@ $selectedImages = [
     $_SESSION['selectedImage5'] ?? '',
 ];
 
-// Check of een afbeelding is geselecteerd en sla deze op in de sessie
+// Check if an image is selected and save it in the session
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedImage'])) {
     $selectedImage = $_POST['selectedImage'];
     $_SESSION["selectedImage{$imageIndex}"] = $selectedImage;
 
-    // Redirect terug naar de juiste opdrachtpagina
+    // Debugging: Print session variables
+    echo '<pre>';
+    print_r($_SESSION);
+    echo '</pre>';
+
+    // Redirect back to the correct assignment page
     header("Location: $caller");
     exit();
 }
@@ -70,10 +75,8 @@ function generateRoster($connection, $imageIndex, $selectedImages) {
 </head>
 <body>
 <h2>Hier krijg ik energie van</h2>
-<a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>"class="button">
-
-<span>X</span>
-
+<a href="<?php echo htmlspecialchars($caller, ENT_QUOTES, 'UTF-8'); ?>" class="button">
+    <span>Sluiten</span>
 </a>
 <div class="popup-body">
     <?php generateRoster($connection, $imageIndex, $selectedImages); ?>
