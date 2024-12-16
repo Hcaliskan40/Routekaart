@@ -32,10 +32,11 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
         <div class="titel-balk">Sectoren</div>
     </div>
 
+    <p>Hier zie ik mezelf later werken (sectoren):</p>
+
     <!-- Content Section (form and checkboxes) -->
-    <div class="section">
-        <p>Hier zie ik mezelf later werken (sectoren):</p>
-        <div class="checkbox-group">
+    <div class="options">
+
             <form method="post" action="opdracht5.php" id="sectorForm">
 
                 <!-- Keuzemogelijkheden met sessie opslag -->
@@ -84,16 +85,15 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
 
                 foreach ($options as $key => $label) {
                     $isChecked = in_array($key, $selectedSectors) ? 'checked' : '';
-                    echo '<label>';
-                    echo '<span><input type="checkbox" name="sector[]" value="' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . '" class="sector-checkbox" onchange="handleCheckboxChange()" ' . $isChecked . '> ';
-                    echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</span>';
+                    echo '<label class="option-item">';
+                    echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
+                    echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); // Zorg ervoor dat alle tekst veilig is voor weergave
                     echo '<button class="info-button" title="' . htmlspecialchars($infoTexts[$key], ENT_QUOTES, 'UTF-8') . '">i</button>';
                     echo '</label>';
                 }
                 ?>
 
             </form>
-        </div>
 
         <div id="infoPopup" class="popup">
             <div class="popup-content">
@@ -101,9 +101,6 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
                 <p id="popupText">Informatie over de sector wordt hier weergegeven.</p>
             </div>
         </div>
-    </div>
-
-
 
     <script>
 
@@ -166,6 +163,7 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
         }
     </script>
 
+    </div>
 
     <!-- Navigatieknoppen -->
     <footer class="button-group">
@@ -173,5 +171,6 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
     </footer>
 
+</div>
 </body>
 </html>

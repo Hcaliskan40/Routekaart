@@ -21,13 +21,13 @@
 
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 14px;
     font-size: 16px;
     color: #fff;
     background-color: #000000; /* Purple button */
     text-decoration: none; /* Remove underline */
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 100px; /* Rounded corners */
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s ease; /* Add hover effect */

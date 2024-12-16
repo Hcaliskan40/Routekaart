@@ -9,6 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+
+<div class="grid-wrapper">
+
 <div class="container">
     <!-- Afbeelding van het logo -->
     <img src="img/WindesheimLogo.png" alt="Windesheim Logo" class="logo">
@@ -22,7 +25,20 @@
     <br><br>
     <!-- Knop met klasse voor styling -->
     <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
+
+</div>
+
+
+<div class="opnieuw-container">
+
+    <b>Met deze knop ga je de routekaart opnieuw maken</b>
+
+    <br></br>
+
     <button class="redo-btn" id="redo-btn">Opnieuw</button>
+
+</div>
+
 </div>
 
 <script>
