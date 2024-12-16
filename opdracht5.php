@@ -99,8 +99,10 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup()">&times;</span>
                 <p id="popupText">Informatie over de sector wordt hier weergegeven.</p>
+                <p class="popup-source">Studiekeuze123.nl - Studiekeuze123, z.d.</p>
             </div>
         </div>
+
 
     <script>
 
