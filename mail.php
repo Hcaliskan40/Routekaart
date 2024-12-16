@@ -31,9 +31,8 @@
 
 <div class="opnieuw-container">
 
-    <b>Met deze knop ga je de routekaart opnieuw maken</b>
+    <p>Met deze knop ga je de routekaart opnieuw maken</p>
 
-    <br></br>
 
     <button class="redo-btn" id="redo-btn">Opnieuw</button>
 
