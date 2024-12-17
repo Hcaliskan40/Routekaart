@@ -1,18 +1,18 @@
 <?php
-session_start();
+session_start(); // Start of hervat de bestaande sessie
 
 // Opslaan van geselecteerde checkboxen in sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['option'])) {
         foreach ($_POST['option'] as $key => $value) {
-            $_SESSION['selectedOptions'][$key] = $value === 'on' ? true : false;
+            $_SESSION['selectedOptions8'][$key] = $value === 'on' ? true : false; // Gebruik een aparte sessie voor vraag 8
         }
     }
 
     // Zorg ervoor dat niet-geselecteerde opties worden verwijderd uit de sessie
-    foreach ($_SESSION['selectedOptions'] as $key => $value) {
+    foreach ($_SESSION['selectedOptions8'] as $key => $value) {
         if (!isset($_POST['option'][$key])) {
-            unset($_SESSION['selectedOptions'][$key]);
+            unset($_SESSION['selectedOptions8'][$key]);
         }
     }
 
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Ophalen van opgeslagen checkboxen en feedback
-$selectedOptions = $_SESSION['selectedOptions'] ?? [];
+$selectedOptions8 = $_SESSION['selectedOptions8'] ?? [];
 $feedback = $_SESSION['feedback'] ?? '';
 ?>
 
@@ -45,8 +45,7 @@ $feedback = $_SESSION['feedback'] ?? '';
     <p>Wat past het beste bij jou op basis van je ontdekkingstocht?</p>
 
     <div class="options">
-        <form method="post" action="opdracht8.php" style="display: contents;">
-            <!-- Keuzemogelijkheden -->
+        <form method="post" action="opdracht8.php">
             <?php
             $options = [
                 'verder_studeren' => 'Verder studeren',
@@ -56,7 +55,7 @@ $feedback = $_SESSION['feedback'] ?? '';
             ];
 
             foreach ($options as $key => $label) {
-                $isChecked = isset($selectedOptions[$key]) && $selectedOptions[$key] ? 'checked' : '';
+                $isChecked = isset($selectedOptions8[$key]) && $selectedOptions8[$key] ? 'checked' : '';
                 echo '<div class="option-item">';
                 echo '<button type="button" class="option-button">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</button>';
                 echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '>';
@@ -64,7 +63,6 @@ $feedback = $_SESSION['feedback'] ?? '';
             }
             ?>
 
-            <!-- Feedback tekstvak -->
             <div class="feedback-section">
                 <label for="feedback">En wat vind jij hiervan?</label>
                 <textarea id="feedback" name="feedback" placeholder="Schrijf hier je feedback..." oninput="this.form.submit()"><?php echo htmlspecialchars($feedback, ENT_QUOTES, 'UTF-8'); ?></textarea>
@@ -79,7 +77,6 @@ $feedback = $_SESSION['feedback'] ?? '';
 
 </div>
 
-
 <script>
     function goToPreviousPage() {
         window.location.href = 'opdracht7.php';
@@ -89,7 +86,6 @@ $feedback = $_SESSION['feedback'] ?? '';
         window.location.href = 'mail.php';
     }
 </script>
-
 
 </body>
 </html>
