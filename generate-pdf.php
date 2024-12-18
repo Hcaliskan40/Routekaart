@@ -1,44 +1,36 @@
 <?php
+//session_start();
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
 require 'vendor/autoload.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-
-// Increase memory limit
-ini_set('memory_limit', '16');
-
-// Initialize Dompdf with options
+// Stel opties in voor Dompdf
 $options = new Options();
-$options->set('isHtml5ParserEnabled', true);
-$options->set('isRemoteEnabled', true);
-$options->set('defaultFont', 'DejaVu Sans'); // Use a default font to speed up rendering
+$options->set('isRemoteEnabled', true); // Voor externe bronnen zoals afbeeldingen
+$options->set('isHtml5ParserEnabled', true); // Voor betere HTML5/CSS-ondersteuning
 
+// Initialiseer Dompdf
 $dompdf = new Dompdf($options);
 
-// Load HTML content
+// Buffer de HTML-output
 ob_start();
-require 'gekozenfotos.php';
+require 'gekozenfotos.php'; // Zorg ervoor dat gekozenfotos.php correcte HTML retourneert
 $html = ob_get_clean();
 
-// Ensure CSS paths are absolute URLs
-$html = preg_replace('/href="css\//', 'href="http://localhost:80/Routekaart/css/', $html);
+// Zorg ervoor dat de afbeelding-paden absolute URL's zijn
+$html = preg_replace('/src="img\//', 'src="http://localhost:8080/routekaart/img/', $html);
 
-// Remove the download button
-//$html = preg_replace('<a href="generate-pdf.php" class="button">Download PDF</a>', '', $html);
-
-// Ensure image paths are absolute URLs
-//$html = preg_replace('/src="img\//', 'src="http://localhost:80/Routekaart/img/', $html);
-
+// Laad de HTML in Dompdf
 $dompdf->loadHtml($html);
 
-// (Optional) Set up the paper size and orientation
+// Stel het papierformaat in
 $dompdf->setPaper('A4', 'portrait');
 
-// Render the HTML as PDF
+// Genereer de PDF
 $dompdf->render();
 
-// Clean (erase) the output buffer and turn off output buffering
-ob_end_clean();
-// Output the generated PDF to Browser
-$dompdf->stream("chosen_images.pdf", ["Attachment" => 1]);
+// Stream de PDF als download
+$dompdf->stream("routekaart.pdf", ["Attachment" => true]);

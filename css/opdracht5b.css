@@ -12,7 +12,7 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 50px;
+    padding: 20px;
     width: 90vw;
     max-width: 800px;
     height: 95vh;
@@ -97,11 +97,11 @@ textarea:focus {
 }
 
 .input-box {
-    margin: 10px 0;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-top: -50px;
 }
 
 .input-item {
@@ -109,7 +109,7 @@ textarea:focus {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 15px;
-    width: 100%;
+    width: 95%;
     padding: 10px; /* Add padding between input items */
 }
 
@@ -168,7 +168,6 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
 }
 
 .button-group button {
@@ -189,22 +188,7 @@ textarea:focus {
     font-size: 1.5em;
     cursor: pointer;
 }
-@media (min-width: 768px) {
-    body {
-        height: 100vh; /* Houdt de hoogte van de pagina gelijk aan de viewport voor grotere schermen. */
-        display: flex; /* Flexbox om de inhoud te centreren, ook op grotere schermen. */
-        justify-content: center; /* Horizontale centrering van de inhoud. */
-        align-items: center; /* Verticale centrering van de inhoud. */
-    }
 
-    .container {
-        width: 700px; /* Specifieke breedte voor grotere schermen om de inhoud gecentreerd en leesbaar te houden. */
-        padding: 1rem 2rem; /* Meer padding voor grotere schermen om de inhoud ruimte te geven. */
-        height: auto; /* De hoogte van de container aangepast zodat deze automatisch past bij de inhoud. */
-    }
-
-
-}
 }
 .button-group{
     float:left;

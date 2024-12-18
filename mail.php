@@ -9,6 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+
+<div class="grid-wrapper">
+
 <div class="container">
     <!-- Afbeelding van het logo -->
     <img src="img/WindesheimLogo.png" alt="Windesheim Logo" class="logo">
@@ -22,22 +25,33 @@
     <br><br>
     <!-- Knop met klasse voor styling -->
     <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
-    <button class="redo-btn" onclick="redoTest()">Opnieuw</button>
 
+</div>
+
+
+<div class="opnieuw-container">
+
+    <p>Met deze knop ga je de routekaart opnieuw maken</p>
+
+
+    <button class="redo-btn" id="redo-btn">Opnieuw</button>
+
+</div>
 
 </div>
 
 <script>
     function redoTest() {
-        // Clear php session
-        <?php session_start(); session_destroy(); ?>
-
-        //Clear local storage
-        localStorage.clear();
-
-        // Redirect to first page
-        window.location.href = 'opdracht1.php';
-
+        // Clear PHP session
+        fetch('clear-session.php')
+            .then(response => {
+                if (response.ok) {
+                    // Clear local storage
+                    localStorage.clear();
+                    // Redirect to first page
+                    window.location.href = 'opdracht1.php';
+                }
+            });
     }
 
     // Functie om confetti te laten zien
@@ -77,6 +91,9 @@
 
     // Start confetti wanneer de pagina geladen wordt
     window.onload = launchConfetti;
+
+    // Add event listener to the redo button
+    document.getElementById('redo-btn').addEventListener('click', redoTest);
 </script>
 </body>
 </html>

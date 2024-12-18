@@ -1,34 +1,29 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: white;
-}
-
-.container {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    padding: 20px;
-    width: 90vw;
-    max-width: 800px;
-    height: 95vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Geen container-omlijsting */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90vw;
+}
+
 .header {
-    display: flex;
-    align-items: center;
     font-size: 2em;
     font-weight: bold;
-    color: #d63384;
-    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .titel-balk {
@@ -57,63 +52,71 @@ body {
 }
 
 /* Sectie styling */
-.section {
-    flex-grow: 1;
-    overflow-y: auto; /* Scrollbalk blijft behouden */
-    padding: 0;
+.options {
+    overflow-y: auto; /* Scrollbalk binnen de opties-sectie */
+    padding-right: 10px; /* Ruimte rechts voor de scrollbalk */
+    max-height: calc(100vh - 300px); /* Hoogte aanpassen zodat knoppen zichtbaar blijven */
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: -115px
+    flex-direction: column; /* Items in een verticale richting */
+    gap: 15px; /* Ruimte tussen checkboxen en tekst */
 }
 
-/* Scrollbar styling */
-.section::-webkit-scrollbar {
-    width: 8px;
+/* Scrollbalk styling */
+.options::-webkit-scrollbar {
+    width: 8px; /* Breedte van de scrollbalk */
 }
 
-.section::-webkit-scrollbar-thumb {
-    background-color: #D63384;
-    border-radius: 10px;
+.options::-webkit-scrollbar-thumb {
+    background-color: #D63384; /* Kleur van de scrollbar */
+    border-radius: 10px; /* Afronding van de scrollbar */
 }
 
-.section::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+.options::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Achtergrondkleur van de scrollbar */
 }
 
-/* Checkbox group styling */
-.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexibele kolommen */
-    gap: 15px;
-}
-
-/* Checkbox label styling */
-.checkbox-group label {
+/* Optie-item styling */
+.option-item {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Tekst die te lang is springt naar een nieuwe regel */
-    padding: 10px; /* Padding voor grotere klikbare labels */
-    font-size: 1rem; /* Tekstformaat */
+    gap: 15px; /* Ruimte tussen checkbox en tekst */
+    font-size: 1.2rem; /* Grotere tekst voor betere leesbaarheid */
+    padding: 12px; /* Ruimte rondom de tekst */
     cursor: pointer;
     transition: background-color 0.2s ease;
-    gap: 10px; /* Ruimte tussen checkbox en tekst */
-    line-height: 1.4; /* Betere ruimte tussen regels */
 }
 
-/* Tekst die netjes naast checkbox blijft */
-.checkbox-group label span {
-    flex: 1; /* Zorgt ervoor dat de tekst de resterende ruimte benut */
-    word-wrap: break-word; /* Breek woorden als ze te lang zijn */
+.option-item:hover {
+    background-color: #f9f9f9;
 }
 
 /* Checkbox styling */
-.checkbox-group input[type="checkbox"] {
-    margin-right: 15px;
-    accent-color: #D63384;
-    width: 20px; /* Grootte van checkbox */
-    height: 20px; /* Grootte van checkbox */
+.option-checkbox {
+    appearance: none; /* Remove the default checkbox */
+    width: 25px;
+    height: 25px;
+    border: 2px solid #D63384; /* Purple border */
+    border-radius: 4px; /* Rounded corners */
+    display: inline-block;
+    position: relative;
     cursor: pointer;
+}
+
+.option-checkbox:checked {
+    background-color: #D63384;
+    border-color: #D63384;
+}
+
+.option-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
 
 /* Info-knop styling */
@@ -134,7 +137,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 180px;
+    padding-top: 85px;
 }
 
 .button-group button {
@@ -146,7 +149,7 @@ body {
 }
 
 .arrow-btn {
-    background-color: #d63384;
+    background-color: #D63384;
     color: #FFFFFF;
     border-radius: 50%;
     font-weight: bold;
@@ -162,6 +165,10 @@ body {
         grid-template-columns: 1fr; /* Eén kolom op mobiele schermen */
     }
 
+    .arrow-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
 
     .checkbox-group input[type="checkbox"] {
         width: 22px; /* Grotere checkbox op mobiel */
@@ -214,4 +221,20 @@ body {
 #popupText {
     font-size: 1rem;
     line-height: 1.5;
+}
+.popup-source {
+    font-size: 0.85rem; /* Iets kleinere tekst voor de bronvermelding */
+    color: #777; /* Subtiele kleur */
+    margin-top: 5px; /* Kleinere ruimte boven de bron */
+    text-align: center;
+}
+
+
+.popup-source a {
+    color: #D63384;
+    text-decoration: none;
+}
+
+.popup-source a:hover {
+    text-decoration: underline;
 }

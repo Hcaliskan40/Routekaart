@@ -16,7 +16,7 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +32,11 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
         <div class="titel-balk">Sectoren</div>
     </div>
 
+    <p>Hier zie ik mezelf later werken (sectoren):</p>
+
     <!-- Content Section (form and checkboxes) -->
-    <div class="section">
-        <p>Hier zie ik mezelf later werken (sectoren):</p>
-        <div class="checkbox-group">
+    <div class="options">
+
             <form method="post" action="opdracht5.php" id="sectorForm">
 
                 <!-- Keuzemogelijkheden met sessie opslag -->
@@ -84,32 +85,41 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
 
                 foreach ($options as $key => $label) {
                     $isChecked = in_array($key, $selectedSectors) ? 'checked' : '';
-                    echo '<label>';
-                    echo '<span><input type="checkbox" name="sector[]" value="' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . '" class="sector-checkbox" onchange="handleCheckboxChange()" ' . $isChecked . '> ';
-                    echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</span>';
+                    echo '<label class="option-item">';
+                    echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
+                    echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); // Zorg ervoor dat alle tekst veilig is voor weergave
                     echo '<button class="info-button" title="' . htmlspecialchars($infoTexts[$key], ENT_QUOTES, 'UTF-8') . '">i</button>';
                     echo '</label>';
                 }
                 ?>
 
             </form>
-        </div>
 
         <div id="infoPopup" class="popup">
             <div class="popup-content">
                 <span class="close-button" onclick="closePopup()">&times;</span>
                 <p id="popupText">Informatie over de sector wordt hier weergegeven.</p>
+                <p class="popup-source">Studiekeuze123.nl - Studiekeuze123, z.d.</p>
             </div>
         </div>
-    </div>
 
-    <!-- Navigatieknoppen -->
-    <div class="button-group">
-        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
-        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
-    </div>
 
     <script>
+
+            function handleCheckboxChange() {
+            // Get all checkboxes with the class "sector-checkbox"
+            const checkboxes = document.querySelectorAll('.sector-checkbox');
+
+            // Loop through the checkboxes to check their state
+            checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+            console.log(`Checked: ${checkbox.value}`);
+        } else {
+            console.log(`Unchecked: ${checkbox.value}`);
+        }
+        });
+        }
+
         // Open het popup-venster met informatie
         function showPopup(infoText) {
             const popup = document.getElementById('infoPopup');
@@ -154,5 +164,15 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
             window.location.href = 'opdracht5b.php';
         }
     </script>
+
+    </div>
+
+    <!-- Navigatieknoppen -->
+    <footer class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+    </footer>
+
+</div>
 </body>
 </html>

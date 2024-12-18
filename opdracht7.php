@@ -4,25 +4,25 @@ session_start(); // Start of hervat de bestaande sessie
 // Opslaan van de geselecteerde waarden in de sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['option'])) {
-        // Loop door de opties uit het formulier en sla deze op in de sessie.
+        // Loop door de opties uit het formulier en sla deze op in de sessie
         foreach ($_POST['option'] as $key => $value) {
-            $_SESSION['selectedOptions'][$key] = true; // Zet de waarde op true in de sessie
+            $_SESSION['selectedOptions7'][$key] = true; // Zet de waarde op true in de sessie voor vraag 7
         }
 
         // Controleer of er opties zijn verwijderd en haal deze uit de sessie
-        foreach ($_SESSION['selectedOptions'] as $key => $value) {
+        foreach ($_SESSION['selectedOptions7'] as $key => $value) {
             if (!isset($_POST['option'][$key])) {
-                unset($_SESSION['selectedOptions'][$key]);
+                unset($_SESSION['selectedOptions7'][$key]);
             }
         }
     } else {
-        // Als er geen opties zijn aangevinkt, verwijder dan alle geselecteerde opties
-        $_SESSION['selectedOptions'] = [];
+        // Als er geen opties zijn aangevinkt, verwijder dan alle geselecteerde opties voor vraag 7
+        $_SESSION['selectedOptions7'] = [];
     }
 }
 
 // Stel de gekozen opties in; gebruik de opgeslagen waarden in de sessie, of een lege array als er nog niets is geselecteerd
-$selectedOptions = $_SESSION['selectedOptions'] ?? [];
+$selectedOptions7 = $_SESSION['selectedOptions7'] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -39,14 +39,12 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
         <span class="dot">7</span>
         <div class="titel-balk">Verlanglijst</div>
     </div>
-    <b>Geef van de onderstaande eisen aan welke belangrijk zijn voor jou voor de studie die je wilt gaan doen:</b>
+    <p>Geef de eisen voor je toekomstige studie:</p>
 
     <div class="options">
-        <form method="post" action="opdracht7.php"> <!-- Het formulier dat de geselecteerde opties naar dezelfde pagina verzendt voor opslag -->
-
-            <!-- Keuzemogelijkheden -->
+        <form method="post" action="opdracht7.php">
             <?php
-            // Lijst van alle beschikbare opties die een student kan selecteren
+            // Lijst van alle beschikbare opties
             $options = [
                 'engels' => 'Engelstalig',
                 'nederlands' => 'Nederlandstalig',
@@ -67,37 +65,31 @@ $selectedOptions = $_SESSION['selectedOptions'] ?? [];
                 'veel_theorie' => 'Veel theorie',
             ];
 
-            // Loop door de opties heen om ze dynamisch weer te geven in het formulier
             foreach ($options as $key => $label) {
-                // Controleer of een optie al is geselecteerd in de sessie
-                $isChecked = isset($selectedOptions[$key]) && $selectedOptions[$key] ? 'checked' : '';
-
-                // Render elke optie als een checkbox en zorg ervoor dat deze direct wordt opgeslagen wanneer de gebruiker deze selecteert of deselecteert.
+                $isChecked = isset($selectedOptions7[$key]) && $selectedOptions7[$key] ? 'checked' : '';
                 echo '<label class="option-item">';
                 echo '<input type="checkbox" name="option[' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . ']" class="option-checkbox" onchange="this.form.submit()" ' . $isChecked . '> ';
-                echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); // Zorg ervoor dat alle tekst veilig is voor weergave
+                echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8');
                 echo '</label>';
             }
             ?>
-
         </form>
     </div>
 
-    <div class="button-group">
-        <!-- Navigatieknoppen om naar de vorige of volgende vraag te gaan -->
-        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button> <!-- Vorige pagina -->
-        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button> <!-- Volgende pagina -->
-    </div>
+    <footer class="button-group">
+        <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
+        <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
+    </footer>
+
 </div>
+
 <script>
-    // JavaScript functie om naar de vorige pagina te navigeren
     function goToPreviousPage() {
-        window.location.href = 'opdracht6.php'; // Stuur de gebruiker naar opdracht 6
+        window.location.href = 'opdracht6.php';
     }
 
-    // JavaScript functie om naar de volgende pagina te navigeren
     function goToNextPage() {
-        window.location.href = 'opdracht8.php'; // Stuur de gebruiker naar opdracht 8
+        window.location.href = 'opdracht8.php';
     }
 </script>
 </body>
