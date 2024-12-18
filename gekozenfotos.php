@@ -1,11 +1,7 @@
 <?php
 session_start();
-// Debugging: Print session variables
-//echo '<pre>';
-//print_r($_SESSION);
-//echo '</pre>';
 
-// Verzamel alle gekozen afbeeldingen voor opdracht 1, 2 en 3 uit de sessie
+// Verzamel alle gekozen afbeeldingen voor opdracht 1, 2, 3 en 4 uit de sessie
 $selectedImagesOpdracht1 = [
     $_SESSION['selectedImage0'] ?? 'img/placeholder0.jpg',
     $_SESSION['selectedImage1'] ?? 'img/placeholder1.jpg',
@@ -20,6 +16,11 @@ $selectedImagesOpdracht3 = [
     $_SESSION['selectedImage_opdracht3_0'] ?? 'img/placeholder0.jpg',
     $_SESSION['selectedImage_opdracht3_1'] ?? 'img/placeholder1.jpg',
     $_SESSION['selectedImage_opdracht3_2'] ?? 'img/placeholder2.jpg',
+];
+$selectedImagesOpdracht4 = [
+    $_SESSION['selectedImage_opdracht4_0'] ?? 'img/placeholder3.jpg',
+    $_SESSION['selectedImage_opdracht4_1'] ?? 'img/placeholder4.jpg',
+    $_SESSION['selectedImage_opdracht4_2'] ?? 'img/placeholder5.jpg',
 ];
 
 // Haal de ingevoerde berichten op uit de sessie
@@ -37,6 +38,11 @@ $messages3 = [
     $_SESSION['message7'] ?? 'Geen tekst ingevoerd.',
     $_SESSION['message8'] ?? 'Geen tekst ingevoerd.',
     $_SESSION['message9'] ?? 'Geen tekst ingevoerd.',
+];
+$messages4 = [
+    $_SESSION['message10'] ?? 'Geen tekst ingevoerd.',
+    $_SESSION['message11'] ?? 'Geen tekst ingevoerd.',
+    $_SESSION['message12'] ?? 'Geen tekst ingevoerd.',
 ];
 ?>
 
@@ -75,13 +81,9 @@ $messages3 = [
             align-items: center;
         }
 
-        .titel-balk.opdracht2 {
-            background-color: #f16682;
-        }
-
-        .titel-balk.opdracht3 {
-            background-color: #3498db;
-        }
+        .titel-balk.opdracht2 { background-color: #b1d249; }
+        .titel-balk.opdracht3 { background-color: #3498db; }
+        .titel-balk.opdracht4 { background-color: #fac710; }
 
         .chosen-images {
             display: grid;
@@ -106,8 +108,8 @@ $messages3 = [
         }
 
         .resized-image {
-            width: 200px; /* Set the desired width */
-            height: auto; /* Maintain aspect ratio */
+            width: 200px;
+            height: auto;
         }
 
         .message-item {
@@ -171,6 +173,23 @@ $messages3 = [
                 <div class="message-item">
                     <strong>Antwoord <?php echo $index + 1; ?>:</strong>
                     <?php echo htmlspecialchars($messages3[$index], ENT_QUOTES, 'UTF-8'); ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<!-- Opdracht 4 -->
+<div class="container">
+    <div class="titel-balk opdracht4">4 Belangrijk</div>
+    <h3>Dit is belangrijk in mijn leven:</h3>
+    <div class="chosen-images">
+        <?php foreach ($selectedImagesOpdracht4 as $index => $image): ?>
+            <div class="image-item">
+                <img src="<?php echo htmlspecialchars($image, ENT_QUOTES, 'UTF-8'); ?>" alt="Gekozen Afbeelding" class="resized-image">
+                <div class="message-item">
+                    <strong>Antwoord <?php echo $index + 1; ?>:</strong>
+                    <?php echo htmlspecialchars($messages4[$index], ENT_QUOTES, 'UTF-8'); ?>
                 </div>
             </div>
         <?php endforeach; ?>
