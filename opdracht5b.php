@@ -8,6 +8,10 @@ $options = [
     'sector3' => $_SESSION['sector3'] ?? ""
 ];
 
+$message5a = $_SESSION['message5a'] ?? '';
+$message5b = $_SESSION['message5b'] ?? '';
+$message5c = $_SESSION['message5c'] ?? '';
+
 // Handle AJAX request
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     $data = json_decode(file_get_contents('php://input'), true);
@@ -22,6 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
     if (isset($data['message53'])) {
         $_SESSION['sector3'] = $selectedSectors[$data['message53']] ?? "";
         $options['sector3'] = $_SESSION['sector3'];
+    }
+    if (isset($data['message5a'])) {
+        $_SESSION['message5a'] = $data['message5a'];
+    }
+    if (isset($data['message5b'])) {
+        $_SESSION['message5b'] = $data['message5b'];
+    }
+    if (isset($data['message5c'])) {
+        $_SESSION['message5c'] = $data['message5c'];
     }
     echo json_encode(['status' => 'success']);
     exit;
@@ -81,9 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
             document.getElementById('message51').value = "<?php echo array_search($options['sector1'], $selectedSectors); ?>";
             document.getElementById('message52').value = "<?php echo array_search($options['sector2'], $selectedSectors); ?>";
             document.getElementById('message53').value = "<?php echo array_search($options['sector3'], $selectedSectors); ?>";
-            document.getElementById('message5a').value = localStorage.getItem('message5a') || '';
-            document.getElementById('message5b').value = localStorage.getItem('message5b') || '';
-            document.getElementById('message5c').value = localStorage.getItem('message5c') || '';
+            document.getElementById('message5a').value = "<?php echo htmlspecialchars($message5a, ENT_QUOTES, 'UTF-8'); ?>";
+            document.getElementById('message5b').value = "<?php echo htmlspecialchars($message5b, ENT_QUOTES, 'UTF-8'); ?>";
+            document.getElementById('message5c').value = "<?php echo htmlspecialchars($message5c, ENT_QUOTES, 'UTF-8'); ?>";
             updateDropdowns();
         }
 
@@ -141,6 +154,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
         }
 
         function goToNextPage() {
+            const dropdowns = ['message51', 'message52', 'message53'];
+            for (let i = 0; i < dropdowns.length; i++) {
+                const dropdown = document.getElementById(dropdowns[i]);
+                if (dropdown.value === "") {
+                    alert('Selecteer alstublieft een sector voor alle dropdowns om door te gaan.');
+                    return;
+                }
+            }
             window.location.href = 'opdracht6.php';
         }
     </script>

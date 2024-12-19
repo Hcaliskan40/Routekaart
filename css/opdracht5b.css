@@ -1,12 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
 }
 .container {
     background: white;
@@ -32,8 +30,6 @@ body {
     font-weight: bold;
     color: #d63384;
     padding-bottom: 15px;
-
-
 }
 .titel-balk {
     background-color: #d63384;
@@ -58,7 +54,6 @@ body {
     color: white;
     font-family: "Roboto Thin";
     margin-right: -20px;
-
 }
 
 /*.image-placeholder {*/
@@ -88,7 +83,6 @@ textarea {
     resize: none;
     hyphens: auto;
     box-sizing: border-box;
-
 }
 textarea:focus {
     border: 2px solid #d63384;
@@ -112,7 +106,6 @@ textarea:focus {
     width: 95%;
     padding: 10px; /* Add padding between input items */
 }
-
 
 .input-number {
     font-size: 1.5em;
@@ -189,13 +182,11 @@ textarea:focus {
     cursor: pointer;
 }
 
+.button-group {
+    float: left;
+    margin-right: 5px;
+    /*justify-content: center;*/
 }
-.button-group{
-    float:left;
-    margin-right:5px;
-    justify-content: center;
-}D63384FF
-
 
 .button-1 {
     background-color: #d63384;
@@ -205,10 +196,8 @@ textarea:focus {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-family:"Roboto Light";
+    font-family: "Roboto Light";
     font-size: 14px;
-
-
     line-height: 20px;
     list-style: none;
     margin: 0;
@@ -216,15 +205,9 @@ textarea:focus {
     padding: 10px 16px;
     position: relative;
     text-align: center;
-
-
     vertical-align: baseline;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     justify-content: center;
-
-
 }
-
-

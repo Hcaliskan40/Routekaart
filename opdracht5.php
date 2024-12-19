@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['selectedSectors'])) {
+    $_SESSION['selectedSectors'] = [];
+}
+
 // Define options
 $options = [
     $_SESSION['bouw'] = 'Bouw / Architectuur',
