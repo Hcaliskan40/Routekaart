@@ -135,11 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && strtolower($_SERVER['HTTP_X_REQUESTE
                 const dropdown = document.getElementById(id);
                 const options = dropdown.options;
                 for (let i = 0; i < options.length; i++) {
-                    if (selectedValues.includes(options[i].value) && options[i].value !== dropdown.value) {
-                        options[i].disabled = true;
-                    } else {
-                        options[i].disabled = false;
-                    }
+                    options[i].disabled = selectedValues.includes(options[i].value) && options[i].value !== dropdown.value;
                 }
             });
         }
