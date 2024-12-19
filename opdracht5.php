@@ -38,9 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sector']) && isset($_P
 // Set selected options
 $selectedSectors = $_SESSION['selectedSectors'] ?? [];
 
-echo '<pre>';
-print_r($selectedSectors);
-echo '</pre>';
+//echo '<pre>';
+//print_r($selectedSectors);
+//echo '</pre>';
 ?>
 
 <!DOCTYPE html>
