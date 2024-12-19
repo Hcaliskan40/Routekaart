@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+/**
+ * Retrieve selected sectors and options from session or set default values.
+ */
 $selectedSectors = $_SESSION['selectedSectors'] ?? [];
 $options = [
     'sector1' => $_SESSION['sector1'] ?? "",
@@ -12,30 +15,30 @@ $message5a = $_SESSION['message5a'] ?? '';
 $message5b = $_SESSION['message5b'] ?? '';
 $message5c = $_SESSION['message5c'] ?? '';
 
-// Handle AJAX request
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+/**
+ * Handle AJAX request to update session variables.
+ *
+ * This block of code checks if the request method is POST and if the request
+ * is an AJAX request. It then decodes the JSON input and updates the session
+ * variables based on the provided data.
+ */
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') == 'xmlhttprequest') {
     $data = json_decode(file_get_contents('php://input'), true);
-    if (isset($data['message51'])) {
-        $_SESSION['sector1'] = $selectedSectors[$data['message51']] ?? "";
-        $options['sector1'] = $_SESSION['sector1'];
+
+    // Update session variables for selected sectors
+    foreach (['message51' => 'sector1', 'message52' => 'sector2', 'message53' => 'sector3'] as $key => $sector) {
+        if (isset($data[$key])) {
+            $_SESSION[$sector] = $selectedSectors[$data[$key]] ?? "";
+            $options[$sector] = $_SESSION[$sector];
+        }
     }
-    if (isset($data['message52'])) {
-        $_SESSION['sector2'] = $selectedSectors[$data['message52']] ?? "";
-        $options['sector2'] = $_SESSION['sector2'];
+    // Update session variables for messages
+    foreach (['message5a', 'message5b', 'message5c'] as $message) {
+        if (isset($data[$message])) {
+            $_SESSION[$message] = $data[$message];
+        }
     }
-    if (isset($data['message53'])) {
-        $_SESSION['sector3'] = $selectedSectors[$data['message53']] ?? "";
-        $options['sector3'] = $_SESSION['sector3'];
-    }
-    if (isset($data['message5a'])) {
-        $_SESSION['message5a'] = $data['message5a'];
-    }
-    if (isset($data['message5b'])) {
-        $_SESSION['message5b'] = $data['message5b'];
-    }
-    if (isset($data['message5c'])) {
-        $_SESSION['message5c'] = $data['message5c'];
-    }
+    // Return success response
     echo json_encode(['status' => 'success']);
     exit;
 }
@@ -58,38 +61,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
     <b>Dit is mijn TOP 3 sectoren:</b>
     <p>Deze beroepen passen bij deze sectoren</p>
     <div class="input-box">
-        <div class="input-item">
-            <div class="input-number">1</div>
-            <select id="message51" class="dotted-input" onchange="saveText('message51')">
-                <option value="">Selecteer een sector</option>
-                <?php foreach ($selectedSectors as $key => $label): ?>
-                    <option value="<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?>" <?php echo ($options['sector1'] == $label) ? 'selected' : ''; ?>><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></option>
-                <?php endforeach; ?>
-            </select>
-            <input id='message5a' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5a')">
-        </div>
-        <div class="input-item">
-            <div class="input-number">2</div>
-            <select id="message52" class="dotted-input" onchange="saveText('message52')">
-                <option value="">Selecteer een sector</option>
-                <?php foreach ($selectedSectors as $key => $label): ?>
-                    <option value="<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?>" <?php echo ($options['sector2'] == $label) ? 'selected' : ''; ?>><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></option>
-                <?php endforeach; ?>
-            </select>
-            <input id='message5b' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5b')">
-        </div>
-        <div class="input-item">
-            <div class="input-number">3</div>
-            <select id="message53" class="dotted-input" onchange="saveText('message53')">
-                <option value="">Selecteer een sector</option>
-                <?php foreach ($selectedSectors as $key => $label): ?>
-                    <option value="<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?>" <?php echo ($options['sector3'] == $label) ? 'selected' : ''; ?>><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></option>
-                <?php endforeach; ?>
-            </select>
-            <input id='message5c' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5c')">
-        </div>
+        <?php for ($i = 1; $i <= 3; $i++): ?>
+            <div class="input-item">
+                <div class="input-number"><?php echo $i; ?></div>
+                <select id="message5<?php echo $i; ?>" class="dotted-input" onchange="saveText('message5<?php echo $i; ?>')">
+                    <option value="">Selecteer een sector</option>
+                    <?php foreach ($selectedSectors as $key => $label): ?>
+                        <option value="<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?>" <?php echo ($options['sector' . $i] == $label) ? 'selected' : ''; ?>><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <input id='message5<?php echo chr(96 + $i); ?>' type="text" class="rounded-input" placeholder="Welk beroep in deze sector?" oninput="saveText('message5<?php echo chr(96 + $i); ?>')">
+            </div>
+        <?php endfor; ?>
     </div>
     <script>
+        /**
+         * Set initial values for dropdowns and inputs on page load.
+         */
         window.onload = function () {
             document.getElementById('message51').value = "<?php echo array_search($options['sector1'], $selectedSectors); ?>";
             document.getElementById('message52').value = "<?php echo array_search($options['sector2'], $selectedSectors); ?>";
@@ -100,6 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
             updateDropdowns();
         }
 
+        /**
+         * Save text input values via AJAX.
+         * @param {string} id - The ID of the input element.
+         */
         function saveText(id) {
             const value = document.getElementById(id).value;
             const data = {};
@@ -128,6 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
                 });
         }
 
+        /**
+         * Update dropdown options to disable already selected values.
+         */
         function updateDropdowns() {
             const selectedValues = [
                 document.getElementById('message51').value,
@@ -149,10 +144,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['HTTP_X_REQUESTED_WIT
             });
         }
 
+        /**
+         * Navigate to the previous page.
+         */
         function goToPreviousPage() {
             window.location.href = 'opdracht5.php';
         }
 
+        /**
+         * Navigate to the next page if all dropdowns have selected values.
+         */
         function goToNextPage() {
             const dropdowns = ['message51', 'message52', 'message53'];
             for (let i = 0; i < dropdowns.length; i++) {
