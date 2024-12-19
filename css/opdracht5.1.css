@@ -222,3 +222,19 @@ body {
     font-size: 1rem;
     line-height: 1.5;
 }
+.popup-source {
+    font-size: 0.85rem; /* Iets kleinere tekst voor de bronvermelding */
+    color: #777; /* Subtiele kleur */
+    margin-top: 5px; /* Kleinere ruimte boven de bron */
+    text-align: center;
+}
+
+
+.popup-source a {
+    color: #D63384;
+    text-decoration: none;
+}
+
+.popup-source a:hover {
+    text-decoration: underline;
+}
