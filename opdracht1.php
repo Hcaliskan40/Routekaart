@@ -57,7 +57,7 @@ $selectedImages = [
     </div>
     <p>Hier krijg ik energie van en doe ik graag:</p>
 
-    <div class="bubble medium bottom">Je kan mij klikken om activiteiten uit te kiezen</div>
+    <div class="bubble medium bottom"><b>Je kan mij klikken om activiteiten uit te kiezen</b></div>
 
     <div class="input-box">
         <!-- Eerste input-item -->

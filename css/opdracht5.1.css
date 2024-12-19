@@ -91,7 +91,7 @@ body {
 }
 
 /* Checkbox styling */
-.option-checkbox {
+.option-item input[type="checkbox"] {
     appearance: none; /* Remove the default checkbox */
     width: 25px;
     height: 25px;
@@ -102,12 +102,12 @@ body {
     cursor: pointer;
 }
 
-.option-checkbox:checked {
+.option-item input[type="checkbox"]:checked {
     background-color: #D63384;
     border-color: #D63384;
 }
 
-.option-checkbox:checked::after {
+.option-item input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
     top: 3px;
