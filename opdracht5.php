@@ -1,33 +1,40 @@
 <?php
 session_start();
 
+/**
+ * Initialize selected sectors in session if not already set.
+ */
 if (!isset($_SESSION['selectedSectors'])) {
     $_SESSION['selectedSectors'] = [];
 }
 
-// Define options
+/**
+ * Array of available sectors with their labels.
+ */
 $options = [
-    $_SESSION['bouw'] = 'Bouw / Architectuur',
-    $_SESSION['communicatie'] = 'Communicatie / Media',
-    $_SESSION['economie'] = 'Economie / Financiën',
-    $_SESSION['facilitaire'] = 'Facilitaire dienstverlening / Horeca',
-    $_SESSION['fashion'] = 'Fashion / Design',
-    $_SESSION['gezondheidszorg'] = 'Gezondheidszorg / Life science',
-    $_SESSION['ict'] = 'ICT / IT',
-    $_SESSION['juridisch'] = 'Juridisch / Recht',
-    $_SESSION['kunst'] = 'Kunst / Cultuur / Entertainment',
-    $_SESSION['management'] = 'Management / Ondernemen',
-    $_SESSION['natuur'] = 'Natuur (planten, dieren en milieu)',
-    $_SESSION['onderwijs'] = 'Onderwijs',
-    $_SESSION['sociaal'] = 'Sociaal welzijn',
-    $_SESSION['sport'] = 'Sport / Voeding / Beweging',
-    $_SESSION['techniek'] = 'Techniek',
-    $_SESSION['toerisme'] = 'Toerisme / Recreatie',
-    $_SESSION['transport'] = 'Transport / Logistiek',
-    $_SESSION['veiligheid'] = 'Veiligheid'
+    'bouw' => 'Bouw / Architectuur',
+    'communicatie' => 'Communicatie / Media',
+    'economie' => 'Economie / Financiën',
+    'facilitaire' => 'Facilitaire dienstverlening / Horeca',
+    'fashion' => 'Fashion / Design',
+    'gezondheidszorg' => 'Gezondheidszorg / Life science',
+    'ict' => 'ICT / IT',
+    'juridisch' => 'Juridisch / Recht',
+    'kunst' => 'Kunst / Cultuur / Entertainment',
+    'management' => 'Management / Ondernemen',
+    'natuur' => 'Natuur (planten, dieren en milieu)',
+    'onderwijs' => 'Onderwijs',
+    'sociaal' => 'Sociaal welzijn',
+    'sport' => 'Sport / Voeding / Beweging',
+    'techniek' => 'Techniek',
+    'toerisme' => 'Toerisme / Recreatie',
+    'transport' => 'Transport / Logistiek',
+    'veiligheid' => 'Veiligheid'
 ];
 
-// Save selected values in the session
+/**
+ * Handle POST request to update selected sectors in session.
+ */
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sector']) && isset($_POST['checked'])) {
     $sector = $_POST['sector'];
     $checked = $_POST['checked'] === 'true';
@@ -39,12 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['sector']) && isset($_P
     }
 }
 
-// Set selected options
+/**
+ * Retrieve selected sectors from session.
+ */
 $selectedSectors = $_SESSION['selectedSectors'] ?? [];
-
-//echo '<pre>';
-//print_r($selectedSectors);
-//echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +60,11 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
     <title>Professions - Vraag 5</title>
     <link rel="stylesheet" type="text/css" href="css/opdracht5.1.css">
     <script>
+        /**
+         * Update selected sectors in session via AJAX.
+         * @param {string} sector - The sector key.
+         * @param {boolean} isChecked - Whether the sector is selected.
+         */
         function updateSelectedSectors(sector, isChecked) {
             const xhr = new XMLHttpRequest();
             xhr.open('POST', 'opdracht5.php', true);
@@ -62,22 +72,29 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
             xhr.send('sector=' + sector + '&checked=' + isChecked);
         }
 
+        /**
+         * Add event listeners to sector checkboxes on page load.
+         */
         document.addEventListener('DOMContentLoaded', function() {
-            const checkboxes = document.querySelectorAll('.sector-checkbox');
-            checkboxes.forEach(function(checkbox) {
+            document.querySelectorAll('.sector-checkbox').forEach(function(checkbox) {
                 checkbox.addEventListener('change', function() {
                     updateSelectedSectors(this.value, this.checked);
                 });
             });
         });
 
+        /**
+         * Navigate to the previous page.
+         */
         function goToPreviousPage() {
             window.location.href = 'opdracht4.php';
         }
 
+        /**
+         * Navigate to the next page if at least three sectors are selected.
+         */
         function goToNextPage() {
-            const selectedCheckboxes = document.querySelectorAll('.sector-checkbox:checked');
-            if (selectedCheckboxes.length < 3) {
+            if (document.querySelectorAll('.sector-checkbox:checked').length < 3) {
                 alert('Selecteer alstublieft minimaal drie sectoren om door te gaan.');
                 return;
             }
@@ -86,35 +103,24 @@ $selectedSectors = $_SESSION['selectedSectors'] ?? [];
     </script>
 </head>
 <body>
-
 <div class="container">
-    <!-- Header Section -->
     <div class="header">
         <div class="dot">5</div>
         <div class="titel-balk">Sectoren</div>
     </div>
-
     <p>Hier zie ik mezelf later werken (sectoren):</p>
-
-    <!-- Content Section (form and checkboxes) -->
     <div class="options">
-        <?php
-        foreach ($options as $key => $label) {
-            $isChecked = array_key_exists($key, $selectedSectors) ? 'checked' : '';
-            echo '<label class="option-item">';
-            echo '<input type="checkbox" name="sector[]" value="' . htmlspecialchars($key, ENT_QUOTES, 'UTF-8') . '" class="sector-checkbox" ' . $isChecked . '> ';
-            echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8');
-            echo '</label>';
-        }
-        ?>
+        <?php foreach ($options as $key => $label): ?>
+            <label class="option-item">
+                <input type="checkbox" name="sector[]" value="<?php echo htmlspecialchars($key, ENT_QUOTES, 'UTF-8'); ?>" class="sector-checkbox" <?php echo array_key_exists($key, $selectedSectors) ? 'checked' : ''; ?>>
+                <?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?>
+            </label>
+        <?php endforeach; ?>
     </div>
-
-    <!-- Navigation buttons -->
     <footer class="button-group">
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
     </footer>
-
 </div>
 </body>
 </html>
