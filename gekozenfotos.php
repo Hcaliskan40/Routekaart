@@ -18,9 +18,22 @@ $selectedImagesOpdracht3 = [
     $_SESSION['selectedImage_opdracht3_2'] ?? 'img/placeholder2.jpg',
 ];
 $selectedImagesOpdracht4 = [
-    $_SESSION['selectedImage_opdracht4_0'] ?? 'img/placeholder3.jpg',
-    $_SESSION['selectedImage_opdracht4_1'] ?? 'img/placeholder4.jpg',
-    $_SESSION['selectedImage_opdracht4_2'] ?? 'img/placeholder5.jpg',
+    $_SESSION['selectedImage_opdracht4_0'] ?? 'img/placeholder0.jpg',
+    $_SESSION['selectedImage_opdracht4_1'] ?? 'img/placeholder1.jpg',
+    $_SESSION['selectedImage_opdracht4_2'] ?? 'img/placeholder2.jpg',
+];
+
+// Haal de geselecteerde sectoren en beroepen op voor opdracht 5
+$selectedSectors = [
+    $_SESSION['sector1'] ?? 'Geen sector geselecteerd',
+    $_SESSION['sector2'] ?? 'Geen sector geselecteerd',
+    $_SESSION['sector3'] ?? 'Geen sector geselecteerd',
+];
+
+$selectedProfessions = [
+    $_SESSION['message5a'] ?? 'Geen beroep ingevoerd',
+    $_SESSION['message5b'] ?? 'Geen beroep ingevoerd',
+    $_SESSION['message5c'] ?? 'Geen beroep ingevoerd',
 ];
 
 // Haal de ingevoerde berichten op uit de sessie
@@ -44,6 +57,17 @@ $messages4 = [
     $_SESSION['message11'] ?? 'Geen tekst ingevoerd.',
     $_SESSION['message12'] ?? 'Geen tekst ingevoerd.',
 ];
+$Beroep = [
+    $_SESSION['message5a'] ?? 'Geen beroep ingevoerd.',
+    $_SESSION['message5b'] ?? 'Geen beroep ingevoerd.',
+    $_SESSION['message5c'] ?? 'Geen beroep ingevoerd.',
+];
+$Opleiding = [
+    $_SESSION['message6a'] ?? 'Geen opleiding ingevoerd.',
+    $_SESSION['message6b'] ?? 'Geen opleiding ingevoerd.',
+    $_SESSION['message6c'] ?? 'Geen opleiding ingevoerd.',
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -81,20 +105,36 @@ $messages4 = [
             align-items: center;
         }
 
-        .titel-balk.opdracht2 { background-color: #b1d249; }
-        .titel-balk.opdracht3 { background-color: #3498db; }
-        .titel-balk.opdracht4 { background-color: #fac710; }
+        .titel-balk.opdracht2 {
+            background-color: #f16682;
+        }
 
-        .chosen-images {
+        .titel-balk.opdracht3 {
+            background-color: #3498db;
+        }
+
+        .titel-balk.opdracht4 {
+            background-color: #fac710;
+        }
+
+        .titel-balk.opdracht5 {
+            background-color: #d63384;
+        }
+        .titel-balk.opdracht6 {
+            background-color: #fadb10;
+        }
+
+
+        .chosen-images, .chosen-sectors {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             margin-top: 10px;
         }
 
-        .image-item {
+        .image-item, .sector-item {
             box-sizing: border-box;
-            padding: 5px;
+            padding: 10px;
             border: 1px solid #ccc;
             background-color: #fafafa;
             text-align: center;
@@ -123,15 +163,13 @@ $messages4 = [
 <body>
 <div class="intro">
     <h1>Studiekeuze Routekaart</h1>
-    <p>Bedankt voor het invullen van jouw studiekeuzevragen. Hier vind je een overzicht van jouw antwoorden en keuzes.
-        Dit verslag kan je helpen bij het maken van een weloverwogen studiekeuze.</p>
+    <p>Bedankt voor het invullen van jouw studiekeuzevragen. Hier vind je een overzicht van jouw antwoorden en keuzes.</p>
     <a href="generate-pdf.php">Download PDF</a>
 </div>
 
 <!-- Opdracht 1 -->
 <div class="container">
     <div class="titel-balk">1 Like</div>
-    <h3>Hier krijg ik energie van en doe ik graag:</h3>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht1 as $index => $image): ?>
             <div class="image-item">
@@ -148,7 +186,6 @@ $messages4 = [
 <!-- Opdracht 2 -->
 <div class="container">
     <div class="titel-balk opdracht2">2 Nieuwsgierig</div>
-    <h3>Dit wil ik leren/ontdekken:</h3>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht2 as $index => $image): ?>
             <div class="image-item">
@@ -165,7 +202,6 @@ $messages4 = [
 <!-- Opdracht 3 -->
 <div class="container">
     <div class="titel-balk opdracht3">3 Trots</div>
-    <h3>Wanneer gebruik ik mijn talenten?</h3>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht3 as $index => $image): ?>
             <div class="image-item">
@@ -182,7 +218,6 @@ $messages4 = [
 <!-- Opdracht 4 -->
 <div class="container">
     <div class="titel-balk opdracht4">4 Belangrijk</div>
-    <h3>Dit is belangrijk in mijn leven:</h3>
     <div class="chosen-images">
         <?php foreach ($selectedImagesOpdracht4 as $index => $image): ?>
             <div class="image-item">
@@ -195,5 +230,33 @@ $messages4 = [
         <?php endforeach; ?>
     </div>
 </div>
+
+<!-- Opdracht 5 -->
+<div class="container">
+    <div class="titel-balk opdracht5">5 Beroepen</div>
+    <div class="chosen-sectors">
+        <?php foreach ($selectedSectors as $index => $sector): ?>
+            <div class="sector-item">
+                <strong>Sector <?php echo $index + 1; ?>:</strong> <?php echo htmlspecialchars($sector, ENT_QUOTES, 'UTF-8'); ?>
+                <br>
+                <strong>Beroep:</strong> <?php echo htmlspecialchars($selectedProfessions[$index], ENT_QUOTES, 'UTF-8'); ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    </div>
+</div>
+<!-- Opdracht 6 -->
+<div class="container">
+    <div class="titel-balk opdracht6">6 Opleidingen</div>
+    <div class="chosen-sectors">
+        <?php foreach ($Beroep as $index => $profession): ?>
+            <div class="sector-item">
+                <strong>Beroep <?php echo $index + 1; ?>:</strong> <?php echo htmlspecialchars($profession, ENT_QUOTES, 'UTF-8'); ?>
+                <br>
+                <strong>Opleiding:</strong> <?php echo htmlspecialchars($Opleiding[$index], ENT_QUOTES, 'UTF-8'); ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </body>
 </html>
