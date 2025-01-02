@@ -72,7 +72,7 @@ body, html {
     object-fit: cover; /* Vul de ruimte zonder vervorming */
 }
 
-/* Inhoud (video, tekst en knop) */
+/* Inhoud (knop) */
 .content {
     position: absolute;
     width: 100%;
@@ -84,33 +84,6 @@ body, html {
     align-items: center; /* Centreer alles horizontaal */
     z-index: 10; /* Zorgt ervoor dat dit bovenop de achtergrondafbeelding staat */
     text-align: center;
-}
-
-/* Video-placeholder */
-.video-placeholder {
-    background: #f4f4f4;
-    border: 2px solid #d1d1d1;
-    border-radius: 5px; /* Minder afgerond voor een rechthoekig kader */
-    width: 60%; /* Maak het videokader smaller */
-    max-width: 350px; /* Beperk de maximale breedte */
-    height: 180px; /* Houd de hoogte hetzelfde */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Ruimte onder de video */
-}
-
-.play-icon {
-    font-size: 3em;
-    color: #555;
-    cursor: pointer;
-}
-
-/* Video-tekst */
-.video-text {
-    font-size: 1em;
-    margin-bottom: 20px; /* Ruimte onder de tekst */
-    color: #333;
 }
 
 /* Start-knop */
@@ -131,15 +104,6 @@ body, html {
 
 /* Responsieve aanpassingen */
 @media (max-width: 768px) {
-    .video-placeholder {
-        width: 80%; /* Maak het videokader breder op kleinere schermen */
-        height: 120px; /* Verklein de hoogte op mobiel */
-    }
-
-    .play-icon {
-        font-size: 2.5em;
-    }
-
     .start-button {
         font-size: 1em;
         padding: 10px 20px;

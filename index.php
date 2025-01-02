@@ -25,12 +25,9 @@
         <img src="img/Lijnen.png" alt="Achtergrond Lijnen" class="lines">
     </div>
 
-    <!-- Inhoud (video en knop) -->
+    <!-- Inhoud (tekst en knop) -->
     <div class="content">
-        <div class="video-placeholder">
-            <i class="fas fa-play-circle play-icon"></i>
-        </div>
-        <h1 class="video-text">Bekijk deze video voor het beginnen</h1>
+        <p>Welkom bij de Windesheim Quiz! Klik op de knop om te beginnen.</p>
         <button class="start-button" onclick="startQuiz()">Begin</button>
     </div>
 </div>
