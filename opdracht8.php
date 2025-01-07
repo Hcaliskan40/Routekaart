@@ -88,7 +88,6 @@ $feedback = $_SESSION['feedback'] ?? '';
 
     // Debounce functionaliteit voor het tekstvak
     let typingTimer;
-    const debounceTime = 500; // Tijd in milliseconden (0,5 seconde)
     const feedbackTextarea = document.getElementById('feedback');
 
     feedbackTextarea.addEventListener('input', function () {
