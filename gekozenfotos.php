@@ -71,7 +71,7 @@ $Opleiding = [
 // Haal de antwoorden op voor vraag 7 en 8
 $vraag7_choices = array_keys($_SESSION['selectedOptions7'] ?? []);
 $vraag8_keuze = array_keys($_SESSION['selectedOptions8'] ?? []);
-$vraag8_feedback = $_SESSION['feedback'] ?? 'Geen feedback gegeven';
+$vraag8_feedback = $_SESSION['feedback8'] ?? 'Geen feedback gegeven';
 ?>
 
 <!DOCTYPE html>
