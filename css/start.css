@@ -76,6 +76,7 @@ body, html {
 .content {
     position: absolute;
     width: 100%;
+    max-width: 1000px; /* Maximale breedte instellen */
     height: 50%;
     bottom: 0;
     display: flex;
@@ -84,6 +85,8 @@ body, html {
     align-items: center; /* Centreer alles horizontaal */
     z-index: 10; /* Zorgt ervoor dat dit bovenop de achtergrondafbeelding staat */
     text-align: center;
+    left: 50%; /* Plaats het element in het midden van de container */
+    transform: translateX(-50%); /* Corrigeer de verschuiving door de helft van de breedte te compenseren */
 }
 
 /* Start-knop */
