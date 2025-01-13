@@ -27,8 +27,9 @@
 
     <!-- Inhoud (tekst en knop) -->
     <div class="content">
-        <p>Welkom bij onze studiekeuzetest! Hier hoef je geen e-mailadres in te vullen of een account aan te maken om je resultaten te bekijken. We geloven in een eenvoudige en toegankelijke manier om jou te helpen jouw toekomst te ontdekken. Vul de vragen in en ontvang direct jouw persoonlijke resultaten. Start nu en zet de eerste stap richting jouw ideale studiekeuze!
-        </p>
+        <b>Welkom bij onze studiekeuzetest! Hier hoef je geen e-mailadres in te vullen of een account aan te maken om je resultaten te bekijken. We geloven in een eenvoudige en toegankelijke manier om jou te helpen jouw toekomst te ontdekken. Vul de vragen in en ontvang direct jouw persoonlijke resultaten. Start nu en zet de eerste stap richting jouw ideale studiekeuze!
+        </b>
+        <br>
         <button class="start-button" onclick="startQuiz()">Begin</button>
     </div>
 </div>
