@@ -1,16 +1,20 @@
 <?php
 session_start(); // Start of hervat de bestaande sessie
-
+//print current session
+//echo "<pre>";
+//print_r($_SESSION['selectedOptions8']);
+//print_r($_SESSION['feedback']);
+//echo "</pre>";
 // Opslaan van geselecteerde checkboxen in sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['option'])) {
         foreach ($_POST['option'] as $key => $value) {
-            $_SESSION['selectedOptions8'][$key] = $value === 'on' ? true : false; // Gebruik een aparte sessie voor vraag 8
+            $_SESSION['selectedOptions8'][$key] = $value === 'on'; // Gebruik een aparte sessie voor vraag 8
         }
     }
 
     // Zorg ervoor dat niet-geselecteerde opties worden verwijderd uit de sessie
-    foreach ($_SESSION['selectedOptions8'] as $key => $value) {
+    foreach (array_keys($_SESSION['selectedOptions8']) as $key) {
         if (!isset($_POST['option'][$key])) {
             unset($_SESSION['selectedOptions8'][$key]);
         }

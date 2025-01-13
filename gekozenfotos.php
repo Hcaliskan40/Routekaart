@@ -70,8 +70,8 @@ $Opleiding = [
 
 // Haal de antwoorden op voor vraag 7 en 8
 $vraag7_choices = array_keys($_SESSION['selectedOptions7'] ?? []);
-$vraag8_keuze = $_SESSION['vraag8_keuze'] ?? [];
-$vraag8_feedback = $_SESSION['vraag8_feedback'] ?? 'Geen feedback gegeven';
+$vraag8_keuze = array_keys($_SESSION['selectedOptions8'] ?? []);
+$vraag8_feedback = $_SESSION['feedback'] ?? 'Geen feedback gegeven';
 ?>
 
 <!DOCTYPE html>
@@ -287,7 +287,7 @@ $vraag8_feedback = $_SESSION['vraag8_feedback'] ?? 'Geen feedback gegeven';
 <div class="container">
     <div class="titel-balk opdracht8">8 Jouw keuze</div>
     <div class="message-item">
-        <strong>Keuze:</strong> <?php echo htmlspecialchars($vraag8_keuze, ENT_QUOTES, 'UTF-8'); ?>
+        <strong>Keuze:</strong> <?php echo htmlspecialchars(implode(', ', $vraag8_keuze), ENT_QUOTES, 'UTF-8'); ?>
     </div>
     <div class="message-item">
         <strong>Feedback:</strong> <?php echo nl2br(htmlspecialchars($vraag8_feedback, ENT_QUOTES, 'UTF-8')); ?>
