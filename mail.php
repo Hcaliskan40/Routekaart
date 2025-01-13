@@ -24,7 +24,7 @@
     </p>
     <br><br>
     <!-- Knop met klasse voor styling -->
-    <button class="resultaat-btn" onclick="goToNextPage()">Resultaat</button>
+    <button class="resultaat-btn" onclick="downloadPDF()">Resultaat</button>
 
 </div>
 
@@ -85,8 +85,9 @@
     }
 
     // Functie om naar de volgende pagina te gaan
-    function goToNextPage() {
-        window.location.href = 'gekozenfotos.php';
+
+        function downloadPDF() {
+            window.location.href = 'generate-pdf.php';
     }
 
     // Start confetti wanneer de pagina geladen wordt
