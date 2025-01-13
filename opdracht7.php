@@ -1,5 +1,6 @@
 <?php
 session_start(); // Start of hervat de bestaande sessie
+
 // Opslaan van de geselecteerde waarden in de sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['option'])) {
@@ -19,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['selectedOptions7'] = [];
     }
 }
+
+// Stel de gekozen opties in; gebruik de opgeslagen waarden in de sessie, of een lege array als er nog niets is geselecteerd
+$selectedOptions7 = $_SESSION['selectedOptions7'] ?? [];
 ?>
 
 <!DOCTYPE html>
