@@ -1,12 +1,9 @@
 <?php
 session_start(); // Start of hervat de bestaande sessie
-//print current session
-//echo "<pre>";
-//print_r($_SESSION['selectedOptions8']);
-//print_r($_SESSION['feedback']);
-//echo "</pre>";
+
 // Opslaan van geselecteerde checkboxen in sessie
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Opslaan van checkboxen
     if (isset($_POST['option'])) {
         foreach ($_POST['option'] as $key => $value) {
             $_SESSION['selectedOptions8'][$key] = $value === 'on'; // Gebruik een aparte sessie voor vraag 8
@@ -14,21 +11,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Zorg ervoor dat niet-geselecteerde opties worden verwijderd uit de sessie
-    foreach (array_keys($_SESSION['selectedOptions8']) as $key) {
+    foreach (array_keys($_SESSION['selectedOptions8'] ?? []) as $key) {
         if (!isset($_POST['option'][$key])) {
             unset($_SESSION['selectedOptions8'][$key]);
         }
     }
 
-    // Opslaan van feedback in sessie
-    if (isset($_POST['feedback'])) {
-        $_SESSION['feedback'] = $_POST['feedback'];
+    // Opslaan van feedback in sessie (indien via AJAX verstuurd)
+    if ($_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest') {
+        $data = json_decode(file_get_contents('php://input'), true);
+        if (isset($data['feedback8'])) {
+            $_SESSION['feedback8'] = $data['feedback8'];
+            echo json_encode(['status' => 'success']);
+            exit;
+        }
     }
 }
 
 // Ophalen van opgeslagen checkboxen en feedback
 $selectedOptions8 = $_SESSION['selectedOptions8'] ?? [];
-$feedback = $_SESSION['feedback'] ?? '';
+$feedback = $_SESSION['feedback8'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -68,8 +70,8 @@ $feedback = $_SESSION['feedback'] ?? '';
             ?>
 
             <div class="feedback-section">
-                <label for="feedback">En wat vind jij hiervan?</label>
-                <textarea id="feedback" name="feedback" placeholder="Schrijf hier je feedback..."><?php echo htmlspecialchars($feedback, ENT_QUOTES, 'UTF-8'); ?></textarea>
+                <label for="feedback8">En wat vind jij hiervan?</label>
+                <textarea id="feedback8" name="feedback8" rows="10" cols="40" placeholder="Schrijf hier je feedback..."><?php echo htmlspecialchars($feedback, ENT_QUOTES, 'UTF-8'); ?></textarea>
             </div>
         </form>
     </div>
@@ -78,10 +80,35 @@ $feedback = $_SESSION['feedback'] ?? '';
         <button class="arrow-btn" onclick="goToPreviousPage()">&#8249;</button>
         <button class="arrow-btn" onclick="goToNextPage()">&#8250;</button>
     </footer>
-
 </div>
 
 <script>
+    const feedbackTextarea = document.getElementById('feedback8');
+
+    // Functie om feedback automatisch op te slaan
+    feedbackTextarea.addEventListener('input', function () {
+        const feedback = feedbackTextarea.value;
+
+        // Verzenden via fetch
+        fetch('opdracht8.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+            body: JSON.stringify({ feedback8: feedback }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log('Feedback automatisch opgeslagen.');
+                } else {
+                    console.error('Fout bij opslaan van feedback:', data.message);
+                }
+            })
+            .catch(error => console.error('Fout bij opslaan van feedback:', error));
+    });
+
     function goToPreviousPage() {
         window.location.href = 'opdracht7.php';
     }
@@ -89,18 +116,6 @@ $feedback = $_SESSION['feedback'] ?? '';
     function goToNextPage() {
         window.location.href = 'mail.php';
     }
-
-    // Debounce functionaliteit voor het tekstvak
-    let typingTimer;
-    const feedbackTextarea = document.getElementById('feedback');
-
-    feedbackTextarea.addEventListener('input', function () {
-        clearTimeout(typingTimer); // Reset de timer
-        typingTimer = setTimeout(() => {
-            // Verzenden van het formulier
-            feedbackTextarea.form.submit();
-        }, debounceTime);
-    });
 </script>
 
 </body>
