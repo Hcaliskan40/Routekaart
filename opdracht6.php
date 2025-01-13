@@ -35,7 +35,7 @@ $message6c = $_SESSION['message6c'] ?? '';
         for ($i = 0; $i < 3; $i++): ?>
             <div class="input-item">
                 <div class="input-number"><?php echo $i + 1; ?></div>
-                <input type="text" class="dotted-input" placeholder="Beroepen" value="<?php echo htmlspecialchars($messages5[$i], ENT_QUOTES, 'UTF-8'); ?>">
+                <input type="text" class="dotted-input" placeholder="Beroepen" value="<?php echo htmlspecialchars($messages5[$i], ENT_QUOTES, 'UTF-8'); ?>" readonly>
                 <input id="message6<?php echo chr(97 + $i); ?>" type="text" class="rounded-input" placeholder="Welke opleiding heb je nodig?" value="<?php echo htmlspecialchars($messages6[$i], ENT_QUOTES, 'UTF-8'); ?>" oninput="saveText('message6<?php echo chr(97 + $i); ?>')">
             </div>
         <?php endfor; ?>

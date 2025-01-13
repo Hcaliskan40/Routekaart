@@ -68,6 +68,10 @@ $Opleiding = [
     $_SESSION['message6c'] ?? 'Geen opleiding ingevoerd.',
 ];
 
+// Haal de antwoorden op voor vraag 7 en 8
+$vraag7_choices = $_SESSION['vraag7'] ?? [];
+$vraag8_keuze = $_SESSION['vraag8_keuze'] ?? 'Geen keuze gemaakt';
+$vraag8_feedback = $_SESSION['vraag8_feedback'] ?? 'Geen feedback gegeven';
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +110,7 @@ $Opleiding = [
         }
 
         .titel-balk.opdracht2 {
-            background-color: #f16682;
+            background-color: #b1d249;
         }
 
         .titel-balk.opdracht3 {
@@ -122,6 +126,12 @@ $Opleiding = [
         }
         .titel-balk.opdracht6 {
             background-color: #fadb10;
+        }
+        .titel-balk.opdracht7 {
+            background-color: #6a0dac;
+        }
+        .titel-balk.opdracht8 {
+            background-color: #ee3135;
         }
 
 
@@ -244,7 +254,7 @@ $Opleiding = [
         <?php endforeach; ?>
     </div>
 
-    </div>
+</div>
 </div>
 <!-- Opdracht 6 -->
 <div class="container">
@@ -258,5 +268,30 @@ $Opleiding = [
             </div>
         <?php endforeach; ?>
     </div>
+</div>
+
+<!-- Vraag 7 -->
+<div class="container">
+    <div class="titel-balk opdracht7">7 Verlanglijst</div>
+    <div class="message-item">
+        <strong>Jouw keuzes:</strong>
+        <ul>
+            <?php foreach ($vraag7_choices as $choice): ?>
+                <li><?php echo htmlspecialchars($choice, ENT_QUOTES, 'UTF-8'); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+
+<!-- Vraag 8 -->
+<div class="container">
+    <div class="titel-balk opdracht8">8 Jouw keuze</div>
+    <div class="message-item">
+        <strong>Keuze:</strong> <?php echo htmlspecialchars($vraag8_keuze, ENT_QUOTES, 'UTF-8'); ?>
+    </div>
+    <div class="message-item">
+        <strong>Feedback:</strong> <?php echo nl2br(htmlspecialchars($vraag8_feedback, ENT_QUOTES, 'UTF-8')); ?>
+    </div>
+</div>
 </body>
 </html>

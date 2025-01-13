@@ -65,7 +65,7 @@ $feedback = $_SESSION['feedback'] ?? '';
 
             <div class="feedback-section">
                 <label for="feedback">En wat vind jij hiervan?</label>
-                <textarea id="feedback" name="feedback" placeholder="Schrijf hier je feedback..." oninput="this.form.submit()"><?php echo htmlspecialchars($feedback, ENT_QUOTES, 'UTF-8'); ?></textarea>
+                <textarea id="feedback" name="feedback" placeholder="Schrijf hier je feedback..."><?php echo htmlspecialchars($feedback, ENT_QUOTES, 'UTF-8'); ?></textarea>
             </div>
         </form>
     </div>
@@ -85,6 +85,18 @@ $feedback = $_SESSION['feedback'] ?? '';
     function goToNextPage() {
         window.location.href = 'mail.php';
     }
+
+    // Debounce functionaliteit voor het tekstvak
+    let typingTimer;
+    const feedbackTextarea = document.getElementById('feedback');
+
+    feedbackTextarea.addEventListener('input', function () {
+        clearTimeout(typingTimer); // Reset de timer
+        typingTimer = setTimeout(() => {
+            // Verzenden van het formulier
+            feedbackTextarea.form.submit();
+        }, debounceTime);
+    });
 </script>
 
 </body>
